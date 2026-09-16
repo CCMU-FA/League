@@ -31,17 +31,7 @@
     "name": "足球小酱",
     "level": "甲级",
     "captain": "周子易",
-    "players": [
-      {
-        "id": "29",
-        "name": "周子易",
-        "docId": "",
-        "goals": 0,
-        "redCards": 0,
-        "yellowCards": 0,
-        "isEligible": true
-      }
-    ],
+    "players": [],
     "points": 0,
     "wins": 0,
     "draws": 0,
