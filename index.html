@@ -269,16 +269,16 @@ async function initDataFromCloud() {
         setTimeout(() => notice.remove(), 300);
     }, 2500);
 }
-// 核心云端同步函数（直接调用 GitHub API）
-let gitHubWriteQueue = Promise.resolve();
+// --- GitHub 异步写入队列与 409 冲突自愈逻辑 ---
+let gitHubWriteQueue = Promise.resolve(); // 全局写入 Promise 链队列
+// 1. 对外调用的统一推送到 GitHub 函数（实现排队串行）
 async function syncToGitHubDirectly(filename, data) {
     // 将新的写入任务追加到队列末尾，确保串行执行
     gitHubWriteQueue = gitHubWriteQueue.then(() => executePushWithRetry(filename, data, 3))
                                        .catch(err => console.error("队列写入异常:", err));
     return gitHubWriteQueue;
 }
-
-// 2. 带 409 冲突重试与最新 SHA 拉取的底层提交逻辑
+/ 2. 带 409 冲突重试与最新 SHA 拉取的底层提交逻辑
 async function executePushWithRetry(filename, data, maxRetries = 3) {
     if (!GITHUB_TOKEN || !GITHUB_USER || !GITHUB_REPO) {
         alert("GitHub 配置不完整，无法保存到云端！");
@@ -354,7 +354,8 @@ async function executePushWithRetry(filename, data, maxRetries = 3) {
         }
     }
     return false;
-}  
+}
+
 // 修改保存函数：同时保存到本地，并异步触发 GitHub 直连上传
 function saveTeams(teamsObj) { 
     localStorage.setItem('teams_folder', JSON.stringify(teamsObj)); 
@@ -902,7 +903,7 @@ async function deleteMatch(index) {
         t2.goalsAgainst = Math.max(0, t2.goalsAgainst - s1);
         t2.refFeeBalance += (match.refFee / 2);
         if (s2 > s1) { t2.wins = Math.max(0, t2.wins - 1); t2.points = Math.max(0, t2.points - 3); }
-        else if (s2 > s1) { t2.losses = Math.max(0, t2.losses - 1); }
+        else if (s2 < s1) { t2.losses = Math.max(0, t2.losses - 1); }
         else { t2.draws = Math.max(0, t2.draws - 1); t2.points = Math.max(0, t2.points - 1); }
     }
 
