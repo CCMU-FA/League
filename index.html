@@ -278,7 +278,7 @@ async function syncToGitHubDirectly(filename, data) {
                                        .catch(err => console.error("队列写入异常:", err));
     return gitHubWriteQueue;
 }
-/ 2. 带 409 冲突重试与最新 SHA 拉取的底层提交逻辑
+// 2. 带 409 冲突重试与最新 SHA 拉取的底层提交逻辑
 async function executePushWithRetry(filename, data, maxRetries = 3) {
     if (!GITHUB_TOKEN || !GITHUB_USER || !GITHUB_REPO) {
         alert("GitHub 配置不完整，无法保存到云端！");
