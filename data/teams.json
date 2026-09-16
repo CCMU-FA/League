@@ -1941,5 +1941,22 @@
     "fairPlayPoints": 100,
     "depositBalance": 100,
     "refFeeBalance": 150
+  },
+  "PSG": {
+    "abbr": "PSG",
+    "name": "PASARGAD",
+    "level": "甲级",
+    "captain": "NIMA",
+    "players": [],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 150
   }
 }
