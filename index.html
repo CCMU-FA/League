@@ -270,58 +270,91 @@ async function initDataFromCloud() {
     }, 2500);
 }
 // 核心云端同步函数（直接调用 GitHub API）
+let gitHubWriteQueue = Promise.resolve();
 async function syncToGitHubDirectly(filename, data) {
+    // 将新的写入任务追加到队列末尾，确保串行执行
+    gitHubWriteQueue = gitHubWriteQueue.then(() => executePushWithRetry(filename, data, 3))
+                                       .catch(err => console.error("队列写入异常:", err));
+    return gitHubWriteQueue;
+}
+
+// 2. 带 409 冲突重试与最新 SHA 拉取的底层提交逻辑
+async function executePushWithRetry(filename, data, maxRetries = 3) {
+    if (!GITHUB_TOKEN || !GITHUB_USER || !GITHUB_REPO) {
+        alert("GitHub 配置不完整，无法保存到云端！");
+        return false;
+    }
 
     const filePath = `data/${filename}`;
     const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${filePath}`;
-    
-    try {
-        let fileSha = null;
+    const jsonString = JSON.stringify(data, null, 2);
+    const contentBase64 = utf8_to_btoa(jsonString);
 
-        // 第一步：尝试获取当前文件的 SHA 值（GitHub 更新文件必须提供旧的 SHA）
-        const getResponse = await fetch(url, {
-            headers: { 'Authorization': `Bearer ${GITHUB_TOKEN}` }
-        });
-        
-        if (getResponse.ok) {
-            const fileInfo = await getResponse.json();
-            fileSha = fileInfo.sha;
-        } else if (getResponse.status !== 404) {
-            console.error('获取文件状态失败:', await getResponse.text());
-            return;
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+        try {
+            // 步骤 A：每次提交前强行重新获取云端最新的 SHA
+            let sha = null;
+            const getRes = await fetch(url, {
+                headers: {
+                    'Authorization': `Bearer ${GITHUB_TOKEN}`,
+                    'Accept': 'application/vnd.github.v3+json'
+                },
+                cache: 'no-store' // 强行禁用缓存，确保获取最新的 SHA
+            });
+
+            if (getRes.ok) {
+                const fileData = await getRes.json();
+                sha = fileData.sha;
+            }
+
+            // 步骤 B：构造 PUT 请求体
+            const body = {
+                message: `Update ${filename} via web app`,
+                content: contentBase64
+            };
+            if (sha) body.sha = sha;
+
+            // 步骤 C：发起同步提交
+            const putRes = await fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `Bearer ${GITHUB_TOKEN}`,
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/vnd.github.v3+json'
+                },
+                body: JSON.stringify(body)
+            });
+
+            if (putRes.ok) {
+                console.log(`✅ [尝试 ${attempt}/${maxRetries}] 云端 ${filename} 同步成功！`);
+                return true;
+            }
+
+            // 步骤 D：专门捕获 409 冲突并退避重试
+            if (putRes.status === 409) {
+                const waitTime = attempt * 1200; // 递增等待 1.2s, 2.4s...
+                console.warn(`⚠️ [409 冲突] GitHub Commit 尚未完成，等待 ${waitTime}ms 后重新尝试 (第 ${attempt}/${maxRetries} 次)...`);
+                await new Promise(resolve => setTimeout(resolve, waitTime));
+                continue; // 重新进入 next attempt 循环，拉取最新 SHA
+            }
+
+            // 其他 HTTP 错误（如 401 权限不足、404 等）直接报错
+            const errData = await putRes.json();
+            console.error(`❌ GitHub 写入失败 [HTTP ${putRes.status}]:`, errData);
+            alert(`云端 ${filename} 保存失败: ${errData.message || putRes.status}`);
+            return false;
+
+        } catch (err) {
+            console.error(`网络连接异常 (尝试 ${attempt}/${maxRetries}):`, err);
+            if (attempt === maxRetries) {
+                alert(`网络异常，多次重试后无法同步至 GitHub。`);
+                return false;
+            }
+            await new Promise(resolve => setTimeout(resolve, 1000));
         }
-
-        // 第二步：将数据转为带缩进的 JSON 字符串，并进行 Base64 编码
-        const jsonString = JSON.stringify(data, null, 2);
-        const encodedContent = utf8_to_btoa(jsonString);
-
-        // 第三步：构建提交内容并发送 PUT 请求更新文件
-        const bodyData = {
-            message: `Auto-update: System saved ${filename}`,
-            content: encodedContent
-        };
-        if (fileSha) bodyData.sha = fileSha; // 如果文件已存在，附带 SHA
-
-        const putResponse = await fetch(url, {
-            method: 'PUT',
-            headers: {
-                'Authorization': `Bearer ${GITHUB_TOKEN}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(bodyData)
-        });
-
-        if (putResponse.ok) {
-            console.log(`✅ ${filename} 成功同步至 GitHub!`);
-        } else {
-            console.error(`❌ 同步 ${filename} 失败:`, await putResponse.text());
-        }
-
-    } catch (error) {
-        console.error("网络请求出错:", error);
     }
-}
-
+    return false;
+}  
 // 修改保存函数：同时保存到本地，并异步触发 GitHub 直连上传
 function saveTeams(teamsObj) { 
     localStorage.setItem('teams_folder', JSON.stringify(teamsObj)); 
