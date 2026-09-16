@@ -442,7 +442,161 @@
     "name": "比奇堡联",
     "level": "甲级",
     "captain": "申沛文",
-    "players": [],
+    "players": [
+      {
+        "id": "16",
+        "name": "申沛文",
+        "docId": "2520009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "14",
+        "name": "宋诣",
+        "docId": "2511159",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "37",
+        "name": "王昊辰",
+        "docId": "2501065",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "肖天时",
+        "docId": "2515004",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "孙可心",
+        "docId": "2501191",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "30",
+        "name": "刘俊辉",
+        "docId": "2514006",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "18",
+        "name": "逄证皓",
+        "docId": "2511155",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "12",
+        "name": "王朔菲",
+        "docId": "2527005",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "2",
+        "name": "陈安瑞",
+        "docId": "2403014",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "巩正阳",
+        "docId": "2501014",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "70",
+        "name": "刘卓逸",
+        "docId": "2519049",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "刘俊程",
+        "docId": "2518009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "15",
+        "name": "承茂森",
+        "docId": "2618040",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "78",
+        "name": "曹子元",
+        "docId": "2620009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "69",
+        "name": "汤硕",
+        "docId": "2501194",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "28",
+        "name": "邢航远",
+        "docId": "122024010072",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "42",
+        "name": "官子栋",
+        "docId": "2211128",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
     "points": 0,
     "wins": 0,
     "draws": 0,
