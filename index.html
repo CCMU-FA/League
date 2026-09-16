@@ -181,10 +181,6 @@ function base64ToUtf8(base64) {
 
 // 核心云端读取函数：从 GitHub REST API 拉取指定 JSON 文件
 async function fetchFromGitHub(filename) {
-    if (!GITHUB_TOKEN || !GITHUB_TOKEN.startsWith('ghp_')) {
-        console.warn('未配置有效的 GitHub Token，跳过云端读取');
-        return null;
-    }
 
     const filePath = `data/${filename}`;
     const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${filePath}`;
