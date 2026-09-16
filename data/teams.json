@@ -186,16 +186,16 @@
         "isEligible": true
       }
     ],
-    "points": 5,
-    "wins": 1,
+    "points": 8,
+    "wins": 2,
     "draws": 2,
     "losses": 0,
-    "goalsFor": 1,
+    "goalsFor": 2,
     "goalsAgainst": 0,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 18
+    "refFeeBalance": -57
   },
   "XJ": {
     "abbr": "XJ",
@@ -206,13 +206,13 @@
     "points": 2,
     "wins": 0,
     "draws": 2,
-    "losses": 1,
+    "losses": 2,
     "goalsFor": 0,
-    "goalsAgainst": 1,
+    "goalsAgainst": 2,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 18
+    "refFeeBalance": -57
   },
   "ZDY": {
     "abbr": "ZDY",
