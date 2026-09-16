@@ -396,7 +396,7 @@
         "id": "47",
         "name": "冯允秋",
         "docId": "2511018",
-        "goals": 0,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -405,7 +405,7 @@
         "id": "19",
         "name": "陈信",
         "docId": "2511002",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -414,7 +414,7 @@
         "id": "11",
         "name": "李汇楠",
         "docId": "2511001",
-        "goals": 0,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -549,7 +549,7 @@
         "id": "9",
         "name": "林鑫波",
         "docId": "2501062",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -582,16 +582,16 @@
         "isEligible": true
       }
     ],
-    "points": 0,
-    "wins": 0,
+    "points": 3,
+    "wins": 1,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 0,
+    "goalsFor": 6,
     "goalsAgainst": 0,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 130
   },
   "BGT": {
     "abbr": "BGT",
@@ -1224,13 +1224,13 @@
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 0,
+    "losses": 1,
     "goalsFor": 0,
-    "goalsAgainst": 0,
+    "goalsAgainst": 6,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 130
   },
   "JGD": {
     "abbr": "JGD",
