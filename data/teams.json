@@ -2523,7 +2523,170 @@
     "name": "宣武医院梦之队",
     "level": "乙级",
     "captain": "徐梓航",
-    "players": [],
+    "players": [
+      {
+        "id": "37",
+        "name": "徐梓航",
+        "docId": "2201006",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "99",
+        "name": "陈昱蘅",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "路明昊",
+        "docId": "122026020341",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "39",
+        "name": "张梓尧",
+        "docId": "2639005",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "26",
+        "name": "常超",
+        "docId": "122024020583",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "27",
+        "name": "武岳霄",
+        "docId": "112026010164",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "20",
+        "name": "毕宸睿",
+        "docId": "2637010",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "28",
+        "name": "方天",
+        "docId": "122026010247",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "22",
+        "name": "李睿",
+        "docId": "122026010193",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "3",
+        "name": "董子民",
+        "docId": "122024010213",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "77",
+        "name": "刘宇博",
+        "docId": "2201022",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "10",
+        "name": "郑梓健",
+        "docId": "122026010153",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "4",
+        "name": "李唯豪",
+        "docId": "2201037",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "彭征桡",
+        "docId": "122024030603",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "30",
+        "name": "李沛哲",
+        "docId": "2201079",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "孔令然",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "29",
+        "name": "黄雨达",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "高佩阳",
+        "docId": "112024010210",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
     "points": 0,
     "wins": 0,
     "draws": 0,
