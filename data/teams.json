@@ -2334,7 +2334,179 @@
     "name": "蒙的全队",
     "level": "乙级",
     "captain": "方俣畅",
-    "players": [],
+    "players": [
+      {
+        "id": "5",
+        "name": "方俣畅",
+        "docId": "2601201",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "李圣珏",
+        "docId": "2601214",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "陈俊慈",
+        "docId": "2618101",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "顾春晓",
+        "docId": "2611169",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "14",
+        "name": "高晨洋",
+        "docId": "2611226",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "戴子航",
+        "docId": "2611186",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "1",
+        "name": "徐君陶",
+        "docId": "2601160",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "91",
+        "name": "马泽明",
+        "docId": "2601216",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "陈兆霖",
+        "docId": "122026010027",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "22",
+        "name": "张斯凡",
+        "docId": "2224005",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "3",
+        "name": "叶梓皓",
+        "docId": "2615042",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "29",
+        "name": "党一诺",
+        "docId": "2601229",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "18",
+        "name": "曹益嘉",
+        "docId": "2611130",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "安世博",
+        "docId": "2539006",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "4",
+        "name": "邵晨博",
+        "docId": "2601173",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "47",
+        "name": "张佳梓",
+        "docId": "2629014",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "30",
+        "name": "安哲远",
+        "docId": "2611100",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "33",
+        "name": "王昶博",
+        "docId": "2630007",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "12",
+        "name": "李寓昊",
+        "docId": "（已毕业）",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
     "points": 0,
     "wins": 0,
     "draws": 0,
