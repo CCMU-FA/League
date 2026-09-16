@@ -1419,5 +1419,22 @@
     "fairPlayPoints": 100,
     "depositBalance": 100,
     "refFeeBalance": 150
+  },
+  "QX": {
+    "abbr": "QX",
+    "name": "七喜",
+    "level": "甲级",
+    "captain": "杨栎文",
+    "players": [],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 150
   }
 }
