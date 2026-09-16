@@ -195,7 +195,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 225
   },
   "XJ": {
     "abbr": "XJ",
@@ -212,7 +212,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 225
   },
   "ZDY": {
     "abbr": "ZDY",
