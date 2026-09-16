@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>校园足球联赛球员管理系统</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; background-color: #f5f7fa; }
+        h1, h2 { color: #333; }
+        .controls { margin-bottom: 20px; }
+        button { padding: 10px 15px; background-color: #0056b3; color: white; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px; }
+        button:hover { background-color: #004494; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+        th { background-color: #0056b3; color: white; }
+        tr:hover { background-color: #f1f1f1; cursor: pointer; }
+        
+        /* 模态框样式 */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); overflow-y: auto; }
+        .modal-content { background: white; margin: 5% auto; padding: 20px; width: 80%; max-width: 800px; border-radius: 8px; }
+        .close { float: right; font-size: 24px; cursor: pointer; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: inline-block; width: 120px; font-weight: bold; }
+        .form-group input, .form-group select { padding: 5px; width: 200px; }
+        .readonly-input { background-color: #e9ecef; border: 1px solid #ccc; }
+        
+        #eventList { margin-bottom: 15px; border: 1px solid #ccc; padding: 10px; }
+        .event-item { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>校园足球联赛管理系统</h1>
+    
+    <div class="controls">
+        <button onclick="openCreateTeamModal()">建立球队</button>
+        <button onclick="openAddMatchModal()">添加比赛</button>
+        <button onclick="clearData()" style="background-color: #dc3545;">清空系统数据(重置)</button>
+    </div>
+
+    <h2>甲级积分榜</h2>
+    <table id="table-divA">
+        <thead>
+            <tr><th>队名</th><th>比赛场次</th><th>胜</th><th>平</th><th>负</th><th>积分</th><th>进球</th><th>失球</th><th>净胜球</th></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2>乙级积分榜</h2>
+    <table id="table-divB">
+        <thead>
+            <tr><th>队名</th><th>比赛场次</th><th>胜</th><th>平</th><th>负</th><th>积分</th><th>进球</th><th>失球</th><th>净胜球</th></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div id="modal-create-team" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-create-team')">&times;</span>
+            <h2>建立球队</h2>
+            <div class="form-group"><label>队名:</label><input type="text" id="ct-name"></div>
+            <div class="form-group"><label>缩写(文件名):</label><input type="text" id="ct-abbr" placeholder="如: CCMU"></div>
+            <div class="form-group"><label>队长:</label><input type="text" id="ct-captain"></div>
+            <div class="form-group">
+                <label>级别:</label>
+                <select id="ct-level">
+                    <option value="甲级">甲级</option>
+                    <option value="乙级">乙级</option>
+                </select>
+            </div>
+            <button onclick="submitCreateTeam()">确认创建</button>
+        </div>
+    </div>
+
+    <div id="modal-add-match" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-add-match')">&times;</span>
+            <h2>添加比赛</h2>
+            <div class="form-group"><label>比赛时间:</label><input type="datetime-local" id="am-time"></div>
+            <div class="form-group">
+                <label>参赛球队1:</label><select id="am-team1" onchange="updateMatchTeams()"></select>
+                <label>比分:</label><input type="number" id="am-score1" style="width: 50px;" value="0">
+            </div>
+            <div class="form-group">
+                <label>参赛球队2:</label><select id="am-team2" onchange="updateMatchTeams()"></select>
+                <label>比分:</label><input type="number" id="am-score2" style="width: 50px;" value="0">
+            </div>
+            <div class="form-group"><label>裁判费开销:</label><input type="number" id="am-refFee" value="150"></div>
+            
+            <h3>比赛事件</h3>
+            <div id="eventList"></div>
+            <button onclick="addEventRow()" style="background-color: #28a745; margin-bottom: 15px;">+ 添加事件</button>
+            <br>
+            <button onclick="submitAddMatch()">保存比赛结果</button>
+        </div>
+    </div>
+
+    <div id="modal-edit-team" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-edit-team')">&times;</span>
+            <h2 id="et-title">球队信息</h2>
+            <div id="et-basic-info"></div>
+            
+            <h3>球员列表</h3>
+            <div style="margin-bottom: 10px;">
+                <button id="btn-add-player" onclick="addNewPlayerRow()" style="display:none; background-color: #28a745;">+ 手动添加球员</button>
+            </div>
+            <div class="form-group" id="et-excel-import" style="display:none;">
+                <label>从 Excel 导入:</label>
+                <input type="file" id="et-file" accept=".xlsx, .xls" onchange="handleExcelImport(event)">
+                <small>（表头需包含：编号, 姓名, 证件号。会自动覆盖当前列表）</small>
+            </div>
+            <table id="table-players">
+                <thead>
+                    <tr><th>编号</th><th>姓名</th><th>证件号</th><th>进球</th><th>红牌</th><th>黄牌</th><th>出场资格</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            
+            <div style="margin-top: 20px;">
+                <button id="btn-unlock-edit" onclick="unlockTeamEdit()">解锁编辑</button>
+                <button id="btn-save-team" onclick="saveTeamEdit()" style="display:none; background-color: #28a745;">保存更改</button>
+            </div>
+        </div>
+    </div>
+
+<script>
+// --- 数据层 (模拟文件夹和JSON) ---
+// 默认RSA加密算法
+const Admin_N= BigInt("460649540625014653069703836716158001934175556390817115828489184652530859840829260360965333887467157");
+
+// 初始化本地存储
+if (!localStorage.getItem('teams_folder')) localStorage.setItem('teams_folder', JSON.stringify({}));
+if (!localStorage.getItem('matches_folder')) localStorage.setItem('matches_folder', JSON.stringify([]));
+// --- 纯前端直连 GitHub 数据层 ---
+
+// ⚠️ 警告：在此处明文写入 Token 意味着任何访问该网页的人都可以看到它。
+// 请确保该 Token 仅具有这个特定“小号”仓库的 repo 权限，不要用于主账号！
+const GITHUB_TOKEN = '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'; 
+const GITHUB_USER = 'CCMU-FA'; 
+const GITHUB_REPO = 'League';
+
+function getTeams() { return JSON.parse(localStorage.getItem('teams_folder') || '{}'); }
+function getMatches() { return JSON.parse(localStorage.getItem('matches_folder') || '[]'); }
+
+// 解决原生 btoa 无法处理中文字符（UTF-8）的问题
+function utf8_to_btoa(str) {
+    return window.btoa(unescape(encodeURIComponent(str)));
+}
+
+// 核心云端同步函数（直接调用 GitHub API）
+async function syncToGitHubDirectly(filename, data) {
+    if (!GITHUB_TOKEN.startsWith('ghp_')) {
+        console.warn('未配置正确的 GitHub Token，跳过云端同步');
+        return;
+    }
+
+    const filePath = `data/${filename}`;
+    const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${filePath}`;
+    
+    try {
+        let fileSha = null;
+
+        // 第一步：尝试获取当前文件的 SHA 值（GitHub 更新文件必须提供旧的 SHA）
+        const getResponse = await fetch(url, {
+            headers: { 'Authorization': `Bearer ${GITHUB_TOKEN}` }
+        });
+        
+        if (getResponse.ok) {
+            const fileInfo = await getResponse.json();
+            fileSha = fileInfo.sha;
+        } else if (getResponse.status !== 404) {
+            console.error('获取文件状态失败:', await getResponse.text());
+            return;
+        }
+
+        // 第二步：将数据转为带缩进的 JSON 字符串，并进行 Base64 编码
+        const jsonString = JSON.stringify(data, null, 2);
+        const encodedContent = utf8_to_btoa(jsonString);
+
+        // 第三步：构建提交内容并发送 PUT 请求更新文件
+        const bodyData = {
+            message: `Auto-update: System saved ${filename}`,
+            content: encodedContent
+        };
+        if (fileSha) bodyData.sha = fileSha; // 如果文件已存在，附带 SHA
+
+        const putResponse = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${GITHUB_TOKEN}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(bodyData)
+        });
+
+        if (putResponse.ok) {
+            console.log(`✅ ${filename} 成功同步至 GitHub!`);
+        } else {
+            console.error(`❌ 同步 ${filename} 失败:`, await putResponse.text());
+        }
+
+    } catch (error) {
+        console.error("网络请求出错:", error);
+    }
+}
+
+// 修改保存函数：同时保存到本地，并异步触发 GitHub 直连上传
+function saveTeams(teamsObj) { 
+    localStorage.setItem('teams_folder', JSON.stringify(teamsObj)); 
+    syncToGitHubDirectly('teams.json', teamsObj);
+}
+
+function saveMatches(matchesArr) { 
+    localStorage.setItem('matches_folder', JSON.stringify(matchesArr)); 
+    syncToGitHubDirectly('matches.json', matchesArr);
+}function clearData() {
+    if(confirm("确定要清空所有球队和比赛数据吗？")){
+        localStorage.clear();
+        location.reload();
+    }
+}
+
+// 基于半素数分解验证的管理员鉴权函数
+function authenticate() {
+    let u = prompt("请输入管理员账号:");
+    if (u === null) return false;
+    let p = prompt("请输入管理员密码:");
+    if (p === null) return false;
+
+    try {
+        // 使用 BigInt 处理大整数，防止超出 JavaScript 普通 Number 的精度限制
+        let bigP = BigInt(u.trim());
+        let bigQ = BigInt(p.trim());
+
+        // 校验逻辑：
+        // 1. P 和 Q 必须大于 1（防止输入 1 和 N 绕过验证）
+        // 2. P * Q 必须完全等于公开的 N
+        if (bigP > 1n && bigQ > 1n && (bigP * bigQ === ADMIN_N)) {
+            return true;
+        }
+    } catch (e) {
+        // 用户输入的不是合法的数字字符串时捕获异常
+    }
+
+    alert("账号或密码验证失败！");
+    return false;
+}
+
+// --- 核心逻辑与 UI 渲染 ---
+
+// 1. 渲染积分榜
+function renderLeaderboards() {
+    const teams = Object.values(getTeams());
+    
+    const sortTeams = (teamList) => {
+        return teamList.sort((a, b) => {
+            if (b.points !== a.points) return b.points - a.points; // 积分
+            let matchesA = a.wins + a.draws + a.losses;
+            let matchesB = b.wins + b.draws + b.losses;
+            if (matchesB !== matchesA) return matchesB - matchesA; // 场次多在上
+            let gdA = a.goalsFor - a.goalsAgainst;
+            let gdB = b.goalsFor - b.goalsAgainst;
+            if (gdB !== gdA) return gdB - gdA; // 净胜球
+            return b.goalsFor - a.goalsFor; // 进球数
+        });
+    };
+
+    const divA = sortTeams(teams.filter(t => t.level === '甲级'));
+    const divB = sortTeams(teams.filter(t => t.level === '乙级'));
+
+    const buildRow = (t) => {
+        let matches = t.wins + t.draws + t.losses;
+        let gd = t.goalsFor - t.goalsAgainst;
+        return `<tr onclick="openEditTeamModal('${t.abbr}')">
+            <td>${t.name}</td><td>${matches}</td><td>${t.wins}</td><td>${t.draws}</td>
+            <td>${t.losses}</td><td><b>${t.points}</b></td><td>${t.goalsFor}</td>
+            <td>${t.goalsAgainst}</td><td>${gd}</td>
+        </tr>`;
+    };
+
+    document.querySelector('#table-divA tbody').innerHTML = divA.map(buildRow).join('');
+    document.querySelector('#table-divB tbody').innerHTML = divB.map(buildRow).join('');
+}
+
+// 2. 建立球队
+function openCreateTeamModal() {
+    if(!authenticate()) return;
+    document.getElementById('modal-create-team').style.display = 'block';
+}
+
+function submitCreateTeam() {
+    let name = document.getElementById('ct-name').value;
+    let abbr = document.getElementById('ct-abbr').value.toUpperCase();
+    let captain = document.getElementById('ct-captain').value;
+    let level = document.getElementById('ct-level').value;
+
+    if(!name || !abbr) return alert("队名和缩写不能为空！");
+
+    let teams = getTeams();
+    if(teams[abbr]) return alert("该缩写的球队（文件）已存在！");
+
+    // JSON 数据结构定义
+    teams[abbr] = {
+        abbr: abbr, name: name, level: level, captain: captain,
+        players: [], points: 0, wins: 0, draws: 0, losses: 0,
+        goalsFor: 0, goalsAgainst: 0, forfeits: 0, fairPlayPoints: 100,
+        depositBalance: 100, refFeeBalance: 150
+    };
+
+    saveTeams(teams);
+    closeModal('modal-create-team');
+    renderLeaderboards();
+}
+
+// 3. 添加比赛及事件逻辑
+let currentEvents = [];
+function openAddMatchModal() {
+    if(!authenticate()) return;
+    let teams = Object.values(getTeams());
+    if(teams.length < 2) return alert("系统内队伍不足两支，无法添加比赛！");
+
+    let t1Select = document.getElementById('am-team1');
+    let t2Select = document.getElementById('am-team2');
+    t1Select.innerHTML = t2Select.innerHTML = teams.map(t => `<option value="${t.abbr}">${t.name}</option>`).join('');
+    t2Select.selectedIndex = 1; // 默认选中第二支队伍
+    
+    currentEvents = [];
+    renderEvents();
+    document.getElementById('modal-add-match').style.display = 'block';
+}
+
+function addEventRow() {
+    currentEvents.push({ type: '进球', time: '', playerId: '', teamAbbr: document.getElementById('am-team1').value, note: '' });
+    renderEvents();
+}
+
+function renderEvents() {
+    let t1 = document.getElementById('am-team1').value;
+    let t2 = document.getElementById('am-team2').value;
+    let teams = getTeams();
+    
+    let html = currentEvents.map((ev, index) => {
+        let playersOptions = (teams[ev.teamAbbr]?.players || []).map(p => `<option value="${p.id}" ${p.id==ev.playerId?'selected':''}>[${p.id}] ${p.name}</option>`).join('');
+        
+        return `<div class="event-item">
+            <select onchange="updateEvent(${index}, 'teamAbbr', this.value)">
+                <option value="${t1}" ${ev.teamAbbr===t1?'selected':''}>${teams[t1].name}</option>
+                <option value="${t2}" ${ev.teamAbbr===t2?'selected':''}>${teams[t2].name}</option>
+            </select>
+            <select onchange="updateEvent(${index}, 'type', this.value)">
+                <option value="进球" ${ev.type==='进球'?'selected':''}>进球</option>
+                <option value="红牌" ${ev.type==='红牌'?'selected':''}>红牌</option>
+                <option value="黄牌" ${ev.type==='黄牌'?'selected':''}>黄牌</option>
+            </select>
+            <select onchange="updateEvent(${index}, 'playerId', this.value)"><option value="">选球员</option>${playersOptions}</select>
+            时间: <input type="text" style="width:50px" placeholder="分钟" value="${ev.time}" onchange="updateEvent(${index}, 'time', this.value)">
+            备注: <input type="text" style="width:100px" value="${ev.note}" onchange="updateEvent(${index}, 'note', this.value)">
+            <button onclick="removeEvent(${index})" style="background-color:red; padding: 2px 5px;">X</button>
+        </div>`;
+    }).join('');
+    document.getElementById('eventList').innerHTML = html;
+}
+
+function updateEvent(index, key, value) { currentEvents[index][key] = value; if(key === 'teamAbbr') renderEvents(); }
+function removeEvent(index) { currentEvents.splice(index, 1); renderEvents(); }
+function updateMatchTeams() { renderEvents(); } // 队伍改变时更新事件下拉框
+
+function submitAddMatch() {
+    let time = document.getElementById('am-time').value;
+    let t1Abbr = document.getElementById('am-team1').value;
+    let t2Abbr = document.getElementById('am-team2').value;
+    let s1 = parseInt(document.getElementById('am-score1').value);
+    let s2 = parseInt(document.getElementById('am-score2').value);
+    let refFee = parseFloat(document.getElementById('am-refFee').value);
+
+    if(t1Abbr === t2Abbr) return alert("参赛队伍不能相同！");
+
+    let teams = getTeams();
+    let team1 = teams[t1Abbr];
+    let team2 = teams[t2Abbr];
+
+    // 保存比赛 JSON 数据
+    let matchJson = { time, score: `${s1}:${s2}`, refFee, team1: t1Abbr, team2: t2Abbr, events: currentEvents };
+    let matches = getMatches();
+    matches.push(matchJson);
+    saveMatches(matches);
+
+    // -- 更新队伍基本数据 --
+    team1.goalsFor += s1; team1.goalsAgainst += s2;
+    team2.goalsFor += s2; team2.goalsAgainst += s1;
+    team1.refFeeBalance -= refFee / 2;
+    team2.refFeeBalance -= refFee / 2;
+
+    if(s1 > s2) { team1.wins++; team1.points += 3; team2.losses++; }
+    else if(s1 < s2) { team2.wins++; team2.points += 3; team1.losses++; }
+    else { team1.draws++; team2.draws++; team1.points += 1; team2.points += 1; }
+
+    // -- 处理出场状态与事件 --
+    // 获取两队赛前已被禁赛的球员，赛后恢复他们的状态
+    let suspendedBeforeMatch = [];
+    [team1, team2].forEach(team => {
+        team.players.forEach(p => { if(!p.isEligible) suspendedBeforeMatch.push(p.id); });
+    });
+
+    // 处理比赛事件
+    currentEvents.forEach(ev => {
+        if(!ev.playerId) return;
+        let targetTeam = ev.teamAbbr === t1Abbr ? team1 : team2;
+        let player = targetTeam.players.find(p => p.id === ev.playerId);
+        if(!player) return;
+
+        if(ev.type === '进球') {
+            player.goals++;
+        } else if(ev.type === '红牌') {
+            player.redCards++;
+            player.isEligible = false;
+            targetTeam.depositBalance -= 30; // 扣保证金
+        } else if(ev.type === '黄牌') {
+            player.yellowCards++;
+            if(player.yellowCards % 3 === 0) player.isEligible = false;
+        }
+    });
+
+    // 恢复赛前被禁赛的球员（如果本场没有再次获得红牌）
+    [team1, team2].forEach(team => {
+        team.players.forEach(p => {
+            if(suspendedBeforeMatch.includes(p.id) && currentEvents.findIndex(e => e.playerId === p.id && (e.type === '红牌' || (e.type === '黄牌' && p.yellowCards % 3 === 0))) === -1) {
+                p.isEligible = true; // 停赛一轮后恢复
+            }
+        });
+    });
+
+    saveTeams(teams);
+    closeModal('modal-add-match');
+    renderLeaderboards();
+    alert("比赛添加成功，各队数据及球员状态已更新！");
+}
+
+// 4. 球队查看与编辑
+let currentEditingTeam = null;
+
+function openEditTeamModal(abbr) {
+    currentEditingTeam = abbr;
+    let team = getTeams()[abbr];
+    document.getElementById('et-title').innerText = `${team.name} 信息管理`;
+    
+    // 生成基本信息视图
+    // 替换 openEditTeamModal 函数中生成 basicHtml 的部分：
+let basicHtml = Object.keys(team).filter(k => k !== 'players' && k !== 'abbr').map(key => {
+    let labelMap = { name:'队名', level:'级别', captain:'队长', points:'积分', wins:'胜', draws:'平', losses:'负', goalsFor:'进球', goalsAgainst:'失球', forfeits:'弃赛', fairPlayPoints:'公平竞赛分', depositBalance:'保证金余额', refFeeBalance:'裁判费余额'};
+    
+    // 关键点：为“胜”和“平”添加自动触发计算的事件
+    let eventHandler = (key === 'wins' || key === 'draws') ? 'oninput="updatePoints()"' : '';
+    let isPoints = (key === 'points') ? 'readonly' : ''; // 积分设为只读，由系统计算
+
+    return `<div class="form-group" style="display:inline-block; width:45%;">
+        <label>${labelMap[key] || key}:</label>
+        <input type="text" id="edit-team-${key}" class="readonly-input team-data-input" 
+               value="${team[key]}" ${isPoints} ${eventHandler} readonly>
+    </div>`;
+}).join('');
+    document.getElementById('et-basic-info').innerHTML = basicHtml;
+
+    // 渲染球员列表
+    renderPlayerTable(team.players);
+
+    // 锁定状态
+    document.getElementById('btn-unlock-edit').style.display = 'inline-block';
+    document.getElementById('btn-save-team').style.display = 'none';
+    document.getElementById('et-excel-import').style.display = 'none';
+    document.getElementById('modal-edit-team').style.display = 'block';
+}
+
+function renderPlayerTable(players) {
+    let tbody = document.querySelector('#table-players tbody');
+    tbody.innerHTML = players.map((p, idx) => `<tr>
+        <td><input class="player-input readonly-input" data-idx="${idx}" data-key="id" value="${p.id}" readonly style="width:40px"></td>
+        <td><input class="player-input readonly-input" data-idx="${idx}" data-key="name" value="${p.name || ''}" readonly style="width:80px"></td>
+        <td><input class="player-input readonly-input" data-idx="${idx}" data-key="docId" value="${p.docId}" readonly style="width:120px"></td>
+        <td><input class="player-input readonly-input" data-idx="${idx}" data-key="goals" value="${p.goals}" readonly style="width:40px"></td>
+        <td><input class="player-input readonly-input" data-idx="${idx}" data-key="redCards" value="${p.redCards}" readonly style="width:40px"></td>
+        <td><input class="player-input readonly-input" data-idx="${idx}" data-key="yellowCards" value="${p.yellowCards}" readonly style="width:40px"></td>
+        <td>
+            <select class="player-input readonly-input" data-idx="${idx}" data-key="isEligible" disabled>
+                <option value="true" ${p.isEligible ? 'selected':''}>是</option>
+                <option value="false" ${!p.isEligible ? 'selected':''}>否</option>
+            </select>
+        </td>
+    </tr>`).join('');
+}
+
+function unlockTeamEdit() {
+    if(!authenticate()) return;
+    document.querySelectorAll('.team-data-input, .player-input').forEach(el => {
+        el.removeAttribute('readonly');
+        el.removeAttribute('disabled');
+        el.classList.remove('readonly-input');
+    });
+    document.getElementById('btn-unlock-edit').style.display = 'none';
+    document.getElementById('btn-save-team').style.display = 'inline-block';
+    document.getElementById('et-excel-import').style.display = 'block';
+    document.getElementById('btn-add-player').style.display = 'inline-block';
+}
+
+function saveTeamEdit() {
+    let teams = getTeams();
+    let team = teams[currentEditingTeam];
+    
+    // 保存基本信息
+    Object.keys(team).filter(k => k !== 'players' && k !== 'abbr').forEach(key => {
+        let val = document.getElementById(`edit-team-${key}`).value;
+        team[key] = isNaN(val) ? val : Number(val);
+    });
+
+    // 保存球员信息
+    let newPlayers = [];
+    let rows = document.querySelectorAll('#table-players tbody tr');
+    rows.forEach(row => {
+        let inputs = row.querySelectorAll('.player-input');
+        if(inputs[0].value) {
+            newPlayers.push({
+                id: inputs[0].value, name: inputs[1].value, docId: inputs[2].value,
+                goals: Number(inputs[3].value), redCards: Number(inputs[4].value),
+                yellowCards: Number(inputs[5].value), isEligible: inputs[6].value === 'true'
+            });
+        }
+    });
+    team.players = newPlayers;
+
+    saveTeams(teams);
+    closeModal('modal-edit-team');
+    renderLeaderboards();
+    alert("球队信息保存成功！");
+}
+
+// 5. Excel 导入逻辑
+function handleExcelImport(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, {type: 'array'});
+        const firstSheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[firstSheetName];
+        const json = XLSX.utils.sheet_to_json(worksheet);
+        
+        let importedPlayers = json.map(row => ({
+            id: String(row['编号'] || row['ID'] || ''),
+            name: String(row['姓名'] || ''),
+            docId: String(row['证件号'] || ''),
+            goals: 0, redCards: 0, yellowCards: 0, isEligible: true
+        })).filter(p => p.id); // 过滤掉空行
+
+        renderPlayerTable(importedPlayers); // 渲染到表格中待保存
+        alert(`成功解析 ${importedPlayers.length} 名球员数据，请点击下方“保存更改”使数据生效。`);
+    };
+    reader.readAsArrayBuffer(file);
+}
+
+// 通用关闭模态框
+function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+// 自动更新积分逻辑 (3*胜 + 1*平)
+function updatePoints() {
+    let wins = parseInt(document.getElementById('edit-team-wins').value) || 0;
+    let draws = parseInt(document.getElementById('edit-team-draws').value) || 0;
+    let totalPoints = (wins * 3) + (draws * 1);
+    document.getElementById('edit-team-points').value = totalPoints;
+}
+
+// 手动在网页中添加新球员行
+function addNewPlayerRow() {
+    let tbody = document.querySelector('#table-players tbody');
+    let newRow = document.createElement('tr');
+    let idx = tbody.rows.length;
+    
+    newRow.innerHTML = `
+        <td><input class="player-input" data-idx="${idx}" data-key="id" placeholder="编号" style="width:40px"></td>
+        <td><input class="player-input" data-idx="${idx}" data-key="name" placeholder="姓名" style="width:80px"></td>
+        <td><input class="player-input" data-idx="${idx}" data-key="docId" placeholder="证件号" style="width:120px"></td>
+        <td><input class="player-input" data-idx="${idx}" data-key="goals" value="0" style="width:40px"></td>
+        <td><input class="player-input" data-idx="${idx}" data-key="redCards" value="0" style="width:40px"></td>
+        <td><input class="player-input" data-idx="${idx}" data-key="yellowCards" value="0" style="width:40px"></td>
+        <td>
+            <select class="player-input" data-idx="${idx}" data-key="isEligible">
+                <option value="true" selected>是</option>
+                <option value="false">否</option>
+            </select>
+        </td>
+    `;
+    tbody.appendChild(newRow);
+}
+
+window.onload = renderLeaderboards;
+
+</script>
+</body>
+</html>
