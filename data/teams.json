@@ -203,16 +203,16 @@
     "level": "甲级",
     "captain": "周子易",
     "players": [],
-    "points": 2,
+    "points": 0,
     "wins": 0,
-    "draws": 2,
+    "draws": 0,
     "losses": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 0
+    "refFeeBalance": 150
   },
   "ZDY": {
     "abbr": "ZDY",
