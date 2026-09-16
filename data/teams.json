@@ -436,5 +436,22 @@
     "fairPlayPoints": 100,
     "depositBalance": 100,
     "refFeeBalance": 150
+  },
+  "BQB": {
+    "abbr": "BQB",
+    "name": "比奇堡联",
+    "level": "甲级",
+    "captain": "申沛文",
+    "players": [],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 150
   }
 }
