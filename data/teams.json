@@ -186,16 +186,16 @@
         "isEligible": true
       }
     ],
-    "points": 1,
+    "points": 2,
     "wins": 0,
-    "draws": 1,
+    "draws": 2,
     "losses": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 75
+    "refFeeBalance": 0
   },
   "XJ": {
     "abbr": "XJ",
@@ -203,16 +203,16 @@
     "level": "甲级",
     "captain": "周子易",
     "players": [],
-    "points": 1,
+    "points": 2,
     "wins": 0,
-    "draws": 1,
+    "draws": 2,
     "losses": 0,
     "goalsFor": 0,
     "goalsAgainst": 0,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 75
+    "refFeeBalance": 0
   },
   "ZDY": {
     "abbr": "ZDY",
