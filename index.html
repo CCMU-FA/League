@@ -236,7 +236,7 @@ function authenticate() {
         // 校验逻辑：
         // 1. P 和 Q 必须大于 1（防止输入 1 和 N 绕过验证）
         // 2. P * Q 必须完全等于公开的 N
-        if (bigP > 1n && bigQ > 1n && (bigP * bigQ === ADMIN_N)) {
+        if (bigP > 1n && bigQ > 1n && bigP * bigQ - ADMIN_N == 0n) {
             return true;
         }
     } catch (e) {
