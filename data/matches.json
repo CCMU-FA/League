@@ -1,1 +1,53 @@
-[]
+[
+  {
+    "time": "2026-09-08T18:38",
+    "score": "6:0",
+    "refFee": 40,
+    "team1": "ZDY",
+    "team2": "AHZ",
+    "events": [
+      {
+        "type": "进球",
+        "time": "5:29",
+        "playerId": "47",
+        "teamAbbr": "ZDY",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "13:26",
+        "playerId": "9",
+        "teamAbbr": "ZDY",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "14:12",
+        "playerId": "47",
+        "teamAbbr": "ZDY",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "16:25",
+        "playerId": "11",
+        "teamAbbr": "ZDY",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "41:23",
+        "playerId": "19",
+        "teamAbbr": "ZDY",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "46:45",
+        "playerId": "11",
+        "teamAbbr": "ZDY",
+        "note": ""
+      }
+    ]
+  }
+]
