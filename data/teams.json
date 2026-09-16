@@ -1230,5 +1230,22 @@
     "fairPlayPoints": 100,
     "depositBalance": 100,
     "refFeeBalance": 150
+  },
+  "DPG": {
+    "abbr": "DPG",
+    "name": "东单公园巡游者",
+    "level": "乙级",
+    "captain": "郭沈亮",
+    "players": [],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 150
   }
 }
