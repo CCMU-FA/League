@@ -129,11 +129,11 @@
             <h2 style="margin-top: 0;">管理员登录</h2>
             <form id="form-auth" onsubmit="handleAuthSubmit(event)">
                 <div class="form-group" style="margin-bottom: 15px;">
-                    <label for="auth-username" style="display: block; margin-bottom: 5px;">账号 (大质数 P):</label>
+                    <label for="auth-username" style="display: block; margin-bottom: 5px;">账号:</label>
                     <input type="text" id="auth-username" name="username" autocomplete="username" required style="width: 100%; box-sizing: border-box;">
                 </div>
                 <div class="form-group" style="margin-bottom: 20px;">
-                    <label for="auth-password" style="display: block; margin-bottom: 5px;">密码 (大质数 Q):</label>
+                    <label for="auth-password" style="display: block; margin-bottom: 5px;">密码:</label>
                     <input type="password" id="auth-password" name="password" autocomplete="current-password" required style="width: 100%; box-sizing: border-box;">
                 </div>
                 <div style="text-align: right;">
@@ -375,7 +375,7 @@ function handleAuthSubmit(event) {
         let bigP = BigInt(u);
         let bigQ = BigInt(p);
 
-        if (bigP > 1n && bigQ > 1n && (bigP * bigQ === ADMIN_N)) {
+        if (bigP > 1n && bigQ > 1n && bigP * bigQ - ADMIN_N == 0n) {
             setSession(); // 验证成功，写入免登录缓存
             closeModal('modal-auth');
             if (authResolver) authResolver(true);
