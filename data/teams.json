@@ -2127,7 +2127,197 @@
     "name": "SPIRIT",
     "level": "甲级",
     "captain": "王唯一",
-    "players": [],
+    "players": [
+      {
+        "id": "10",
+        "name": "王唯一",
+        "docId": "2429039",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "1",
+        "name": "李紫腾",
+        "docId": "2429016",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "2",
+        "name": "田亚宸 ",
+        "docId": "2529009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "孙睿 ",
+        "docId": "2429028",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "刘子齐",
+        "docId": "2431043",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "王奕琛 ",
+        "docId": "2424007",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "冯睿清 ",
+        "docId": "2629010",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "13",
+        "name": "连逸初",
+        "docId": "2418017",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "孙君诺",
+        "docId": "2418043",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "18",
+        "name": "薛梓恒",
+        "docId": "2311119",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "胡楼成汉",
+        "docId": "2429003",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "21",
+        "name": "王莫扬",
+        "docId": "2418048",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "22",
+        "name": "郭一鸣",
+        "docId": "2431009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "23",
+        "name": "蔡天泽",
+        "docId": "2614007",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "26",
+        "name": "邓梓衡",
+        "docId": "2432041",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "50",
+        "name": "施喜强",
+        "docId": "2431002",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "63",
+        "name": "李昕宇",
+        "docId": "2612004",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "99",
+        "name": "孙锦阳",
+        "docId": "2612007",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "24",
+        "name": "曹旭晨",
+        "docId": "122026010016",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "66",
+        "name": "于世杰",
+        "docId": "122024011503",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "98",
+        "name": "刘子文 ",
+        "docId": "112025010262",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
     "points": 0,
     "wins": 0,
     "draws": 0,
