@@ -1,0 +1,46 @@
+[
+  {
+    "time": "2026-09-18T18:00",
+    "score": "5:0",
+    "refFee": 150,
+    "team1": "XZT",
+    "team2": "XJ",
+    "events": [
+      {
+        "type": "进球",
+        "time": "2",
+        "playerId": "27",
+        "teamAbbr": "XZT",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "5",
+        "playerId": "27",
+        "teamAbbr": "XZT",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "13",
+        "playerId": "27",
+        "teamAbbr": "XZT",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "47",
+        "playerId": "27",
+        "teamAbbr": "XZT",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "50",
+        "playerId": "27",
+        "teamAbbr": "XZT",
+        "note": ""
+      }
+    ]
+  }
+]
