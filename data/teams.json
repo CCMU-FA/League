@@ -219,7 +219,197 @@
     "name": "自定义名称138",
     "level": "乙级",
     "captain": "冯允秋",
-    "players": [],
+    "players": [
+      {
+        "id": "47",
+        "name": "冯允秋",
+        "docId": "2511018",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "陈信",
+        "docId": "2511002",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "李汇楠",
+        "docId": "2511001",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "4",
+        "name": "田关乐耕",
+        "docId": "2511012",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "16",
+        "name": "张谦驰",
+        "docId": "2514002",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "1",
+        "name": "朱泽瑄",
+        "docId": "2511019",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "36",
+        "name": "王梓涵",
+        "docId": "2511011",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "91",
+        "name": "程鸿波",
+        "docId": "2511007",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "王梓骁",
+        "docId": "2511023",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "56",
+        "name": "周云恺",
+        "docId": "2511021",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "10",
+        "name": "王尧",
+        "docId": "2511020",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "43",
+        "name": "徐嘉枨",
+        "docId": "2511008",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "77",
+        "name": "张嘉硕",
+        "docId": "2511004",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "刘子豪",
+        "docId": "2511022",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "78",
+        "name": "刁思然",
+        "docId": "2511006",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "72",
+        "name": "何雨祥",
+        "docId": "2511005",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "99",
+        "name": "候英昊",
+        "docId": "2511003",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "林鑫波",
+        "docId": "2501062",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "孙睿辰",
+        "docId": "2411038",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "25",
+        "name": "李彦霆",
+        "docId": "2432025",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "孙博嘉",
+        "docId": "2415004",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
     "points": 0,
     "wins": 0,
     "draws": 0,
