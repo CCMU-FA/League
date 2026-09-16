@@ -683,14 +683,15 @@ async function unlockTeamEdit() {
         btn.style.display = 'inline-block';
     });
 
-    // 3. 切换功能按钮的显隐状态
+    // 3. 显示 Excel 导入区域与操作按钮
     document.getElementById('btn-unlock-edit').style.display = 'none';
     document.getElementById('btn-save-team').style.display = 'inline-block';
     document.getElementById('btn-delete-team').style.display = 'inline-block';
     
-    if (document.getElementById('btn-excel-import')) {
-        document.getElementById('btn-excel-import').style.display = 'block';
-    }
+    // 显示 Excel 导入框
+    const excelBox = document.getElementById('et-excel-import');
+    if (excelBox) excelBox.style.display = 'block';
+
     if (document.getElementById('btn-add-player')) {
         document.getElementById('btn-add-player').style.display = 'inline-block';
     }
