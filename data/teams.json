@@ -235,8 +235,162 @@
     "abbr": "BGT",
     "name": "黑山羊",
     "level": "甲级",
-    "captain": "佧米力江",
-    "players": [],
+    "captain": "佧米力江·图尔迪",
+    "players": [
+      {
+        "id": "8",
+        "name": "佧米力江·图尔迪",
+        "docId": "2314007",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "孙仁鸿",
+        "docId": "2314022",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "里扎别克·胡斯曼",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "26",
+        "name": "木热地力·木塔力甫",
+        "docId": "112026020216",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "沙木哈尔·也勒波拉提",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "10",
+        "name": "巴合波力",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "3",
+        "name": "艾力亚尔·阿布来提",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "2",
+        "name": "赵一玮",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "48",
+        "name": "阿卜杜热合曼·艾山",
+        "docId": "2328003",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "阿布",
+        "docId": "122026010015",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "35",
+        "name": "乃吉米丁",
+        "docId": "2638017",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "玉素甫江",
+        "docId": "2626025",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "21",
+        "name": "玉苏普江·麦麦提阿卜杜拉",
+        "docId": "2638018",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "麦尔旦江·麦麦提",
+        "docId": "2537048",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "25",
+        "name": "潘梓霆",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "32",
+        "name": "达仁拜",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "1",
+        "name": "阿卜杜瓦日斯·阿巴白克日",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
     "points": 0,
     "wins": 0,
     "draws": 0,
