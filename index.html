@@ -123,6 +123,26 @@
             </div>
         </div>
     </div>
+    <div id="modal-auth" class="modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <span class="close" onclick="closeAuthModal(false)">&times;</span>
+            <h2 style="margin-top: 0;">管理员登录</h2>
+            <form id="form-auth" onsubmit="handleAuthSubmit(event)">
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="auth-username" style="display: block; margin-bottom: 5px;">账号 (大质数 P):</label>
+                    <input type="text" id="auth-username" name="username" autocomplete="username" required style="width: 100%; box-sizing: border-box;">
+                </div>
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="auth-password" style="display: block; margin-bottom: 5px;">密码 (大质数 Q):</label>
+                    <input type="password" id="auth-password" name="password" autocomplete="current-password" required style="width: 100%; box-sizing: border-box;">
+                </div>
+                <div style="text-align: right;">
+                    <button type="button" onclick="closeAuthModal(false)" style="background-color: #6c757d; margin-right: 10px;">取消</button>
+                    <button type="submit" style="background-color: #28a745;">登录</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 <script>
 // --- 数据层 (模拟文件夹和JSON) ---
@@ -150,7 +170,95 @@ function getMatches() { return JSON.parse(localStorage.getItem('matches_folder')
 function utf8_to_btoa(str) {
     return window.btoa(unescape(encodeURIComponent(str)));
 }
+    
+// UTF-8 解码函数：解决 Base64 解码中文乱码问题
+function base64ToUtf8(base64) {
+    const cleanBase64 = base64.replace(/\s/g, '');
+    const binaryString = window.atob(cleanBase64);
+    const bytes = Uint8Array.from(binaryString, char => char.charCodeAt(0));
+    return new TextDecoder().decode(bytes);
+}
 
+// 核心云端读取函数：从 GitHub REST API 拉取指定 JSON 文件
+async function fetchFromGitHub(filename) {
+    if (!GITHUB_TOKEN || !GITHUB_TOKEN.startsWith('ghp_')) {
+        console.warn('未配置有效的 GitHub Token，跳过云端读取');
+        return null;
+    }
+
+    const filePath = `data/${filename}`;
+    const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${filePath}`;
+
+    try {
+        const response = await fetch(url, {
+            headers: {
+                'Authorization': `Bearer ${GITHUB_TOKEN}`,
+                'Accept': 'application/vnd.github.v3+json'
+            },
+            cache: 'no-store' // 禁用浏览器缓存，确保获取 GitHub 上最新的提交
+        });
+
+        if (response.ok) {
+            const fileInfo = await response.json();
+            const jsonString = base64ToUtf8(fileInfo.content);
+            return JSON.parse(jsonString);
+        } else if (response.status === 404) {
+            console.log(`云端暂无 ${filename} 文件，将沿用本地初始化数据。`);
+        } else {
+            console.error(`读取 ${filename} 失败:`, await response.text());
+        }
+    } catch (error) {
+        console.error(`从 GitHub 读取 ${filename} 出错:`, error);
+    }
+    return null;
+}
+// 初始化：从 GitHub 云端同步最新数据并刷新视图
+async function initDataFromCloud() {
+    // 页面右上角生成轻量级加载状态提示
+    const notice = document.createElement('div');
+    notice.id = 'cloud-notice';
+    notice.style.cssText = 'position:fixed; top:15px; right:15px; background:#0056b3; color:white; padding:8px 16px; border-radius:20px; font-size:13px; z-index:9999; box-shadow:0 2px 6px rgba(0,0,0,0.2); transition:all 0.3s;';
+    notice.innerText = '🔄 正在同步云端数据...';
+    document.body.appendChild(notice);
+
+    try {
+        // 并行拉取球队数据与比赛数据
+        const [cloudTeams, cloudMatches] = await Promise.all([
+            fetchFromGitHub('teams.json'),
+            fetchFromGitHub('matches.json')
+        ]);
+
+        let hasUpdated = false;
+
+        if (cloudTeams) {
+            localStorage.setItem('teams_folder', JSON.stringify(cloudTeams));
+            hasUpdated = true;
+        }
+        if (cloudMatches) {
+            localStorage.setItem('matches_folder', JSON.stringify(cloudMatches));
+            hasUpdated = true;
+        }
+
+        // 如果获取到了新数据，重新渲染界面
+        if (hasUpdated) {
+            renderLeaderboards();
+            notice.style.backgroundColor = '#28a745';
+            notice.innerText = '✅ 云端数据同步完成';
+        } else {
+            notice.style.backgroundColor = '#6c757d';
+            notice.innerText = 'ℹ️ 已是最新本地数据';
+        }
+    } catch (err) {
+        notice.style.backgroundColor = '#dc3545';
+        notice.innerText = '❌ 云端同步失败，使用本地缓存';
+    }
+
+    // 2.5 秒后自动隐去提示框
+    setTimeout(() => {
+        notice.style.opacity = '0';
+        setTimeout(() => notice.remove(), 300);
+    }, 2500);
+}
 // 核心云端同步函数（直接调用 GitHub API）
 async function syncToGitHubDirectly(filename, data) {
 
@@ -221,29 +329,73 @@ function saveMatches(matchesArr) {
 }
 
 // 基于半素数分解验证的管理员鉴权函数
+// --- 会话管理与 RSA 登录逻辑 ---
+const AUTH_SESSION_KEY = 'admin_auth_expiry';
+const AUTH_DURATION = 30 * 60 * 1000; // 免登录有效时间：30 分钟 (可自行调整)
+let authResolver = null;
+
+// 检查当前设备是否在 30 分钟免登录有效期内
+function isSessionValid() {
+    const expiry = localStorage.getItem(AUTH_SESSION_KEY);
+    if (!expiry) return false;
+    if (Date.now() > parseInt(expiry, 10)) {
+        localStorage.removeItem(AUTH_SESSION_KEY);
+        return false;
+    }
+    return true;
+}
+
+// 刷新/设置登录会话时间
+function setSession() {
+    localStorage.setItem(AUTH_SESSION_KEY, (Date.now() + AUTH_DURATION).toString());
+}
+
+// 异步鉴权函数：如果已有会话则直接通过，否则弹出登录框等待用户提交
 function authenticate() {
-    let u = prompt("请输入管理员账号:");
-    if (u === null) return false;
-    let p = prompt("请输入管理员密码:");
-    if (p === null) return false;
+    if (isSessionValid()) {
+        setSession(); // 每次进行管理操作时自动续期 30 分钟
+        return Promise.resolve(true);
+    }
+
+    return new Promise((resolve) => {
+        authResolver = resolve;
+        document.getElementById('auth-username').value = '';
+        document.getElementById('auth-password').value = '';
+        document.getElementById('modal-auth').style.display = 'block';
+    });
+}
+
+// 处理表单提交（支持浏览器自动保存密码）
+function handleAuthSubmit(event) {
+    event.preventDefault();
+    const u = document.getElementById('auth-username').value.trim();
+    const p = document.getElementById('auth-password').value.trim();
 
     try {
-        // 使用 BigInt 处理大整数，防止超出 JavaScript 普通 Number 的精度限制
-        let bigP = BigInt(u.trim());
-        let bigQ = BigInt(p.trim());
+        let bigP = BigInt(u);
+        let bigQ = BigInt(p);
 
-        // 校验逻辑：
-        // 1. P 和 Q 必须大于 1（防止输入 1 和 N 绕过验证）
-        // 2. P * Q 必须完全等于公开的 N
-        if (bigP > 1n && bigQ > 1n && bigP * bigQ - Admin_N == 0n) {
-            return true;
+        if (bigP > 1n && bigQ > 1n && (bigP * bigQ === ADMIN_N)) {
+            setSession(); // 验证成功，写入免登录缓存
+            closeModal('modal-auth');
+            if (authResolver) authResolver(true);
+            authResolver = null;
+            return;
         }
     } catch (e) {
-        // 用户输入的不是合法的数字字符串时捕获异常
+        // 捕获 BigInt 转换异常
     }
 
     alert("账号或密码验证失败！");
-    return false;
+}
+
+// 关闭登录框取消操作
+function closeAuthModal(success) {
+    closeModal('modal-auth');
+    if (authResolver) {
+        authResolver(false);
+        authResolver = null;
+    }
 }
 
 // --- 核心逻辑与 UI 渲染 ---
@@ -283,8 +435,8 @@ function renderLeaderboards() {
 }
 
 // 2. 建立球队
-function openCreateTeamModal() {
-    if(!authenticate()) return;
+async function openCreateTeamModal() {
+    if (!(await authenticate())) return;
     document.getElementById('modal-create-team').style.display = 'block';
 }
 
@@ -314,15 +466,15 @@ function submitCreateTeam() {
 
 // 3. 添加比赛及事件逻辑
 let currentEvents = [];
-function openAddMatchModal() {
-    if(!authenticate()) return;
+async function openAddMatchModal() {
+    if (!(await authenticate())) return;
     let teams = Object.values(getTeams());
-    if(teams.length < 2) return alert("系统内队伍不足两支，无法添加比赛！");
+    if (teams.length < 2) return alert("系统内队伍不足两支，无法添加比赛！");
 
     let t1Select = document.getElementById('am-team1');
     let t2Select = document.getElementById('am-team2');
     t1Select.innerHTML = t2Select.innerHTML = teams.map(t => `<option value="${t.abbr}">${t.name}</option>`).join('');
-    t2Select.selectedIndex = 1; // 默认选中第二支队伍
+    t2Select.selectedIndex = 1;
     
     currentEvents = [];
     renderEvents();
@@ -489,8 +641,8 @@ function renderPlayerTable(players) {
     </tr>`).join('');
 }
 
-function unlockTeamEdit() {
-    if(!authenticate()) return;
+async function unlockTeamEdit() {
+    if (!(await authenticate())) return;
     document.querySelectorAll('.team-data-input, .player-input').forEach(el => {
         el.removeAttribute('readonly');
         el.removeAttribute('disabled');
@@ -499,7 +651,9 @@ function unlockTeamEdit() {
     document.getElementById('btn-unlock-edit').style.display = 'none';
     document.getElementById('btn-save-team').style.display = 'inline-block';
     document.getElementById('et-excel-import').style.display = 'block';
-    document.getElementById('btn-add-player').style.display = 'inline-block';
+    if (document.getElementById('btn-add-player')) {
+        document.getElementById('btn-add-player').style.display = 'inline-block';
+    }
 }
 
 function saveTeamEdit() {
@@ -591,7 +745,11 @@ function addNewPlayerRow() {
     tbody.appendChild(newRow);
 }
 
-window.onload = renderLeaderboards;
+// 页面加载流程：先渲染本地缓存实现“秒开”，然后异步从云端同步最新 JSON
+window.onload = function() {
+    renderLeaderboards();
+    initDataFromCloud();
+};
 
 </script>
 </body>
