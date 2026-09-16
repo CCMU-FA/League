@@ -375,7 +375,7 @@ function handleAuthSubmit(event) {
         let bigP = BigInt(u);
         let bigQ = BigInt(p);
 
-        if (bigP > 1n && bigQ > 1n && bigP * bigQ - ADMIN_N == 0n) {
+        if (bigP > 1n && bigQ > 1n && bigP * bigQ - Admin_N == 0n) {
             setSession(); // 验证成功，写入免登录缓存
             closeModal('modal-auth');
             if (authResolver) authResolver(true);
