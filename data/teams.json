@@ -1947,7 +1947,170 @@
     "name": "PASARGAD",
     "level": "甲级",
     "captain": "NIMA",
-    "players": [],
+    "players": [
+      {
+        "id": "10",
+        "name": "NIMA",
+        "docId": "122025091764",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "RAHIM",
+        "docId": "122025091765",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "KHODADADI",
+        "docId": "2111W024",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "ABBAS",
+        "docId": "2511505",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "4",
+        "name": "AMIRALI",
+        "docId": "2511501",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "NASIR",
+        "docId": "122025091754",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "MOSAVIASL",
+        "docId": "2311W002",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "2",
+        "name": "CHIPS",
+        "docId": "2411390",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "AMIRZAREN",
+        "docId": "2111W015",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "3",
+        "name": "MASROR",
+        "docId": "2511550",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "KHALED",
+        "docId": "2511515",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "30",
+        "name": "ABDULMOUNIM",
+        "docId": "2511554",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "ALI DEIRY",
+        "docId": "2011W017",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "1",
+        "name": "FARAHMAND MOHAMMADALI",
+        "docId": "122026091854",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "12",
+        "name": "MOHAMMAD AIMAN",
+        "docId": "2511536",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "99",
+        "name": "MOHAMMAD PAKDEL",
+        "docId": "2111W029",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "21",
+        "name": "AHMED TETA OMAR EDRIS",
+        "docId": "2611544",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "20",
+        "name": "SANJAR MUSTAKOV",
+        "docId": "2611535",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
     "points": 0,
     "wins": 0,
     "draws": 0,
