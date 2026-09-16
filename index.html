@@ -150,10 +150,6 @@ function utf8_to_btoa(str) {
 
 // 核心云端同步函数（直接调用 GitHub API）
 async function syncToGitHubDirectly(filename, data) {
-    if (!GITHUB_TOKEN.startsWith('ghp_')) {
-        console.warn('未配置正确的 GitHub Token，跳过云端同步');
-        return;
-    }
 
     const filePath = `data/${filename}`;
     const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${filePath}`;
