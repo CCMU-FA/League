@@ -1323,7 +1323,7 @@
         "id": "12",
         "name": "高利旺",
         "docId": "",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1413,13 +1413,13 @@
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 0,
-    "goalsFor": 0,
-    "goalsAgainst": 0,
+    "losses": 1,
+    "goalsFor": 1,
+    "goalsAgainst": 2,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 135
   },
   "DPG": {
     "abbr": "DPG",
@@ -1449,7 +1449,7 @@
         "id": "79",
         "name": "吴昱宸",
         "docId": "2618089",
-        "goals": 0,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1469,7 +1469,7 @@
         "docId": "2602005",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -1590,16 +1590,16 @@
         "isEligible": true
       }
     ],
-    "points": 0,
-    "wins": 0,
+    "points": 3,
+    "wins": 1,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 0,
-    "goalsAgainst": 0,
+    "goalsFor": 2,
+    "goalsAgainst": 1,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 135
   },
   "QX": {
     "abbr": "QX",
