@@ -223,5 +223,21 @@
         "note": ""
       }
     ]
+  },
+  {
+    "time": "2026-09-17T18:59",
+    "score": "1:0",
+    "refFee": 40,
+    "team1": "XWM",
+    "team2": "DSM",
+    "events": [
+      {
+        "type": "进球",
+        "time": "1:37",
+        "playerId": "6",
+        "teamAbbr": "DSM",
+        "note": "乌龙"
+      }
+    ]
   }
 ]
