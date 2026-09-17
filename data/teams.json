@@ -1408,7 +1408,170 @@
     "name": "东单公园巡游者",
     "level": "乙级",
     "captain": "郭沈亮",
-    "players": [],
+    "players": [
+      {
+        "id": "1",
+        "name": "郭沈亮",
+        "docId": "2614015",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "18",
+        "name": "吴梓睿",
+        "docId": "2601141",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "79",
+        "name": "吴昱宸",
+        "docId": "2618089",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "赵华隆",
+        "docId": "2601091",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "郭朗",
+        "docId": "2602005",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "季明瞻",
+        "docId": "2639026",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "13",
+        "name": "杨帅",
+        "docId": "2611219",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "66",
+        "name": "白宇彤",
+        "docId": "2601085",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "25",
+        "name": "刘仁博",
+        "docId": "2631047",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "肖钧仁",
+        "docId": "2602009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "宋子浩",
+        "docId": "2611067",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "12",
+        "name": "陈张俍",
+        "docId": "2601009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "陈颢丹",
+        "docId": "2611113",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "26",
+        "name": "俞德安",
+        "docId": "2601130",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "77",
+        "name": "耿铭泽",
+        "docId": "2620017",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "杨睿",
+        "docId": "2631026",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "石稣玘",
+        "docId": "2631050",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "21",
+        "name": "曾胜涛",
+        "docId": "2631049",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
     "points": 0,
     "wins": 0,
     "draws": 0,
