@@ -750,7 +750,7 @@
         "goals": 0,
         "redCards": 0,
         "yellowCards": 0,
-        "isEligible": true
+        "isEligible": false
       },
       {
         "id": "21",
