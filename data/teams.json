@@ -751,6 +751,24 @@
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": false
+      },
+      {
+        "id": "21",
+        "name": "孙伟",
+        "docId": "112026011017",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "51",
+        "name": "邓凯文",
+        "docId": "112026011079",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
       }
     ],
     "points": 0,
