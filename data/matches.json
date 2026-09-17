@@ -130,5 +130,98 @@
         "note": ""
       }
     ]
+  },
+  {
+    "time": "2026-09-17T17:51",
+    "score": "3:1",
+    "refFee": 40,
+    "team1": "BGT",
+    "team2": "BQB",
+    "events": [
+      {
+        "type": "红牌",
+        "time": "6:07",
+        "playerId": "15",
+        "teamAbbr": "BQB",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "16:00",
+        "playerId": "10",
+        "teamAbbr": "BGT",
+        "note": ""
+      },
+      {
+        "type": "黄牌",
+        "time": "20:06",
+        "playerId": "21",
+        "teamAbbr": "BGT",
+        "note": ""
+      },
+      {
+        "type": "黄牌",
+        "time": "27:15",
+        "playerId": "16",
+        "teamAbbr": "BQB",
+        "note": ""
+      },
+      {
+        "type": "黄牌",
+        "time": "27:20",
+        "playerId": "10",
+        "teamAbbr": "BGT",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "27:56",
+        "playerId": "7",
+        "teamAbbr": "BGT",
+        "note": ""
+      },
+      {
+        "type": "黄牌",
+        "time": "30:17",
+        "playerId": "6",
+        "teamAbbr": "BQB",
+        "note": ""
+      },
+      {
+        "type": "黄牌",
+        "time": "30:30",
+        "playerId": "17",
+        "teamAbbr": "BGT",
+        "note": ""
+      },
+      {
+        "type": "黄牌",
+        "time": "30:35",
+        "playerId": "11",
+        "teamAbbr": "BGT",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "33:35",
+        "playerId": "30",
+        "teamAbbr": "BQB",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "53:18",
+        "playerId": "11",
+        "teamAbbr": "BGT",
+        "note": ""
+      },
+      {
+        "type": "红牌",
+        "time": "55:16",
+        "playerId": "11",
+        "teamAbbr": "BGT",
+        "note": ""
+      }
+    ]
   }
 ]
