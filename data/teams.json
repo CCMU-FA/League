@@ -837,7 +837,7 @@
         "id": "6",
         "name": "林梓恒",
         "docId": "2401046",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -963,13 +963,13 @@
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 0,
+    "losses": 1,
     "goalsFor": 0,
-    "goalsAgainst": 0,
+    "goalsAgainst": 1,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 130
   },
   "BQB": {
     "abbr": "BQB",
@@ -2868,15 +2868,15 @@
         "isEligible": true
       }
     ],
-    "points": 0,
-    "wins": 0,
+    "points": 3,
+    "wins": 1,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 0,
+    "goalsFor": 1,
     "goalsAgainst": 0,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 130
   }
 }
