@@ -49,5 +49,49 @@
         "note": ""
       }
     ]
+  },
+  {
+    "time": "2026-09-15T18:24",
+    "score": "0:5",
+    "refFee": 30,
+    "team1": "MDQ",
+    "team2": "ZDY",
+    "events": [
+      {
+        "type": "进球",
+        "time": "2:22",
+        "playerId": "47",
+        "teamAbbr": "ZDY",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "20:43",
+        "playerId": "47",
+        "teamAbbr": "ZDY",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "28:24",
+        "playerId": "47",
+        "teamAbbr": "ZDY",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "44:04",
+        "playerId": "11",
+        "teamAbbr": "ZDY",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "46:02",
+        "playerId": "47",
+        "teamAbbr": "ZDY",
+        "note": ""
+      }
+    ]
   }
 ]
