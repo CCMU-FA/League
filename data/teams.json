@@ -396,7 +396,7 @@
         "id": "47",
         "name": "冯允秋",
         "docId": "2511018",
-        "goals": 2,
+        "goals": 6,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -414,7 +414,7 @@
         "id": "11",
         "name": "李汇楠",
         "docId": "2511001",
-        "goals": 2,
+        "goals": 3,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -582,16 +582,16 @@
         "isEligible": true
       }
     ],
-    "points": 3,
-    "wins": 1,
+    "points": 6,
+    "wins": 2,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 6,
+    "goalsFor": 11,
     "goalsAgainst": 0,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 130
+    "refFeeBalance": 115
   },
   "BGT": {
     "abbr": "BGT",
@@ -2510,13 +2510,13 @@
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 0,
+    "losses": 1,
     "goalsFor": 0,
-    "goalsAgainst": 0,
+    "goalsAgainst": 5,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 135
   },
   "XWM": {
     "abbr": "XWM",
