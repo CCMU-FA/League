@@ -621,7 +621,7 @@
         "id": "7",
         "name": "里扎别克·胡斯曼",
         "docId": "",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -639,18 +639,18 @@
         "id": "11",
         "name": "沙木哈尔·也勒波拉提",
         "docId": "",
-        "goals": 0,
-        "redCards": 0,
-        "yellowCards": 0,
-        "isEligible": true
+        "goals": 1,
+        "redCards": 1,
+        "yellowCards": 1,
+        "isEligible": false
       },
       {
         "id": "10",
         "name": "巴合波力",
         "docId": "",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -713,7 +713,7 @@
         "docId": "2638018",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -722,7 +722,7 @@
         "docId": "2537048",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -750,7 +750,7 @@
         "goals": 0,
         "redCards": 0,
         "yellowCards": 0,
-        "isEligible": false
+        "isEligible": true
       },
       {
         "id": "21",
@@ -771,16 +771,16 @@
         "isEligible": true
       }
     ],
-    "points": 0,
-    "wins": 0,
+    "points": 3,
+    "wins": 1,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 0,
-    "goalsAgainst": 0,
+    "goalsFor": 3,
+    "goalsAgainst": 1,
     "forfeits": 0,
     "fairPlayPoints": 100,
-    "depositBalance": 100,
-    "refFeeBalance": 150
+    "depositBalance": 70,
+    "refFeeBalance": 130
   },
   "DSM": {
     "abbr": "DSM",
@@ -983,7 +983,7 @@
         "docId": "2520009",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -1010,7 +1010,7 @@
         "docId": "2515004",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -1026,7 +1026,7 @@
         "id": "30",
         "name": "刘俊辉",
         "docId": "2514006",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1090,9 +1090,9 @@
         "name": "承茂森",
         "docId": "2618040",
         "goals": 0,
-        "redCards": 0,
+        "redCards": 1,
         "yellowCards": 0,
-        "isEligible": true
+        "isEligible": false
       },
       {
         "id": "78",
@@ -1134,13 +1134,13 @@
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 0,
-    "goalsFor": 0,
-    "goalsAgainst": 0,
+    "losses": 1,
+    "goalsFor": 1,
+    "goalsAgainst": 3,
     "forfeits": 0,
     "fairPlayPoints": 100,
-    "depositBalance": 100,
-    "refFeeBalance": 150
+    "depositBalance": 70,
+    "refFeeBalance": 130
   },
   "AHZ": {
     "abbr": "AHZ",
