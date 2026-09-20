@@ -1,10 +1,191 @@
 {
-  "1": {
-    "abbr": "1",
-    "name": "1",
+  "XZT": {
+    "abbr": "XZT",
+    "name": "选择题对对队",
     "level": "甲级",
-    "captain": "1",
-    "players": [],
+    "captain": "张家齐",
+    "players": [
+      {
+        "id": "27",
+        "name": "张家齐",
+        "docId": "2301062",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "1",
+        "name": "王浩玮",
+        "docId": "2401156",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "3",
+        "name": "张嘉辰",
+        "docId": "2511103",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "18",
+        "name": "张家铭",
+        "docId": "2218024",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "28",
+        "name": "Kester",
+        "docId": "2311W015",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "王家乐",
+        "docId": "2311121",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "12",
+        "name": "曲竞雯",
+        "docId": "2418035",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "22",
+        "name": "谷宇",
+        "docId": "2218015",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "486",
+        "name": "薛子耕",
+        "docId": "2501127",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "郭飞宇",
+        "docId": "2318048",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "47",
+        "name": "李炳涵",
+        "docId": "2314009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "14",
+        "name": "徐泽瑞",
+        "docId": "2511108",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "26",
+        "name": "潘敏聪",
+        "docId": "2311202",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "29",
+        "name": "都熠桐 ",
+        "docId": "2637006",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "姬野周",
+        "docId": "2111376",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "任倬君",
+        "docId": "2511107",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "15",
+        "name": "高旭阳",
+        "docId": "2520004",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "23",
+        "name": "卢照东",
+        "docId": "2229008",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "25",
+        "name": "张鑫",
+        "docId": "2115024",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "逯博文",
+        "docId": "122025031126",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
     "points": 0,
     "wins": 0,
     "draws": 0,
@@ -15,5 +196,2678 @@
     "fairPlayPoints": 100,
     "depositBalance": 100,
     "refFeeBalance": 150
+  },
+  "XJ": {
+    "abbr": "XJ",
+    "name": "足球小酱",
+    "level": "甲级",
+    "captain": "周子易",
+    "players": [
+      {
+        "id": "29",
+        "name": "周子意",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "15",
+        "name": "陶浩宇",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "21",
+        "name": "杜天雨",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "24",
+        "name": "钱正晔",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "赵立强",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "王鼎然",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "刘一辰",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "3",
+        "name": "侬佳昊",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "张历延",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "25",
+        "name": "王靖钧",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "苏绍轩",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "26",
+        "name": "周湛钊",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "彭伟宸",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "1",
+        "name": "温正奇",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "10",
+        "name": "孙铭远",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "20",
+        "name": "呼昱衡",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "4",
+        "name": "殷宜展",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "91",
+        "name": "蒋晨宇",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "14",
+        "name": "陆辰",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 150
+  },
+  "ZDY": {
+    "abbr": "ZDY",
+    "name": "自定义名称138",
+    "level": "乙级",
+    "captain": "冯允秋",
+    "players": [
+      {
+        "id": "47",
+        "name": "冯允秋",
+        "docId": "2511018",
+        "goals": 6,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "陈信",
+        "docId": "2511002",
+        "goals": 1,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "李汇楠",
+        "docId": "2511001",
+        "goals": 3,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "4",
+        "name": "田关乐耕",
+        "docId": "2511012",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "16",
+        "name": "张谦驰",
+        "docId": "2514002",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "1",
+        "name": "朱泽瑄",
+        "docId": "2511019",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "36",
+        "name": "王梓涵",
+        "docId": "2511011",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "91",
+        "name": "程鸿波",
+        "docId": "2511007",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "王梓骁",
+        "docId": "2511023",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "56",
+        "name": "周云恺",
+        "docId": "2511021",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "10",
+        "name": "王尧",
+        "docId": "2511020",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "43",
+        "name": "徐嘉枨",
+        "docId": "2511008",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "77",
+        "name": "张嘉硕",
+        "docId": "2511004",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "刘子豪",
+        "docId": "2511022",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "78",
+        "name": "刁思然",
+        "docId": "2511006",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "72",
+        "name": "何雨祥",
+        "docId": "2511005",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "99",
+        "name": "候英昊",
+        "docId": "2511003",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "林鑫波",
+        "docId": "2501062",
+        "goals": 1,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "孙睿辰",
+        "docId": "2411038",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "25",
+        "name": "李彦霆",
+        "docId": "2432025",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "孙博嘉",
+        "docId": "2415004",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 6,
+    "wins": 2,
+    "draws": 0,
+    "losses": 0,
+    "goalsFor": 11,
+    "goalsAgainst": 0,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 115
+  },
+  "BGT": {
+    "abbr": "BGT",
+    "name": "黑山羊",
+    "level": "甲级",
+    "captain": "佧米力江·图尔迪",
+    "players": [
+      {
+        "id": "8",
+        "name": "佧米力江·图尔迪",
+        "docId": "2314007",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "孙仁鸿",
+        "docId": "2314022",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "里扎别克·胡斯曼",
+        "docId": "",
+        "goals": 1,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "26",
+        "name": "木热地力·木塔力甫",
+        "docId": "112026020216",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "沙木哈尔·也勒波拉提",
+        "docId": "",
+        "goals": 1,
+        "redCards": 1,
+        "yellowCards": 1,
+        "isEligible": false
+      },
+      {
+        "id": "10",
+        "name": "巴合波力",
+        "docId": "",
+        "goals": 1,
+        "redCards": 0,
+        "yellowCards": 1,
+        "isEligible": true
+      },
+      {
+        "id": "3",
+        "name": "艾力亚尔·阿布来提",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "2",
+        "name": "赵一玮",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "48",
+        "name": "阿卜杜热合曼·艾山",
+        "docId": "2328003",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "阿布",
+        "docId": "122026010015",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "35",
+        "name": "乃吉米丁",
+        "docId": "2638017",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "玉素甫江",
+        "docId": "2626025",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "21",
+        "name": "玉苏普江·麦麦提阿卜杜拉",
+        "docId": "2638018",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 1,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "麦尔旦江·麦麦提",
+        "docId": "2537048",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 1,
+        "isEligible": true
+      },
+      {
+        "id": "25",
+        "name": "潘梓霆",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "32",
+        "name": "达仁拜",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "21",
+        "name": "孙伟",
+        "docId": "112026011017",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "51",
+        "name": "邓凯文",
+        "docId": "112026011079",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 3,
+    "wins": 1,
+    "draws": 0,
+    "losses": 0,
+    "goalsFor": 3,
+    "goalsAgainst": 1,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 70,
+    "refFeeBalance": 130
+  },
+  "DSM": {
+    "abbr": "DSM",
+    "name": "对什么队",
+    "level": "乙级",
+    "captain": "何嘉泽",
+    "players": [
+      {
+        "id": "14",
+        "name": "何嘉泽",
+        "docId": "2401026",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "程星策",
+        "docId": "2401028",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "李晨飞",
+        "docId": "2401164",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "1",
+        "name": "刘鑫霖",
+        "docId": "2601057",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "13",
+        "name": "李云洋",
+        "docId": "2401169",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "林梓恒",
+        "docId": "2401046",
+        "goals": 1,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "林子崑",
+        "docId": "2401180",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "刘海鲲",
+        "docId": "2401039",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "29",
+        "name": "罗乐",
+        "docId": "2501018",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "2",
+        "name": "赵梓熙",
+        "docId": "2601219",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "28",
+        "name": "齐彦霖",
+        "docId": "2401014",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "18",
+        "name": "任厚宇",
+        "docId": "2401001",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "3",
+        "name": "魏子一",
+        "docId": "2401077",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "30",
+        "name": "王昱",
+        "docId": "2501002",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "12",
+        "name": "王之耀",
+        "docId": "2501029",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "徐浩予",
+        "docId": "2501021",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "4",
+        "name": "林悦泽",
+        "docId": "2501007",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "23",
+        "name": "冯昕航",
+        "docId": "2601029",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "马浩宇",
+        "docId": "2401029",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 1,
+    "goalsFor": 0,
+    "goalsAgainst": 1,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 130
+  },
+  "BQB": {
+    "abbr": "BQB",
+    "name": "比奇堡联",
+    "level": "甲级",
+    "captain": "申沛文",
+    "players": [
+      {
+        "id": "16",
+        "name": "申沛文",
+        "docId": "2520009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 1,
+        "isEligible": true
+      },
+      {
+        "id": "14",
+        "name": "宋诣",
+        "docId": "2511159",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "37",
+        "name": "王昊辰",
+        "docId": "2501065",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "肖天时",
+        "docId": "2515004",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 1,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "孙可心",
+        "docId": "2501191",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "30",
+        "name": "刘俊辉",
+        "docId": "2514006",
+        "goals": 1,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "18",
+        "name": "逄证皓",
+        "docId": "2511155",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "12",
+        "name": "王朔菲",
+        "docId": "2527005",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "2",
+        "name": "陈安瑞",
+        "docId": "2403014",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "巩正阳",
+        "docId": "2501014",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "70",
+        "name": "刘卓逸",
+        "docId": "2519049",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "刘俊程",
+        "docId": "2518009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "15",
+        "name": "承茂森",
+        "docId": "2618040",
+        "goals": 0,
+        "redCards": 1,
+        "yellowCards": 0,
+        "isEligible": false
+      },
+      {
+        "id": "78",
+        "name": "曹子元",
+        "docId": "2620009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "69",
+        "name": "汤硕",
+        "docId": "2501194",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "28",
+        "name": "邢航远",
+        "docId": "122024010072",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "42",
+        "name": "官子栋",
+        "docId": "2211128",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 1,
+    "goalsFor": 1,
+    "goalsAgainst": 3,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 70,
+    "refFeeBalance": 130
+  },
+  "AHZ": {
+    "abbr": "AHZ",
+    "name": "爱好者队",
+    "level": "乙级",
+    "captain": "闫舒睿",
+    "players": [
+      {
+        "id": "5",
+        "name": "闫舒睿",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "24",
+        "name": "何启昊",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "33",
+        "name": "占京",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "42",
+        "name": "覃翊宸",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "99",
+        "name": "毛书洋",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "29",
+        "name": "王铭宇",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "44",
+        "name": "王梓庆",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "王镜翔",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "88",
+        "name": "徐小康",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "魏来",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 1,
+    "goalsFor": 0,
+    "goalsAgainst": 6,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 130
+  },
+  "JGD": {
+    "abbr": "JGD",
+    "name": "首医融创队",
+    "level": "乙级",
+    "captain": "彭志刚",
+    "players": [
+      {
+        "id": "18",
+        "name": "彭志刚",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "焦昆",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "16",
+        "name": "黄韦臻",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "韩洋",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "2",
+        "name": "王战京",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "田野",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "20",
+        "name": "李华",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "12",
+        "name": "高利旺",
+        "docId": "",
+        "goals": 1,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "23",
+        "name": " 仵毅",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "3",
+        "name": "胡子净",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "15",
+        "name": "毕京东",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "马俊",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "高昊然",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "张顺利",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "宋宇",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "10",
+        "name": "杨菲",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "司马汉",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 1,
+    "goalsFor": 1,
+    "goalsAgainst": 2,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 135
+  },
+  "DPG": {
+    "abbr": "DPG",
+    "name": "东单公园巡游者",
+    "level": "乙级",
+    "captain": "郭沈亮",
+    "players": [
+      {
+        "id": "1",
+        "name": "郭沈亮",
+        "docId": "2614015",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "18",
+        "name": "吴梓睿",
+        "docId": "2601141",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "79",
+        "name": "吴昱宸",
+        "docId": "2618089",
+        "goals": 2,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "赵华隆",
+        "docId": "2601091",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "郭朗",
+        "docId": "2602005",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 1,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "季明瞻",
+        "docId": "2639026",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "13",
+        "name": "杨帅",
+        "docId": "2611219",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "66",
+        "name": "白宇彤",
+        "docId": "2601085",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "25",
+        "name": "刘仁博",
+        "docId": "2631047",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "肖钧仁",
+        "docId": "2602009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "宋子浩",
+        "docId": "2611067",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "12",
+        "name": "陈张俍",
+        "docId": "2601009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "陈颢丹",
+        "docId": "2611113",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "26",
+        "name": "俞德安",
+        "docId": "2601130",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "77",
+        "name": "耿铭泽",
+        "docId": "2620017",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "杨睿",
+        "docId": "2631026",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "石稣玘",
+        "docId": "2631050",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "21",
+        "name": "曾胜涛",
+        "docId": "2631049",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 3,
+    "wins": 1,
+    "draws": 0,
+    "losses": 0,
+    "goalsFor": 2,
+    "goalsAgainst": 1,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 135
+  },
+  "QX": {
+    "abbr": "QX",
+    "name": "七喜",
+    "level": "甲级",
+    "captain": "杨轹文",
+    "players": [
+      {
+        "id": "9",
+        "name": "杨轹文",
+        "docId": "2401216",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "刘城安",
+        "docId": "2411154",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "1",
+        "name": "陈昊阳",
+        "docId": "2411141",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "63",
+        "name": "拜革扎提·阿利亚",
+        "docId": "2526006",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "33",
+        "name": "杜思达",
+        "docId": "2615021",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "4",
+        "name": "卞宇航",
+        "docId": "2501193",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "2",
+        "name": "廖杨阳",
+        "docId": "2411149",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "陈宇泰",
+        "docId": "2611057",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "3",
+        "name": "刘键轩",
+        "docId": "2611098",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "10",
+        "name": "徐易行",
+        "docId": "2411232",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "盛谦",
+        "docId": "2414030",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "42",
+        "name": "钱煜文",
+        "docId": "2611092",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "14",
+        "name": "土登维色",
+        "docId": "2420025",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "张兴源",
+        "docId": "2611023",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "王麟森",
+        "docId": "2617014",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "22",
+        "name": "龚思豪",
+        "docId": "2411175",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "20",
+        "name": "阿卜杜哈力克·吐尔逊",
+        "docId": "2411161",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "18",
+        "name": "田易霖",
+        "docId": "2411156",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 150
+  },
+  "BX": {
+    "abbr": "BX",
+    "name": "八喜",
+    "level": "乙级",
+    "captain": "殷浩源",
+    "players": [
+      {
+        "id": "9",
+        "name": "殷浩源",
+        "docId": "2401138",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "29",
+        "name": "陈星烨",
+        "docId": "2511164",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "39",
+        "name": "胡佳涵",
+        "docId": "2401126",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "68",
+        "name": "杜启瑞",
+        "docId": "2401124",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "77",
+        "name": "邓奕涵",
+        "docId": "2401095",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "21",
+        "name": "马祖飞",
+        "docId": "2301142",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "李睿新",
+        "docId": "2518005",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "金泽正",
+        "docId": "2511163",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "66",
+        "name": "孙周",
+        "docId": "2401107",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "12",
+        "name": "范培钧",
+        "docId": "2401086",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "99",
+        "name": "焦钰涵",
+        "docId": "2401097",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "28",
+        "name": "胡志诚",
+        "docId": "2401149",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "23",
+        "name": "陈宸",
+        "docId": "2415011",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "30",
+        "name": "蒋一川",
+        "docId": "2414029",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "83",
+        "name": "刘子翚",
+        "docId": "2401201",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 150
+  },
+  "XZD": {
+    "abbr": "XZD",
+    "name": "海底小纵队",
+    "level": "甲级",
+    "captain": "宋有光",
+    "players": [
+      {
+        "id": "1",
+        "name": "宋有光",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "10",
+        "name": "陈舒简",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "王膺铮",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "18",
+        "name": "向育杭",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "27",
+        "name": "王健行",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "张元龙",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "张聪睿",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "袁立臻",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "12",
+        "name": "唐文渊",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "沈未泽",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "4",
+        "name": "冯天睿",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "61",
+        "name": "王巍",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "91",
+        "name": "王嘉傲",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "2",
+        "name": "吕心泽",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "69",
+        "name": "商子晨",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "李佳航",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "26",
+        "name": "王毅涵",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "66",
+        "name": "刘子岳",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "37",
+        "name": "姚旭阳",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 150
+  },
+  "PSG": {
+    "abbr": "PSG",
+    "name": "PASARGAD",
+    "level": "甲级",
+    "captain": "NIMA",
+    "players": [
+      {
+        "id": "10",
+        "name": "NIMA",
+        "docId": "122025091764",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "RAHIM",
+        "docId": "122025091765",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "KHODADADI",
+        "docId": "2111W024",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "ABBAS",
+        "docId": "2511505",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "4",
+        "name": "AMIRALI",
+        "docId": "2511501",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "NASIR",
+        "docId": "122025091754",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "MOSAVIASL",
+        "docId": "2311W002",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "2",
+        "name": "CHIPS",
+        "docId": "2411390",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "AMIRZAREN",
+        "docId": "2111W015",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "3",
+        "name": "MASROR",
+        "docId": "2511550",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "KHALED",
+        "docId": "2511515",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "30",
+        "name": "ABDULMOUNIM",
+        "docId": "2511554",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "ALI DEIRY",
+        "docId": "2011W017",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "1",
+        "name": "FARAHMAND MOHAMMADALI",
+        "docId": "122026091854",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "12",
+        "name": "MOHAMMAD AIMAN",
+        "docId": "2511536",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "99",
+        "name": "MOHAMMAD PAKDEL",
+        "docId": "2111W029",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "21",
+        "name": "AHMED TETA OMAR EDRIS",
+        "docId": "2611544",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "20",
+        "name": "SANJAR MUSTAKOV",
+        "docId": "2611535",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 85
+  },
+  "SPR": {
+    "abbr": "SPR",
+    "name": "SPIRIT",
+    "level": "甲级",
+    "captain": "王唯一",
+    "players": [
+      {
+        "id": "10",
+        "name": "王唯一",
+        "docId": "2429039",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "1",
+        "name": "李紫腾",
+        "docId": "2429016",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "2",
+        "name": "田亚宸 ",
+        "docId": "2529009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "孙睿 ",
+        "docId": "2429028",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "刘子齐",
+        "docId": "2431043",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "王奕琛 ",
+        "docId": "2424007",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "冯睿清 ",
+        "docId": "2629010",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "13",
+        "name": "连逸初",
+        "docId": "2418017",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "孙君诺",
+        "docId": "2418043",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "18",
+        "name": "薛梓恒",
+        "docId": "2311119",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "胡楼成汉",
+        "docId": "2429003",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "21",
+        "name": "王莫扬",
+        "docId": "2418048",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "22",
+        "name": "郭一鸣",
+        "docId": "2431009",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "23",
+        "name": "蔡天泽",
+        "docId": "2614007",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "26",
+        "name": "邓梓衡",
+        "docId": "2432041",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "50",
+        "name": "施喜强",
+        "docId": "2431002",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "63",
+        "name": "李昕宇",
+        "docId": "2612004",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "99",
+        "name": "孙锦阳",
+        "docId": "2612007",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "24",
+        "name": "曹旭晨",
+        "docId": "122026010016",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "66",
+        "name": "于世杰",
+        "docId": "122024011503",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "98",
+        "name": "刘子文 ",
+        "docId": "112025010262",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 0,
+    "goalsFor": 0,
+    "goalsAgainst": 0,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 150
+  },
+  "MDQ": {
+    "abbr": "MDQ",
+    "name": "蒙的全队",
+    "level": "乙级",
+    "captain": "方俣畅",
+    "players": [
+      {
+        "id": "5",
+        "name": "方俣畅",
+        "docId": "2601201",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "李圣珏",
+        "docId": "2601214",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "陈俊慈",
+        "docId": "2618101",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "顾春晓",
+        "docId": "2611169",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "14",
+        "name": "高晨洋",
+        "docId": "2611226",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "7",
+        "name": "戴子航",
+        "docId": "2611186",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "1",
+        "name": "徐君陶",
+        "docId": "2601160",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "91",
+        "name": "马泽明",
+        "docId": "2601216",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "陈兆霖",
+        "docId": "122026010027",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "22",
+        "name": "张斯凡",
+        "docId": "2224005",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "3",
+        "name": "叶梓皓",
+        "docId": "2615042",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "29",
+        "name": "党一诺",
+        "docId": "2601229",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "18",
+        "name": "曹益嘉",
+        "docId": "2611130",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "17",
+        "name": "安世博",
+        "docId": "2539006",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "4",
+        "name": "邵晨博",
+        "docId": "2601173",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "47",
+        "name": "张佳梓",
+        "docId": "2629014",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "30",
+        "name": "安哲远",
+        "docId": "2611100",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "33",
+        "name": "王昶博",
+        "docId": "2630007",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "12",
+        "name": "李寓昊",
+        "docId": "（已毕业）",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 1,
+    "goalsFor": 0,
+    "goalsAgainst": 5,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 135
+  },
+  "XWM": {
+    "abbr": "XWM",
+    "name": "宣武医院梦之队",
+    "level": "乙级",
+    "captain": "徐梓航",
+    "players": [
+      {
+        "id": "37",
+        "name": "徐梓航",
+        "docId": "2201006",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "99",
+        "name": "陈昱蘅",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "11",
+        "name": "路明昊",
+        "docId": "122026020341",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "39",
+        "name": "张梓尧",
+        "docId": "2639005",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "26",
+        "name": "常超",
+        "docId": "122024020583",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "27",
+        "name": "武岳霄",
+        "docId": "112026010164",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "20",
+        "name": "毕宸睿",
+        "docId": "2637010",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "28",
+        "name": "方天",
+        "docId": "122026010247",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "22",
+        "name": "李睿",
+        "docId": "122026010193",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "3",
+        "name": "董子民",
+        "docId": "122024010213",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "77",
+        "name": "刘宇博",
+        "docId": "2201022",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "10",
+        "name": "郑梓健",
+        "docId": "122026010153",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "4",
+        "name": "李唯豪",
+        "docId": "2201037",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "5",
+        "name": "彭征桡",
+        "docId": "122024030603",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "30",
+        "name": "李沛哲",
+        "docId": "2201079",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "9",
+        "name": "孔令然",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "29",
+        "name": "黄雨达",
+        "docId": "",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "6",
+        "name": "高佩阳",
+        "docId": "112024010210",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      }
+    ],
+    "points": 3,
+    "wins": 1,
+    "draws": 0,
+    "losses": 0,
+    "goalsFor": 1,
+    "goalsAgainst": 0,
+    "forfeits": 0,
+    "fairPlayPoints": 100,
+    "depositBalance": 100,
+    "refFeeBalance": 130
   }
 }
