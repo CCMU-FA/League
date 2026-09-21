@@ -1,0 +1,562 @@
+[
+  {
+    "id": "17900278669880",
+    "team1": "JGD",
+    "team2": "DPG",
+    "time": "9.16",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "17900278669891",
+    "team1": "BX",
+    "team2": "AHZ",
+    "time": "9.16",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "17900278669892",
+    "team1": "XWM",
+    "team2": "DSM",
+    "time": "9.17",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "17900278669893",
+    "team1": "QX",
+    "team2": "XZD",
+    "time": "9.18",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "17900278669894",
+    "team1": "XJ",
+    "team2": "XZT",
+    "time": "9.18",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "17900278669895",
+    "team1": "BQB",
+    "team2": "BGT",
+    "time": "9.18",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "17900278669896",
+    "team1": "BX",
+    "team2": "MDQ",
+    "time": "9.2",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "17900278669897",
+    "team1": "XZD",
+    "team2": "PSG",
+    "time": "9.21",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "17900278669898",
+    "team1": "DPG",
+    "team2": "XWM",
+    "time": "9.21",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "17900278669899",
+    "team1": "XJ",
+    "team2": "BQB",
+    "time": "9.21",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698910",
+    "team1": "JGD",
+    "team2": "DSM",
+    "time": "9.21",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698911",
+    "team1": "QX",
+    "team2": "SPR",
+    "time": "9.21",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698912",
+    "team1": "BX",
+    "team2": "ZDY",
+    "time": "9.22",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698913",
+    "team1": "BGT",
+    "team2": "PSG",
+    "time": "9.23",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698914",
+    "team1": "DSM",
+    "team2": "MDQ",
+    "time": "9.24",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698915",
+    "team1": "PSG",
+    "team2": "SPR",
+    "time": "9.28",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698916",
+    "team1": "XJ",
+    "team2": "XZD",
+    "time": "9.28",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698917",
+    "team1": "XZT",
+    "team2": "QX",
+    "time": "9.28",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698918",
+    "team1": "MDQ",
+    "team2": "XWM",
+    "time": "9.29",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698919",
+    "team1": "ZDY",
+    "team2": "JGD",
+    "time": "9.29",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698920",
+    "team1": "BGT",
+    "team2": "SPR",
+    "time": "9.3",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698921",
+    "team1": "DPG",
+    "team2": "AHZ",
+    "time": "9.3",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698922",
+    "team1": "DPG",
+    "team2": "DSM",
+    "time": "10.22",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698923",
+    "team1": "QX",
+    "team2": "BQB",
+    "time": "10.23",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698924",
+    "team1": "MDQ",
+    "team2": "AHZ",
+    "time": "10.23",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698925",
+    "team1": "BX",
+    "team2": "JGD",
+    "time": "10.23",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698926",
+    "team1": "XZT",
+    "team2": "BGT",
+    "time": "10.23",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698927",
+    "team1": "XJ",
+    "team2": "PSG",
+    "time": "10.24",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698928",
+    "team1": "XZT",
+    "team2": "SPR",
+    "time": "10.24",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698929",
+    "team1": "ZDY",
+    "team2": "XWM",
+    "time": "10.25",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698930",
+    "team1": "DPG",
+    "team2": "MDQ",
+    "time": "10.26",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698931",
+    "team1": "XZD",
+    "team2": "BQB",
+    "time": "10.27",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698932",
+    "team1": "ZDY",
+    "team2": "AHZ",
+    "time": "10.27",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698933",
+    "team1": "XJ",
+    "team2": "BGT",
+    "time": "10.28",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698934",
+    "team1": "XWM",
+    "team2": "JGD",
+    "time": "10.29",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698935",
+    "team1": "DSM",
+    "team2": "AHZ",
+    "time": "10.29",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698936",
+    "team1": "BX",
+    "team2": "DPG",
+    "time": "10.3",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698937",
+    "team1": "XZT",
+    "team2": "BQB",
+    "time": "10.3",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698938",
+    "team1": "XJ",
+    "team2": "QX",
+    "time": "10.31",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698939",
+    "team1": "ZDY",
+    "team2": "DPG",
+    "time": "10.31",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698940",
+    "team1": "JGD",
+    "team2": "AHZ",
+    "time": "11.01",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698941",
+    "team1": "BX",
+    "team2": "XWM",
+    "time": "11.01",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698942",
+    "team1": "XZD",
+    "team2": "XZT",
+    "time": "11.01",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698943",
+    "team1": "BQB",
+    "team2": "SPR",
+    "time": "11.01",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698944",
+    "team1": "ZDY",
+    "team2": "DSM",
+    "time": "11.02",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698945",
+    "team1": "XJ",
+    "team2": "SPR",
+    "time": "11.03",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698946",
+    "team1": "XZT",
+    "team2": "PSG",
+    "time": "11.04",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698947",
+    "team1": "QX",
+    "team2": "BGT",
+    "time": "11.05",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698948",
+    "team1": "BX",
+    "team2": "DSM",
+    "time": "11.05",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698949",
+    "team1": "XWM",
+    "team2": "AHZ",
+    "time": "11.06",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698950",
+    "team1": "MDQ",
+    "team2": "JGD",
+    "time": "11.07",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698951",
+    "team1": "BQB",
+    "team2": "PSG",
+    "time": "11.07",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698952",
+    "team1": "BGT",
+    "team2": "XZD",
+    "time": "11.07",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698953",
+    "team1": "ZDY",
+    "team2": "MDQ",
+    "time": "11.09",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698954",
+    "team1": "QX",
+    "team2": "PSG",
+    "time": "11.1",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698955",
+    "team1": "XZD",
+    "team2": "SPR",
+    "time": "11.1",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  }
+]
