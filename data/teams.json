@@ -966,7 +966,7 @@
     "abbr": "BQB",
     "name": "比奇堡联",
     "level": "甲级",
-    "captain": "申沛文",
+    "captain": "李晓桐",
     "players": [
       {
         "id": "16",
@@ -1116,6 +1116,15 @@
         "id": "42",
         "name": "官子栋",
         "docId": "2211128",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "8",
+        "name": "李晓桐",
+        "docId": "2311102",
         "goals": 0,
         "redCards": 0,
         "yellowCards": 0,
