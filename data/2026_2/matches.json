@@ -613,5 +613,37 @@
         "note": ""
       }
     ]
+  },
+  {
+    "time": "2026-09-24T19:35",
+    "referee": "肖天时",
+    "assistRefs": "",
+    "score": "2:1",
+    "refFee": 30,
+    "team1": "DSM",
+    "team2": "MDQ",
+    "events": [
+      {
+        "type": "进球",
+        "time": "23:49",
+        "playerId": "5",
+        "teamAbbr": "DSM",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "32:26",
+        "playerId": "14",
+        "teamAbbr": "DSM",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "32:26",
+        "playerId": "14",
+        "teamAbbr": "MDQ",
+        "note": ""
+      }
+    ]
   }
 ]
