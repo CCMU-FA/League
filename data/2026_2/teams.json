@@ -1590,7 +1590,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 60
+    "refFeeBalance": 120
   },
   "QX": {
     "abbr": "QX",
@@ -2868,6 +2868,6 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 55
+    "refFeeBalance": 115
   }
 }
