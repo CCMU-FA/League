@@ -414,7 +414,7 @@
         "id": "11",
         "name": "李汇楠",
         "docId": "2511001",
-        "goals": 3,
+        "goals": 4,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -585,13 +585,13 @@
     "points": 6,
     "wins": 2,
     "draws": 0,
-    "losses": 0,
-    "goalsFor": 11,
-    "goalsAgainst": 0,
+    "losses": 1,
+    "goalsFor": 12,
+    "goalsAgainst": 2,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 115
+    "refFeeBalance": 100
   },
   "BGT": {
     "abbr": "BGT",
@@ -1602,7 +1602,7 @@
         "id": "9",
         "name": "杨轹文",
         "docId": "2401216",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1647,7 +1647,7 @@
         "id": "4",
         "name": "卞宇航",
         "docId": "2501193",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1761,16 +1761,16 @@
         "isEligible": true
       }
     ],
-    "points": 0,
-    "wins": 0,
+    "points": 3,
+    "wins": 1,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 0,
-    "goalsAgainst": 0,
+    "goalsFor": 2,
+    "goalsAgainst": 1,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 130
   },
   "BX": {
     "abbr": "BX",
@@ -1818,7 +1818,7 @@
         "id": "77",
         "name": "邓奕涵",
         "docId": "2401095",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1899,7 +1899,7 @@
         "id": "30",
         "name": "蒋一川",
         "docId": "2414029",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1914,16 +1914,16 @@
         "isEligible": true
       }
     ],
-    "points": 0,
-    "wins": 0,
+    "points": 3,
+    "wins": 1,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 0,
-    "goalsAgainst": 0,
+    "goalsFor": 2,
+    "goalsAgainst": 1,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 135
   },
   "XZD": {
     "abbr": "XZD",
@@ -1944,7 +1944,7 @@
         "id": "10",
         "name": "陈舒简",
         "docId": "",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2106,13 +2106,13 @@
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 0,
-    "goalsFor": 0,
-    "goalsAgainst": 0,
+    "losses": 1,
+    "goalsFor": 1,
+    "goalsAgainst": 2,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 130
   },
   "PSG": {
     "abbr": "PSG",
