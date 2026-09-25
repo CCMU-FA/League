@@ -249,5 +249,37 @@
         "note": "乌龙"
       }
     ]
+  },
+  {
+    "time": "2026-09-18T17:16",
+    "referee": "赵立强",
+    "assistRefs": "",
+    "score": "2:1",
+    "refFee": 40,
+    "team1": "QX",
+    "team2": "XZD",
+    "events": [
+      {
+        "type": "进球",
+        "time": "24:06",
+        "playerId": "9",
+        "teamAbbr": "QX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "31:40",
+        "playerId": "4",
+        "teamAbbr": "QX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "54:05",
+        "playerId": "10",
+        "teamAbbr": "XZD",
+        "note": ""
+      }
+    ]
   }
 ]
