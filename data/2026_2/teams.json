@@ -1460,8 +1460,8 @@
         "docId": "2602005",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 1,
-        "isEligible": true
+        "yellowCards": 3,
+        "isEligible": false
       },
       {
         "id": "11",
@@ -1584,13 +1584,13 @@
     "points": 3,
     "wins": 1,
     "draws": 0,
-    "losses": 0,
+    "losses": 1,
     "goalsFor": 2,
-    "goalsAgainst": 1,
+    "goalsAgainst": 2,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 135
+    "refFeeBalance": 60
   },
   "QX": {
     "abbr": "QX",
@@ -2799,7 +2799,7 @@
         "id": "10",
         "name": "郑梓健",
         "docId": "122026010153",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2859,15 +2859,15 @@
         "isEligible": true
       }
     ],
-    "points": 3,
-    "wins": 1,
+    "points": 6,
+    "wins": 2,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 1,
+    "goalsFor": 2,
     "goalsAgainst": 0,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 130
+    "refFeeBalance": 55
   }
 }
