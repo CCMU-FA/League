@@ -225,7 +225,7 @@
         "id": "21",
         "name": "杜天雨",
         "docId": "",
-        "goals": 0,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -243,7 +243,7 @@
         "id": "6",
         "name": "赵立强",
         "docId": "",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -375,16 +375,16 @@
         "isEligible": true
       }
     ],
-    "points": 0,
-    "wins": 0,
+    "points": 3,
+    "wins": 1,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 0,
-    "goalsAgainst": 0,
+    "goalsFor": 4,
+    "goalsAgainst": 1,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 130
   },
   "ZDY": {
     "abbr": "ZDY",
@@ -990,7 +990,7 @@
         "id": "37",
         "name": "王昊辰",
         "docId": "2501065",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -999,7 +999,7 @@
         "id": "6",
         "name": "肖天时",
         "docId": "2515004",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 1,
         "isEligible": true
@@ -1083,7 +1083,7 @@
         "goals": 0,
         "redCards": 1,
         "yellowCards": 0,
-        "isEligible": false
+        "isEligible": true
       },
       {
         "id": "78",
@@ -1125,13 +1125,13 @@
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 1,
-    "goalsFor": 1,
-    "goalsAgainst": 3,
+    "losses": 2,
+    "goalsFor": 2,
+    "goalsAgainst": 7,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 70,
-    "refFeeBalance": 130
+    "refFeeBalance": 110
   },
   "AHZ": {
     "abbr": "AHZ",
