@@ -551,9 +551,65 @@
       },
       {
         "type": "进球",
-        "time": "",
-        "playerId": "",
+        "time": "19:58",
+        "playerId": "19",
         "teamAbbr": "BGT",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "25:00",
+        "playerId": "26",
+        "teamAbbr": "BGT",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "30:01",
+        "playerId": "13",
+        "teamAbbr": "BGT",
+        "note": ""
+      },
+      {
+        "type": "黄牌",
+        "time": "38:32",
+        "playerId": "4",
+        "teamAbbr": "PSG",
+        "note": ""
+      },
+      {
+        "type": "黄牌",
+        "time": "39:51",
+        "playerId": "10",
+        "teamAbbr": "BGT",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "42:36",
+        "playerId": "21",
+        "teamAbbr": "PSG",
+        "note": ""
+      },
+      {
+        "type": "黄牌",
+        "time": "43:31",
+        "playerId": "4",
+        "teamAbbr": "PSG",
+        "note": ""
+      },
+      {
+        "type": "黄牌",
+        "time": "58:36",
+        "playerId": "6",
+        "teamAbbr": "PSG",
+        "note": ""
+      },
+      {
+        "type": "红牌",
+        "time": "63:00",
+        "playerId": "10",
+        "teamAbbr": "PSG",
         "note": ""
       }
     ]
