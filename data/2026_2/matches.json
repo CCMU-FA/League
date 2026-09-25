@@ -433,5 +433,44 @@
         "note": ""
       }
     ]
+  },
+  {
+    "time": "2026-09-21T18:16",
+    "referee": "都熠桐",
+    "assistRefs": "",
+    "score": "2:2",
+    "refFee": 30,
+    "team1": "JGD",
+    "team2": "DSM",
+    "events": [
+      {
+        "type": "进球",
+        "time": "12:07",
+        "playerId": "7",
+        "teamAbbr": "JGD",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "19:50",
+        "playerId": "7",
+        "teamAbbr": "JGD",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "24:14",
+        "playerId": "5",
+        "teamAbbr": "DSM",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "25:30",
+        "playerId": "8",
+        "teamAbbr": "DSM",
+        "note": "点球"
+      }
+    ]
   }
 ]
