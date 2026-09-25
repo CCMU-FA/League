@@ -760,6 +760,33 @@
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
+      },
+      {
+        "id": "66",
+        "name": "艾合散",
+        "docId": "2438018",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "13",
+        "name": "迪力扎提",
+        "docId": "2437027",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
+      },
+      {
+        "id": "19",
+        "name": "约麦尔",
+        "docId": "2437042",
+        "goals": 0,
+        "redCards": 0,
+        "yellowCards": 0,
+        "isEligible": true
       }
     ],
     "points": 6,
