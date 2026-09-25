@@ -1611,7 +1611,7 @@
         "id": "7",
         "name": "刘城安",
         "docId": "2411154",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1622,7 +1622,7 @@
         "docId": "2411141",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -1764,13 +1764,13 @@
     "points": 3,
     "wins": 1,
     "draws": 0,
-    "losses": 0,
+    "losses": 1,
     "goalsFor": 2,
-    "goalsAgainst": 1,
+    "goalsAgainst": 5,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 130
+    "refFeeBalance": 110
   },
   "BX": {
     "abbr": "BX",
@@ -2385,9 +2385,9 @@
         "id": "18",
         "name": "薛梓恒",
         "docId": "2311119",
-        "goals": 0,
+        "goals": 2,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -2490,16 +2490,16 @@
         "isEligible": true
       }
     ],
-    "points": 0,
-    "wins": 0,
+    "points": 3,
+    "wins": 1,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 0,
+    "goalsFor": 4,
     "goalsAgainst": 0,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 130
   },
   "MDQ": {
     "abbr": "MDQ",
