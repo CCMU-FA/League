@@ -612,7 +612,7 @@
         "id": "19",
         "name": "孙仁鸿",
         "docId": "2314022",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -630,7 +630,7 @@
         "id": "26",
         "name": "木热地力·木塔力甫",
         "docId": "112026020216",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 1,
         "isEligible": true
@@ -650,7 +650,7 @@
         "docId": "",
         "goals": 1,
         "redCards": 0,
-        "yellowCards": 1,
+        "yellowCards": 2,
         "isEligible": true
       },
       {
@@ -774,7 +774,7 @@
         "id": "13",
         "name": "迪力扎提",
         "docId": "2437027",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2152,9 +2152,9 @@
         "name": "NIMA",
         "docId": "122025091764",
         "goals": 0,
-        "redCards": 0,
+        "redCards": 1,
         "yellowCards": 0,
-        "isEligible": true
+        "isEligible": false
       },
       {
         "id": "8",
@@ -2189,7 +2189,7 @@
         "docId": "2511501",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 2,
         "isEligible": true
       },
       {
@@ -2243,7 +2243,7 @@
         "docId": "2511515",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -2295,7 +2295,7 @@
         "id": "21",
         "name": "AHMED TETA OMAR EDRIS",
         "docId": "2611544",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2318,7 +2318,7 @@
     "goalsAgainst": 6,
     "forfeits": 0,
     "fairPlayPoints": 100,
-    "depositBalance": 100,
+    "depositBalance": 70,
     "refFeeBalance": 55
   },
   "SPR": {
