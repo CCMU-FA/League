@@ -632,7 +632,7 @@
         "docId": "112026020216",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -642,7 +642,7 @@
         "goals": 1,
         "redCards": 1,
         "yellowCards": 1,
-        "isEligible": false
+        "isEligible": true
       },
       {
         "id": "10",
@@ -762,16 +762,16 @@
         "isEligible": true
       }
     ],
-    "points": 3,
-    "wins": 1,
+    "points": 6,
+    "wins": 2,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 3,
-    "goalsAgainst": 1,
+    "goalsFor": 6,
+    "goalsAgainst": 2,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 70,
-    "refFeeBalance": 130
+    "refFeeBalance": 100
   },
   "DSM": {
     "abbr": "DSM",
@@ -2171,7 +2171,7 @@
         "docId": "122025091754",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -2286,13 +2286,13 @@
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 1,
-    "goalsFor": 0,
-    "goalsAgainst": 3,
+    "losses": 2,
+    "goalsFor": 1,
+    "goalsAgainst": 6,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 85
+    "refFeeBalance": 55
   },
   "SPR": {
     "abbr": "SPR",
