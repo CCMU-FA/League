@@ -472,5 +472,58 @@
         "note": "点球"
       }
     ]
+  },
+  {
+    "time": "2026-09-21T18:23",
+    "referee": "杨恒",
+    "assistRefs": "",
+    "score": "0:4",
+    "refFee": 40,
+    "team1": "QX",
+    "team2": "SPR",
+    "events": [
+      {
+        "type": "进球",
+        "time": "10:54",
+        "playerId": "7",
+        "teamAbbr": "QX",
+        "note": "乌龙"
+      },
+      {
+        "type": "黄牌",
+        "time": "14:17",
+        "playerId": "18",
+        "teamAbbr": "SPR",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "26:06",
+        "playerId": "",
+        "teamAbbr": "SPR",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "47:36",
+        "playerId": "18",
+        "teamAbbr": "SPR",
+        "note": ""
+      },
+      {
+        "type": "黄牌",
+        "time": "53:04",
+        "playerId": "1",
+        "teamAbbr": "QX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "53:19",
+        "playerId": "18",
+        "teamAbbr": "SPR",
+        "note": "点球"
+      }
+    ]
   }
 ]
