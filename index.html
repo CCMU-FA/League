@@ -2,57 +2,226 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>校园足球联赛球员管理系统</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; background-color: #f5f7fa; }
-        h1, h2 { color: #333; }
+        h1 { color: #333; text-align: center; margin-bottom: 20px; }
+        h2 { color: #333; }
+
+        /* 导航切换按钮样式 */
+        .nav-buttons { text-align: center; margin-bottom: 30px; }
+        .tab-btn { background-color: #e9ecef; color: #333; font-weight: bold; border-radius: 4px; padding: 12px 24px; font-size: 16px; transition: background-color 0.2s; margin: 0 4px; }
+        .tab-btn.active-tab { background-color: #0056b3; color: white; }
+        .tab-btn:hover:not(.active-tab) { background-color: #d3d9df; }
+
         .controls { margin-bottom: 20px; }
         button { padding: 10px 15px; background-color: #0056b3; color: white; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px; }
         button:hover { background-color: #004494; }
+
         table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
         th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
         th { background-color: #0056b3; color: white; }
         tr:hover { background-color: #f1f1f1; cursor: pointer; }
-        
+
         /* 模态框样式 */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); overflow-y: auto; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); overflow-y: auto; z-index: 1000; }
         .modal-content { background: white; margin: 5% auto; padding: 20px; width: 80%; max-width: 800px; border-radius: 8px; }
         .close { float: right; font-size: 24px; cursor: pointer; }
         .form-group { margin-bottom: 15px; }
-        .form-group label { display: inline-block; width: 120px; font-weight: bold; }
+        .form-group label { display: inline-block; width: 130px; font-weight: bold; }
         .form-group input, .form-group select { padding: 5px; width: 200px; }
         .readonly-input { background-color: #e9ecef; border: 1px solid #ccc; }
-        
+
         #eventList { margin-bottom: 15px; border: 1px solid #ccc; padding: 10px; }
         .event-item { margin-bottom: 5px; }
+
+        /* 视图模块控制 */
+        .view-section { display: none; animation: fadeIn 0.3s; }
+        .view-section.active-view { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* 卡片及分页样式 */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); }
+        .card-img { width: 100%; height: 160px; object-fit: cover; background-color: #e9ecef; }
+        .card-content { padding: 15px; }
+        .card-title { font-size: 18px; font-weight: bold; margin: 0 0 10px 0; color: #333; }
+        .card-summary { font-size: 14px; color: #666; margin: 0 0 10px 0; line-height: 1.5; }
+        .card-date { font-size: 12px; color: #999; text-align: right; }
+
+        .pagination { display: flex; justify-content: center; align-items: center; margin-top: 30px; gap: 5px; }
+        .page-btn { padding: 8px 12px; border: 1px solid #ddd; background: white; cursor: pointer; border-radius: 4px; color: #0056b3; }
+        .page-btn:hover { background: #f1f1f1; }
+        .page-btn.active { background: #0056b3; color: white; border-color: #0056b3; }
+        .page-btn:disabled { color: #ccc; cursor: not-allowed; background: #fafafa; border-color: #eee; }
+
+        /* 登录和管理按钮控制 */
+        .top-left-auth { position: absolute; top: 20px; left: 20px; z-index: 1001; display: flex; gap: 10px; flex-wrap: wrap; }
+        .admin-controls { display: none; margin-bottom: 20px; }
+
+        /* 比赛时间轴样式 */
+        .timeline { position: relative; max-width: 600px; margin: 30px auto; padding: 10px 0; }
+        .timeline::after { content: ''; position: absolute; width: 4px; background-color: #dee2e6; top: 0; bottom: 0; left: 50%; margin-left: -2px; border-radius: 2px; }
+        .timeline-item { padding: 10px 40px; position: relative; width: 50%; box-sizing: border-box; }
+        .timeline-item.left { left: 0; text-align: right; }
+        .timeline-item.right { left: 50%; text-align: left; }
+        .timeline-icon { position: absolute; width: 32px; height: 32px; right: -16px; background-color: white; border: 4px solid #0056b3; top: 15px; border-radius: 50%; z-index: 1; text-align: center; line-height: 24px; font-size: 14px; box-sizing: border-box; }
+        .timeline-item.right .timeline-icon { left: -16px; }
+        .timeline-content { padding: 12px 20px; background-color: #f8f9fa; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border: 1px solid #e9ecef; display: inline-block; min-width: 150px; }
+        .event-time { font-weight: bold; color: #0056b3; margin-right: 8px; font-size: 16px; }
+        .timeline-item.left .event-time { margin-right: 0; margin-left: 8px; }
+        .card-red { border-color: #dc3545 !important; }
+        .card-yellow { border-color: #ffc107 !important; }
+
+        /* 响应式时间轴 */
+        @media screen and (max-width: 600px) {
+            .timeline::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left; }
+            .timeline-item.left, .timeline-item.right { left: 0; text-align: left; }
+            .timeline-item.left .timeline-icon, .timeline-item.right .timeline-icon { left: 15px; right: auto; }
+            .timeline-item.left .event-time { margin-right: 8px; margin-left: 0; }
+        }
+
+        .badge-tag { display: inline-block; padding: 2px 6px; font-size: 12px; border-radius: 3px; font-weight: normal; }
+        .badge-ref { background-color: #17a2b8; color: white; }
     </style>
 </head>
 <body>
 
-    <h1>校园足球联赛管理系统</h1>
-    
-    <div class="controls">
-        <button onclick="openCreateTeamModal()">建立球队</button>
-        <button onclick="openAddMatchModal()">添加比赛</button>
-        <button onclick="openMatchListModal()" style="background-color: #17a2b8;">比赛记录</button>
+    <div class="top-left-auth">
+        <div id="admin-auth-box">
+            <button id="btn-login-top" onclick="authenticate()">管理员登录</button>
+            <div id="logged-in-container" style="display:none; align-items: center; gap: 8px;">
+                <span id="text-logged-in" style="color:#28a745; font-weight:bold; padding: 8px 12px; background: rgba(255,255,255,0.9); border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">管理员已登录</span>
+                <button id="btn-logout-top" onclick="logout()" style="background-color: #dc3545;">退出登录</button>
+            </div>
+        </div>
+        <div id="ref-auth-box">
+            <button id="btn-ref-login-top" onclick="openRefAuthModal()" style="background-color: #17a2b8;">裁判登录</button>
+            <div id="logged-in-ref-container" style="display:none; align-items: center; gap: 8px;">
+                <span id="text-ref-logged-in" style="color:#17a2b8; font-weight:bold; padding: 8px 12px; background: rgba(255,255,255,0.9); border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">裁判: <span id="ref-name-span"></span></span>
+                <button id="btn-ref-logout-top" onclick="logoutReferee()" style="background-color: #dc3545;">退出</button>
+            </div>
+        </div>
     </div>
 
-    <h2>甲级积分榜</h2>
-    <table id="table-divA">
-        <thead>
-            <tr><th>队名</th><th>比赛场次</th><th>胜</th><th>平</th><th>负</th><th>积分</th><th>进球</th><th>失球</th><th>净胜球</th></tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <h1>首都医科大学足球社</h1>
 
-    <h2>乙级积分榜</h2>
-    <table id="table-divB">
-        <thead>
-            <tr><th>队名</th><th>比赛场次</th><th>胜</th><th>平</th><th>负</th><th>积分</th><th>进球</th><th>失球</th><th>净胜球</th></tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <div class="nav-buttons">
+        <button class="tab-btn active-tab" onclick="switchTab('leaderboard', this)">积分榜</button>
+        <button class="tab-btn" onclick="switchTab('matches', this)">比赛目录</button>
+        <button class="tab-btn" onclick="switchTab('announcements', this)">通知公告</button>
+        <button class="tab-btn" id="tab-btn-management" style="display:none;" onclick="switchTab('management', this)">管理</button>
+    </div>
+
+    <!-- 模块 1：积分榜 (默认显示) -->
+    <div id="view-leaderboard" class="view-section active-view">
+        <div id="admin-ctrl-leaderboard" class="admin-controls" style="justify-content: center;">
+            <button onclick="openCreateTeamModal()" style="font-size: 16px; padding: 10px 30px;">+ 建立球队</button>
+        </div>
+
+        <div style="margin-bottom: 20px; background: white; padding: 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <label for="season-select" style="font-weight: bold; font-size: 16px;">选择赛季：</label>
+            <select id="season-select" onchange="handleSeasonChange(this.value)" style="padding: 8px; font-size: 14px; border-radius: 4px;">
+                <option value="2026_2">2026年秋季赛季</option>
+            </select>
+        </div>
+
+        <h2>甲级积分榜</h2>
+        <table id="table-divA">
+            <thead>
+                <tr><th>队名</th><th>比赛场次</th><th>胜</th><th>平</th><th>负</th><th>积分</th><th>进球</th><th>失球</th><th>净胜球</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h2 style="margin-top: 30px;">甲级射手榜</h2>
+        <table id="table-scorers-divA">
+            <thead>
+                <tr><th style="width: 60px;">排名</th><th>队伍</th><th>姓名</th><th style="width: 80px;">进球数</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h2 style="margin-top: 30px;">乙级积分榜</h2>
+        <table id="table-divB">
+            <thead>
+                <tr><th>队名</th><th>比赛场次</th><th>胜</th><th>平</th><th>负</th><th>积分</th><th>进球</th><th>失球</th><th>净胜球</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h2 style="margin-top: 30px;">乙级射手榜</h2>
+        <table id="table-scorers-divB">
+            <thead>
+                <tr><th style="width: 60px;">排名</th><th>队伍</th><th>姓名</th><th style="width: 80px;">进球数</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- 模块 2：比赛目录 -->
+    <div id="view-matches" class="view-section">
+        <div style="margin-bottom: 20px; background: white; padding: 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <label for="season-select-matches" style="font-weight: bold; font-size: 16px;">选择赛季：</label>
+            <select id="season-select-matches" onchange="handleSeasonChange(this.value)" style="padding: 8px; font-size: 14px; border-radius: 4px;">
+                <option value="2026_2">2026年秋季赛季</option>
+            </select>
+        </div>
+
+        <div id="admin-ctrl-matches" class="admin-controls">
+            <button onclick="openAddMatchModal()">添加已完赛记录</button>
+            <button onclick="openScheduleMatchModal()" style="background-color: #17a2b8;">安排即将进行的比赛</button>
+            <button onclick="document.getElementById('import-schedule-excel').click()" style="background-color: #28a745;">批量导入赛程(Excel)</button>
+            <input type="file" id="import-schedule-excel" accept=".xlsx, .xls" style="display:none;" onchange="handleScheduleExcelImport(event)">
+        </div>
+
+        <h2>已完成比赛记录</h2>
+        <table id="table-matches">
+            <thead>
+                <tr><th>时间</th><th>主队 vs 客队</th><th>比分</th><th>主裁判</th><th id="th-match-op1">操作</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h2 style="margin-top: 40px;">即将进行的比赛</h2>
+        <table id="table-upcoming-matches">
+            <thead>
+                <tr><th>对阵双方</th><th>时间</th><th>地点</th><th>主裁判</th><th>助理裁判</th><th>备注</th><th id="th-match-op2">操作</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- 模块 3：通知公告 -->
+    <div id="view-announcements" class="view-section">
+        <div id="admin-ctrl-announcements" class="admin-controls">
+            <button onclick="openPublishAnnouncementModal()">+ 发布公告</button>
+        </div>
+        <h2>通知公告</h2>
+        <div id="announcements-container" class="card-grid"></div>
+        <div id="announcements-pagination" class="pagination"></div>
+    </div>
+
+    <!-- 模块 4：管理 (裁判员管理) -->
+    <div id="view-management" class="view-section">
+        <div class="admin-controls" style="display: flex;">
+            <button onclick="openCreateRefereeModal()">+ 新增裁判员</button>
+        </div>
+        <h2>裁判员管理</h2>
+        <table id="table-referees">
+            <thead>
+                <tr><th>姓名</th><th>级别</th><th>密钥 (RSA Key)</th><th>操作</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="referees-pagination" class="pagination"></div>
+    </div>
+
+    <!-- ================= 模态框区域 ================= -->
 
     <div id="modal-create-team" class="modal">
         <div class="modal-content">
@@ -75,8 +244,17 @@
     <div id="modal-add-match" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-add-match')">&times;</span>
-            <h2>添加比赛</h2>
+            <h2 id="modal-add-match-title">添加比赛</h2>
+            <div class="form-group" id="am-json-import-group" style="background: #e9ecef; padding: 10px; border-radius: 4px; margin-bottom: 15px;">
+                <label style="width: auto; margin-right: 10px;">从裁判APP导入(JSON):</label>
+                <input type="file" id="import-match-json" accept=".json" onchange="handleMatchJsonImport(event)" style="width: auto;">
+            </div>
+
             <div class="form-group"><label>比赛时间:</label><input type="datetime-local" id="am-time"></div>
+            <div class="form-group">
+                <label>主裁判:</label><input type="text" id="am-referee" style="width: 120px;" placeholder="姓名">
+                <label style="margin-left: 15px;">助理裁判:</label><input type="text" id="am-assist-refs" style="width: 150px;" placeholder="多人用逗号分隔">
+            </div>
             <div class="form-group">
                 <label>参赛球队1:</label><select id="am-team1" onchange="updateMatchTeams()"></select>
                 <label>比分:</label><input type="number" id="am-score1" style="width: 50px;" value="0">
@@ -86,12 +264,51 @@
                 <label>比分:</label><input type="number" id="am-score2" style="width: 50px;" value="0">
             </div>
             <div class="form-group"><label>裁判费开销:</label><input type="number" id="am-refFee" value="150"></div>
-            
+
             <h3>比赛事件</h3>
             <div id="eventList"></div>
             <button onclick="addEventRow()" style="background-color: #28a745; margin-bottom: 15px;">+ 添加事件</button>
             <br>
-            <button onclick="submitAddMatch()">保存比赛结果</button>
+            <button id="btn-submit-match" onclick="submitAddMatch()">保存比赛结果</button>
+        </div>
+    </div>
+
+    <!-- 比赛详情弹窗 -->
+    <div id="modal-match-details" class="modal">
+        <div class="modal-content" style="max-width: 700px; background-color: #fff;">
+            <span class="close" onclick="closeModal('modal-match-details')">&times;</span>
+            <div id="md-header-info" style="text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px dashed #ddd;"></div>
+            <h3 style="text-align: center; color: #555; margin-bottom: 20px;">比赛事件</h3>
+            <div class="timeline" id="md-timeline"></div>
+        </div>
+    </div>
+
+    <div id="modal-schedule-match" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-schedule-match')">&times;</span>
+            <h2 id="modal-schedule-match-title">安排即将进行的比赛</h2>
+            <div class="form-group">
+                <label>参赛球队1:</label><select id="sm-team1"></select>
+                <label>参赛球队2:</label><select id="sm-team2"></select>
+            </div>
+            <div class="form-group"><label>比赛时间:</label><input type="datetime-local" id="sm-time"></div>
+            <div class="form-group"><label>地点:</label><input type="text" id="sm-location" placeholder="如：南操场"></div>
+            <div class="form-group"><label>主裁判:</label><input type="text" id="sm-referee"></div>
+            <div class="form-group"><label>助理裁判:</label><input type="text" id="sm-assist-refs" placeholder="多人用逗号分隔"></div>
+            <div class="form-group"><label>备注:</label><input type="text" id="sm-notes"></div>
+            <button id="btn-submit-schedule" onclick="submitScheduleMatch()">安排比赛</button>
+        </div>
+    </div>
+
+    <div id="modal-publish-announcement" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-publish-announcement')">&times;</span>
+            <h2>发布通知公告</h2>
+            <div class="form-group"><label>标题:</label><input type="text" id="pa-title" style="width: 80%;"></div>
+            <div class="form-group"><label>封面图URL:</label><input type="text" id="pa-image" style="width: 80%;" placeholder="留空则使用默认封面"></div>
+            <div class="form-group"><label>简介:</label><input type="text" id="pa-summary" style="width: 80%;"></div>
+            <div class="form-group"><label style="vertical-align: top;">正文:</label><textarea id="pa-content" style="width: 80%; height: 100px; padding: 5px;"></textarea></div>
+            <button onclick="submitAnnouncement()">发布</button>
         </div>
     </div>
 
@@ -100,7 +317,7 @@
             <span class="close" onclick="closeModal('modal-edit-team')">&times;</span>
             <h2 id="et-title">球队信息</h2>
             <div id="et-basic-info"></div>
-            
+
             <h3>球员列表</h3>
             <div style="margin-bottom: 10px;">
                 <button id="btn-add-player" onclick="addNewPlayerRow()" style="display:none; background-color: #28a745;">+ 手动添加球员</button>
@@ -117,13 +334,13 @@
                 <tbody></tbody>
             </table>
             <div style="margin-top: 20px;">
-                <button id="btn-unlock-edit" onclick="unlockTeamEdit()">解锁编辑</button>
+                <button id="btn-unlock-edit" onclick="unlockTeamEdit()" style="display:none;">解锁编辑</button>
                 <button id="btn-save-team" onclick="saveTeamEdit()" style="display:none; background-color: #28a745;">保存更改</button>
-                <!-- 新增删除球队按钮 -->
                 <button id="btn-delete-team" onclick="deleteCurrentTeam()" style="display:none; background-color: #dc3545; margin-left: 10px;">删除本球队</button>
             </div>
         </div>
     </div>
+
     <div id="modal-auth" class="modal">
         <div class="modal-content" style="max-width: 400px;">
             <span class="close" onclick="closeAuthModal(false)">&times;</span>
@@ -144,48 +361,115 @@
             </form>
         </div>
     </div>
-    <!-- 比赛记录与删除模态框 -->
-    <div id="modal-match-list" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal-match-list')">&times;</span>
-            <h2>历史比赛记录与删除</h2>
-            <table id="table-matches">
-                <thead>
-                    <tr><th>时间</th><th>主队 vs 客队</th><th>比分</th><th>裁判费</th><th>操作</th></tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+
+    <!-- 裁判员登录模态框 -->
+    <div id="modal-ref-auth" class="modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <span class="close" onclick="closeModal('modal-ref-auth')">&times;</span>
+            <h2 style="margin-top: 0;">裁判员登录</h2>
+            <form id="form-ref-auth" onsubmit="handleRefAuthSubmit(event)">
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label for="ref-auth-username" style="display: block; margin-bottom: 5px;">账号:</label>
+                    <input type="text" id="ref-auth-username" required style="width: 100%; box-sizing: border-box;" placeholder="请输入分配的质数P">
+                </div>
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="ref-auth-password" style="display: block; margin-bottom: 5px;">密码:</label>
+                    <input type="password" id="ref-auth-password" required style="width: 100%; box-sizing: border-box;" placeholder="请输入分配的质数Q">
+                </div>
+                <div style="text-align: right;">
+                    <button type="button" onclick="closeModal('modal-ref-auth')" style="background-color: #6c757d; margin-right: 10px;">取消</button>
+                    <button type="submit" style="background-color: #17a2b8;">登录</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 新增裁判员模态框 -->
+    <div id="modal-create-referee" class="modal">
+        <div class="modal-content" style="max-width: 500px;">
+            <span class="close" onclick="closeModal('modal-create-referee')">&times;</span>
+            <h2>新增裁判员</h2>
+            <div class="form-group">
+                <label>姓名:</label>
+                <input type="text" id="cr-name" placeholder="裁判姓名">
+            </div>
+            <div class="form-group">
+                <label>级别:</label>
+                <select id="cr-level">
+                    <option value="一级">一级</option>
+                    <option value="二级">二级</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>账号:</label>
+                <input type="text" id="cr-prime-p" class="readonly-input" readonly style="font-weight:bold; color:#0056b3;">
+            </div>
+            <div class="form-group">
+                <label>密码:</label>
+                <input type="text" id="cr-prime-q" class="readonly-input" readonly style="font-weight:bold; color:#0056b3;">
+            </div>
+            <div class="form-group">
+                <label>密钥:</label>
+                <input type="text" id="cr-key" class="readonly-input" readonly style="width: 200px; font-size:12px;">
+            </div>
+            <div style="margin-bottom:15px; text-align: right;">
+                <button type="button" onclick="generateNewRefereeKeys()" style="background-color:#6c757d; font-size:12px; padding:6px 12px;">重新随机生成账号密码</button>
+            </div>
+            <button onclick="submitCreateReferee()" style="background-color:#28a745; width:100%;">确认添加并保存</button>
         </div>
     </div>
 
 <script>
+// --- 全局状态变量 ---
+let currentSeason = '2026_2'; // 默认赛季
+let editingMatchIndex = null; // 当前处于编辑状态的比赛索引
+let editingUpcomingId = null; // 当前处于编辑状态的未开赛安排ID
+let finishingUpcomingId = null; // 当前正在完赛的未开赛安排ID
+let currentRefUser = null; // 当前登录的裁判员数据对象 { id, name, level, key }
+let currentRefereesPage = 1;
+const REFEREES_PER_PAGE = 10;
+
 // --- 数据层 (模拟文件夹和JSON) ---
-// 默认RSA加密算法
-const Admin_N= BigInt("460649540625014653069703836716158001934175556390817115828489184652530859840829260360965333887467157");
+const Admin_N = BigInt("460649540625014653069703836716158001934175556390817115828489184652530859840829260360965333887467157");
 
-// 初始化本地存储
-if (!localStorage.getItem('teams_folder')) localStorage.setItem('teams_folder', JSON.stringify({}));
-if (!localStorage.getItem('matches_folder')) localStorage.setItem('matches_folder', JSON.stringify([]));
+// 初始化本地存储 (按赛季隔离数据)
+function initLocalStorage() {
+    if (!localStorage.getItem(`teams_folder_${currentSeason}`)) {
+        localStorage.setItem(`teams_folder_${currentSeason}`, JSON.stringify({}));
+    }
+    if (!localStorage.getItem(`matches_folder_${currentSeason}`)) {
+        localStorage.setItem(`matches_folder_${currentSeason}`, JSON.stringify([]));
+    }
+    if (!localStorage.getItem(`upcoming_matches_folder_${currentSeason}`)) {
+        localStorage.setItem(`upcoming_matches_folder_${currentSeason}`, JSON.stringify([]));
+    }
+    if (!localStorage.getItem(`announcements_folder_${currentSeason}`)) {
+        localStorage.setItem(`announcements_folder_${currentSeason}`, JSON.stringify([]));
+    }
+    if (!localStorage.getItem(`referees_folder_${currentSeason}`)) {
+        localStorage.setItem(`referees_folder_${currentSeason}`, JSON.stringify([]));
+    }
+}
+initLocalStorage();
+
 // --- 纯前端直连 GitHub 数据层 ---
-
-// ⚠️ 警告：在此处明文写入 Token 意味着任何访问该网页的人都可以看到它。
-// 请确保该 Token 仅具有这个特定“小号”仓库的 repo 权限，不要用于主账号！
 let tokenA='github_pat_1';
 let tokenB='1COVRFNY0RNULHReattMX_6WfaHb0jjeO';
 let tokenC='UQl4VBdFzj8FVIzW9lblj8YbI81Q9mChNKMXJFSQACfZqVYr';
-const GITHUB_TOKEN = tokenA + tokenB + tokenC; 
-const GITHUB_USER = 'CCMU-FA'; 
+const GITHUB_TOKEN = tokenA + tokenB + tokenC;
+const GITHUB_USER = 'CCMU-FA';
 const GITHUB_REPO = 'League';
 
-function getTeams() { return JSON.parse(localStorage.getItem('teams_folder') || '{}'); }
-function getMatches() { return JSON.parse(localStorage.getItem('matches_folder') || '[]'); }
+function getTeams() { return JSON.parse(localStorage.getItem(`teams_folder_${currentSeason}`) || '{}'); }
+function getMatches() { return JSON.parse(localStorage.getItem(`matches_folder_${currentSeason}`) || '[]'); }
+function getUpcomingMatches() { return JSON.parse(localStorage.getItem(`upcoming_matches_folder_${currentSeason}`) || '[]'); }
+function getAnnouncements() { return JSON.parse(localStorage.getItem(`announcements_folder_${currentSeason}`) || '[]'); }
+function getReferees() { return JSON.parse(localStorage.getItem(`referees_folder_${currentSeason}`) || '[]'); }
 
-// 解决原生 btoa 无法处理中文字符（UTF-8）的问题
 function utf8_to_btoa(str) {
     return window.btoa(unescape(encodeURIComponent(str)));
 }
-    
-// UTF-8 解码函数：解决 Base64 解码中文乱码问题
+
 function base64ToUtf8(base64) {
     const cleanBase64 = base64.replace(/\s/g, '');
     const binaryString = window.atob(cleanBase64);
@@ -193,10 +477,9 @@ function base64ToUtf8(base64) {
     return new TextDecoder().decode(bytes);
 }
 
-// 核心云端读取函数：从 GitHub REST API 拉取指定 JSON 文件
+// 从 GitHub REST API 拉取指定 JSON 文件 (按赛季路径读取)
 async function fetchFromGitHub(filename) {
-
-    const filePath = `data/${filename}`;
+    const filePath = `data/${currentSeason}/${filename}`;
     const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${filePath}`;
 
     try {
@@ -205,7 +488,7 @@ async function fetchFromGitHub(filename) {
                 'Authorization': `Bearer ${GITHUB_TOKEN}`,
                 'Accept': 'application/vnd.github.v3+json'
             },
-            cache: 'no-store' // 禁用浏览器缓存，确保获取 GitHub 上最新的提交
+            cache: 'no-store'
         });
 
         if (response.ok) {
@@ -213,45 +496,67 @@ async function fetchFromGitHub(filename) {
             const jsonString = base64ToUtf8(fileInfo.content);
             return JSON.parse(jsonString);
         } else if (response.status === 404) {
-            console.log(`云端暂无 ${filename} 文件，将沿用本地初始化数据。`);
+            console.log(`云端暂无 ${filePath} 文件，将沿用本地初始化数据。`);
         } else {
-            console.error(`读取 ${filename} 失败:`, await response.text());
+            console.error(`读取 ${filePath} 失败:`, await response.text());
         }
     } catch (error) {
-        console.error(`从 GitHub 读取 ${filename} 出错:`, error);
+        console.error(`从 GitHub 读取 ${filePath} 出错:`, error);
     }
     return null;
 }
+
 // 初始化：从 GitHub 云端同步最新数据并刷新视图
 async function initDataFromCloud() {
-    // 页面右上角生成轻量级加载状态提示
     const notice = document.createElement('div');
     notice.id = 'cloud-notice';
     notice.style.cssText = 'position:fixed; top:15px; right:15px; background:#0056b3; color:white; padding:8px 16px; border-radius:20px; font-size:13px; z-index:9999; box-shadow:0 2px 6px rgba(0,0,0,0.2); transition:all 0.3s;';
-    notice.innerText = '🔄 正在同步云端数据...';
+    notice.innerText = `🔄 正在同步 ${currentSeason} 赛季云端数据...`;
     document.body.appendChild(notice);
 
     try {
-        // 并行拉取球队数据与比赛数据
-        const [cloudTeams, cloudMatches] = await Promise.all([
+        const [cloudTeams, cloudMatches, cloudUpcoming, cloudAnnouncements, cloudReferees] = await Promise.all([
             fetchFromGitHub('teams.json'),
-            fetchFromGitHub('matches.json')
+            fetchFromGitHub('matches.json'),
+            fetchFromGitHub('upcoming_matches.json'),
+            fetchFromGitHub('announcements.json'),
+            fetchFromGitHub('referees.json')
         ]);
 
         let hasUpdated = false;
 
         if (cloudTeams) {
-            localStorage.setItem('teams_folder', JSON.stringify(cloudTeams));
+            localStorage.setItem(`teams_folder_${currentSeason}`, JSON.stringify(cloudTeams));
             hasUpdated = true;
         }
         if (cloudMatches) {
-            localStorage.setItem('matches_folder', JSON.stringify(cloudMatches));
+            localStorage.setItem(`matches_folder_${currentSeason}`, JSON.stringify(cloudMatches));
+            hasUpdated = true;
+        }
+        if (cloudUpcoming) {
+            localStorage.setItem(`upcoming_matches_folder_${currentSeason}`, JSON.stringify(cloudUpcoming));
+            hasUpdated = true;
+        }
+        if (cloudAnnouncements) {
+            localStorage.setItem(`announcements_folder_${currentSeason}`, JSON.stringify(cloudAnnouncements));
+            hasUpdated = true;
+        }
+        if (cloudReferees) {
+            localStorage.setItem(`referees_folder_${currentSeason}`, JSON.stringify(cloudReferees));
             hasUpdated = true;
         }
 
-        // 如果获取到了新数据，重新渲染界面
         if (hasUpdated) {
             renderLeaderboards();
+            if (document.getElementById('view-matches').classList.contains('active-view')) {
+                renderMatchList();
+            }
+            if (document.getElementById('view-announcements').classList.contains('active-view')) {
+                renderAnnouncements();
+            }
+            if (document.getElementById('view-management').classList.contains('active-view')) {
+                renderReferees();
+            }
             notice.style.backgroundColor = '#28a745';
             notice.innerText = '✅ 云端数据同步完成';
         } else {
@@ -263,43 +568,41 @@ async function initDataFromCloud() {
         notice.innerText = '❌ 云端同步失败，使用本地缓存';
     }
 
-    // 2.5 秒后自动隐去提示框
     setTimeout(() => {
         notice.style.opacity = '0';
         setTimeout(() => notice.remove(), 300);
     }, 2500);
 }
+
 // --- GitHub 异步写入队列与 409 冲突自愈逻辑 ---
-let gitHubWriteQueue = Promise.resolve(); // 全局写入 Promise 链队列
-// 1. 对外调用的统一推送到 GitHub 函数（实现排队串行）
+let gitHubWriteQueue = Promise.resolve();
+
 async function syncToGitHubDirectly(filename, data) {
-    // 将新的写入任务追加到队列末尾，确保串行执行
     gitHubWriteQueue = gitHubWriteQueue.then(() => executePushWithRetry(filename, data, 3))
                                        .catch(err => console.error("队列写入异常:", err));
     return gitHubWriteQueue;
 }
-// 2. 带 409 冲突重试与最新 SHA 拉取的底层提交逻辑
+
 async function executePushWithRetry(filename, data, maxRetries = 3) {
     if (!GITHUB_TOKEN || !GITHUB_USER || !GITHUB_REPO) {
         alert("GitHub 配置不完整，无法保存到云端！");
         return false;
     }
 
-    const filePath = `data/${filename}`;
+    const filePath = `data/${currentSeason}/${filename}`;
     const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${filePath}`;
     const jsonString = JSON.stringify(data, null, 2);
     const contentBase64 = utf8_to_btoa(jsonString);
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
         try {
-            // 步骤 A：每次提交前强行重新获取云端最新的 SHA
             let sha = null;
             const getRes = await fetch(url, {
                 headers: {
                     'Authorization': `Bearer ${GITHUB_TOKEN}`,
                     'Accept': 'application/vnd.github.v3+json'
                 },
-                cache: 'no-store' // 强行禁用缓存，确保获取最新的 SHA
+                cache: 'no-store'
             });
 
             if (getRes.ok) {
@@ -307,14 +610,12 @@ async function executePushWithRetry(filename, data, maxRetries = 3) {
                 sha = fileData.sha;
             }
 
-            // 步骤 B：构造 PUT 请求体
             const body = {
-                message: `Update ${filename} via web app`,
+                message: `Update ${filePath} via web app`,
                 content: contentBase64
             };
             if (sha) body.sha = sha;
 
-            // 步骤 C：发起同步提交
             const putRes = await fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -326,22 +627,20 @@ async function executePushWithRetry(filename, data, maxRetries = 3) {
             });
 
             if (putRes.ok) {
-                console.log(`✅ [尝试 ${attempt}/${maxRetries}] 云端 ${filename} 同步成功！`);
+                console.log(`✅ [尝试 ${attempt}/${maxRetries}] 云端 ${filePath} 同步成功！`);
                 return true;
             }
 
-            // 步骤 D：专门捕获 409 冲突并退避重试
             if (putRes.status === 409) {
-                const waitTime = attempt * 1200; // 递增等待 1.2s, 2.4s...
-                console.warn(`⚠️ [409 冲突] GitHub Commit 尚未完成，等待 ${waitTime}ms 后重新尝试 (第 ${attempt}/${maxRetries} 次)...`);
+                const waitTime = attempt * 1200;
+                console.warn(`⚠️ [409 冲突] GitHub Commit 尚未完成，等待 ${waitTime}ms 后重新尝试...`);
                 await new Promise(resolve => setTimeout(resolve, waitTime));
-                continue; // 重新进入 next attempt 循环，拉取最新 SHA
+                continue;
             }
 
-            // 其他 HTTP 错误（如 401 权限不足、404 等）直接报错
             const errData = await putRes.json();
             console.error(`❌ GitHub 写入失败 [HTTP ${putRes.status}]:`, errData);
-            alert(`云端 ${filename} 保存失败: ${errData.message || putRes.status}`);
+            alert(`云端 ${filePath} 保存失败: ${errData.message || putRes.status}`);
             return false;
 
         } catch (err) {
@@ -356,46 +655,180 @@ async function executePushWithRetry(filename, data, maxRetries = 3) {
     return false;
 }
 
-// 修改保存函数：同时保存到本地，并异步触发 GitHub 直连上传
-function saveTeams(teamsObj) { 
-    localStorage.setItem('teams_folder', JSON.stringify(teamsObj)); 
+function saveTeams(teamsObj) {
+    localStorage.setItem(`teams_folder_${currentSeason}`, JSON.stringify(teamsObj));
     syncToGitHubDirectly('teams.json', teamsObj);
 }
 
-function saveMatches(matchesArr) { 
-    localStorage.setItem('matches_folder', JSON.stringify(matchesArr)); 
+function saveMatches(matchesArr) {
+    localStorage.setItem(`matches_folder_${currentSeason}`, JSON.stringify(matchesArr));
     syncToGitHubDirectly('matches.json', matchesArr);
 }
 
-// 基于半素数分解验证的管理员鉴权函数
-// --- 会话管理与 RSA 登录逻辑 ---
-const AUTH_SESSION_KEY = 'admin_auth_expiry';
-const AUTH_DURATION = 30 * 60 * 1000; // 免登录有效时间：30 分钟 (可自行调整)
-let authResolver = null;
+function saveUpcomingMatches(arr) {
+    localStorage.setItem(`upcoming_matches_folder_${currentSeason}`, JSON.stringify(arr));
+    syncToGitHubDirectly('upcoming_matches.json', arr);
+}
 
-// 检查当前设备是否在 30 分钟免登录有效期内
-function isSessionValid() {
-    const expiry = localStorage.getItem(AUTH_SESSION_KEY);
-    if (!expiry) return false;
-    if (Date.now() > parseInt(expiry, 10)) {
-        localStorage.removeItem(AUTH_SESSION_KEY);
-        return false;
+function saveAnnouncements(arr) {
+    localStorage.setItem(`announcements_folder_${currentSeason}`, JSON.stringify(arr));
+    syncToGitHubDirectly('announcements.json', arr);
+}
+
+function saveReferees(arr) {
+    localStorage.setItem(`referees_folder_${currentSeason}`, JSON.stringify(arr));
+    syncToGitHubDirectly('referees.json', arr);
+}
+
+// --- 随机质数与 RSA 密钥生成逻辑 ---
+function isPrime(num) {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
+    if (num % 2 === 0 || num % 3 === 0) return false;
+    for (let i = 5; i * i <= num; i += 6) {
+        if (num % i === 0 || num % (i + 2) === 0) return false;
     }
     return true;
 }
 
-// 刷新/设置登录会话时间
-function setSession() {
-    localStorage.setItem(AUTH_SESSION_KEY, (Date.now() + AUTH_DURATION).toString());
+function generateRandomPrime(min = 10000, max = 99999) {
+    while (true) {
+        let num = Math.floor(Math.random() * (max - min + 1)) + min;
+        if (isPrime(num)) return num;
+    }
 }
 
-// 异步鉴权函数：如果已有会话则直接通过，否则弹出登录框等待用户提交
-function authenticate() {
-    if (isSessionValid()) {
-        setSession(); // 每次进行管理操作时自动续期 30 分钟
-        return Promise.resolve(true);
+function generateRefereeKeyPair() {
+    let p = generateRandomPrime(10000, 99999);
+    let q = generateRandomPrime(10000, 99999);
+    while (q === p) {
+        q = generateRandomPrime(10000, 99999);
+    }
+    let key = (BigInt(p) * BigInt(q)).toString();
+    return { p, q, key };
+}
+
+// --- 会话管理与 RSA 登录逻辑 ---
+const AUTH_SESSION_KEY = 'admin_auth_expiry';
+const REF_SESSION_KEY = 'ref_auth_session';
+const AUTH_DURATION = 30 * 60 * 1000;
+let authResolver = null;
+let isAdminLoggedIn = false;
+
+function isSessionValid() {
+    const expiry = localStorage.getItem(AUTH_SESSION_KEY);
+    if (!expiry) { isAdminLoggedIn = false; return false; }
+    if (Date.now() > parseInt(expiry, 10)) {
+        localStorage.removeItem(AUTH_SESSION_KEY);
+        isAdminLoggedIn = false;
+        return false;
+    }
+    isAdminLoggedIn = true;
+    return true;
+}
+
+function checkRefSession() {
+    const refSession = localStorage.getItem(REF_SESSION_KEY);
+    if (refSession) {
+        try {
+            const parsed = JSON.parse(refSession);
+            if (Date.now() < parsed.expiry) {
+                currentRefUser = parsed.refUser;
+            } else {
+                localStorage.removeItem(REF_SESSION_KEY);
+                currentRefUser = null;
+            }
+        } catch(e) { currentRefUser = null; }
+    } else {
+        currentRefUser = null;
+    }
+    updateRefereeUI();
+}
+
+function setSession() {
+    localStorage.setItem(AUTH_SESSION_KEY, (Date.now() + AUTH_DURATION).toString());
+    isAdminLoggedIn = true;
+    updateAdminUI();
+}
+
+function setRefSession(refUser) {
+    currentRefUser = refUser;
+    localStorage.setItem(REF_SESSION_KEY, JSON.stringify({
+        refUser: refUser,
+        expiry: Date.now() + AUTH_DURATION
+    }));
+    updateRefereeUI();
+    if (document.getElementById('view-matches').classList.contains('active-view')) {
+        renderMatchList();
+    }
+}
+
+function logout() {
+    localStorage.removeItem(AUTH_SESSION_KEY);
+    isAdminLoggedIn = false;
+    updateAdminUI();
+    if (document.getElementById('view-management').classList.contains('active-view')) {
+        switchTab('leaderboard', document.querySelectorAll('.tab-btn')[0]);
+    }
+    alert("已成功退出管理员登录，已恢复访客模式。");
+}
+
+function logoutReferee() {
+    localStorage.removeItem(REF_SESSION_KEY);
+    currentRefUser = null;
+    updateRefereeUI();
+    if (document.getElementById('view-matches').classList.contains('active-view')) {
+        renderMatchList();
+    }
+    alert("已成功退出裁判员登录。");
+}
+
+function updateAdminUI() {
+    if (isAdminLoggedIn) {
+        document.getElementById('btn-login-top').style.display = 'none';
+        document.getElementById('logged-in-container').style.display = 'inline-flex';
+        document.getElementById('admin-ctrl-leaderboard').style.display = 'flex';
+        document.getElementById('admin-ctrl-matches').style.display = 'block';
+        document.getElementById('admin-ctrl-announcements').style.display = 'block';
+        document.getElementById('tab-btn-management').style.display = 'inline-block';
+    } else {
+        document.getElementById('btn-login-top').style.display = 'inline-block';
+        document.getElementById('logged-in-container').style.display = 'none';
+        document.getElementById('admin-ctrl-leaderboard').style.display = 'none';
+        document.getElementById('admin-ctrl-matches').style.display = 'none';
+        document.getElementById('admin-ctrl-announcements').style.display = 'none';
+        document.getElementById('tab-btn-management').style.display = 'none';
     }
 
+    let op1 = document.getElementById('th-match-op1');
+    let op2 = document.getElementById('th-match-op2');
+    if (op1) op1.style.display = isAdminLoggedIn ? 'table-cell' : 'none';
+    if (op2) op2.style.display = (isAdminLoggedIn || currentRefUser) ? 'table-cell' : 'none';
+
+    if (document.getElementById('view-matches').classList.contains('active-view')) {
+        renderMatchList();
+    }
+}
+
+function updateRefereeUI() {
+    if (currentRefUser) {
+        document.getElementById('btn-ref-login-top').style.display = 'none';
+        document.getElementById('logged-in-ref-container').style.display = 'inline-flex';
+        document.getElementById('ref-name-span').innerText = `${currentRefUser.name} (${currentRefUser.level || '裁判'})`;
+    } else {
+        document.getElementById('btn-ref-login-top').style.display = 'inline-block';
+        document.getElementById('logged-in-ref-container').style.display = 'none';
+    }
+
+    let op2 = document.getElementById('th-match-op2');
+    if (op2) op2.style.display = (isAdminLoggedIn || currentRefUser) ? 'table-cell' : 'none';
+}
+
+function authenticate() {
+    if (isSessionValid()) {
+        setSession();
+        return Promise.resolve(true);
+    }
     return new Promise((resolve) => {
         authResolver = resolve;
         document.getElementById('auth-username').value = '';
@@ -404,7 +837,12 @@ function authenticate() {
     });
 }
 
-// 处理表单提交（支持浏览器自动保存密码）
+function openRefAuthModal() {
+    document.getElementById('ref-auth-username').value = '';
+    document.getElementById('ref-auth-password').value = '';
+    document.getElementById('modal-ref-auth').style.display = 'block';
+}
+
 function handleAuthSubmit(event) {
     event.preventDefault();
     const u = document.getElementById('auth-username').value.trim();
@@ -415,20 +853,41 @@ function handleAuthSubmit(event) {
         let bigQ = BigInt(p);
 
         if (bigP > 1n && bigQ > 1n && bigP * bigQ - Admin_N == 0n) {
-            setSession(); // 验证成功，写入免登录缓存
+            setSession();
             closeModal('modal-auth');
             if (authResolver) authResolver(true);
             authResolver = null;
             return;
         }
-    } catch (e) {
-        // 捕获 BigInt 转换异常
-    }
+    } catch (e) { }
 
     alert("账号或密码验证失败！");
 }
 
-// 关闭登录框取消操作
+function handleRefAuthSubmit(event) {
+    event.preventDefault();
+    const u = document.getElementById('ref-auth-username').value.trim();
+    const p = document.getElementById('ref-auth-password').value.trim();
+
+    try {
+        let bigP = BigInt(u);
+        let bigQ = BigInt(p);
+        let targetKey = (bigP * bigQ).toString();
+
+        let referees = getReferees();
+        let matchedRef = referees.find(r => r.key === targetKey);
+
+        if (matchedRef) {
+            setRefSession(matchedRef);
+            closeModal('modal-ref-auth');
+            alert(`欢迎登录，${matchedRef.name} 裁判！`);
+            return;
+        }
+    } catch (e) { }
+
+    alert("裁判员账号或密码验证失败！请检查输入的质数账号密码。");
+}
+
 function closeAuthModal(success) {
     closeModal('modal-auth');
     if (authResolver) {
@@ -437,22 +896,59 @@ function closeAuthModal(success) {
     }
 }
 
-// --- 核心逻辑与 UI 渲染 ---
+// --- 界面控制与导航模块逻辑 ---
+function switchTab(tabId, btnElement) {
+    document.querySelectorAll('.view-section').forEach(el => {
+        el.classList.remove('active-view');
+    });
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active-tab');
+    });
 
-// 1. 渲染积分榜
+    document.getElementById('view-' + tabId).classList.add('active-view');
+    btnElement.classList.add('active-tab');
+
+    if (tabId === 'leaderboard') renderLeaderboards();
+    if (tabId === 'matches') renderMatchList();
+    if (tabId === 'announcements') renderAnnouncements();
+    if (tabId === 'management') renderReferees();
+}
+
+function handleSeasonChange(val) {
+    if (val) {
+        currentSeason = val;
+        let s1 = document.getElementById('season-select');
+        let s2 = document.getElementById('season-select-matches');
+        if (s1 && s1.value !== currentSeason) s1.value = currentSeason;
+        if (s2 && s2.value !== currentSeason) s2.value = currentSeason;
+    } else {
+        currentSeason = document.getElementById('season-select').value;
+        let s2 = document.getElementById('season-select-matches');
+        if (s2 && s2.value !== currentSeason) s2.value = currentSeason;
+    }
+
+    initLocalStorage();
+    initDataFromCloud();
+    renderLeaderboards();
+    if (document.getElementById('view-matches').classList.contains('active-view')) renderMatchList();
+    if (document.getElementById('view-announcements').classList.contains('active-view')) renderAnnouncements();
+    if (document.getElementById('view-management').classList.contains('active-view')) renderReferees();
+}
+
+// --- 核心逻辑与 UI 渲染 ---
 function renderLeaderboards() {
     const teams = Object.values(getTeams());
-    
+
     const sortTeams = (teamList) => {
         return teamList.sort((a, b) => {
-            if (b.points !== a.points) return b.points - a.points; // 积分
+            if (b.points !== a.points) return b.points - a.points;
             let matchesA = a.wins + a.draws + a.losses;
             let matchesB = b.wins + b.draws + b.losses;
-            if (matchesB !== matchesA) return matchesB - matchesA; // 场次多在上
+            if (matchesB !== matchesA) return matchesB - matchesA;
             let gdA = a.goalsFor - a.goalsAgainst;
             let gdB = b.goalsFor - b.goalsAgainst;
-            if (gdB !== gdA) return gdB - gdA; // 净胜球
-            return b.goalsFor - a.goalsFor; // 进球数
+            if (gdB !== gdA) return gdB - gdA;
+            return b.goalsFor - a.goalsFor;
         });
     };
 
@@ -471,9 +967,40 @@ function renderLeaderboards() {
 
     document.querySelector('#table-divA tbody').innerHTML = divA.map(buildRow).join('');
     document.querySelector('#table-divB tbody').innerHTML = divB.map(buildRow).join('');
+
+    let playersA = [];
+    let playersB = [];
+    Object.values(teams).forEach(t => {
+        (t.players || []).forEach(p => {
+            if (p.goals > 0) {
+                let scorer = { ...p, teamName: t.name, penaltyPoints: (p.redCards || 0) * 3 + (p.yellowCards || 0) };
+                if (t.level === '甲级') playersA.push(scorer);
+                else if (t.level === '乙级') playersB.push(scorer);
+            }
+        });
+    });
+
+    const sortScorers = (a, b) => {
+        if (b.goals !== a.goals) return b.goals - a.goals;
+        return a.penaltyPoints - b.penaltyPoints;
+    };
+
+    const buildScorerRow = (p, index) => {
+        return `<tr>
+            <td>${index + 1}</td>
+            <td>${p.teamName}</td>
+            <td>${p.name || '未知'}</td>
+            <td><b style="color:#dc3545;">${p.goals}</b></td>
+        </tr>`;
+    };
+
+    let htmlA = playersA.sort(sortScorers).slice(0, 10).map(buildScorerRow).join('');
+    let htmlB = playersB.sort(sortScorers).slice(0, 10).map(buildScorerRow).join('');
+
+    document.querySelector('#table-scorers-divA tbody').innerHTML = htmlA || '<tr><td colspan="4">暂无进球数据</td></tr>';
+    document.querySelector('#table-scorers-divB tbody').innerHTML = htmlB || '<tr><td colspan="4">暂无进球数据</td></tr>';
 }
 
-// 2. 建立球队
 async function openCreateTeamModal() {
     if (!(await authenticate())) return;
     document.getElementById('modal-create-team').style.display = 'block';
@@ -488,9 +1015,8 @@ function submitCreateTeam() {
     if(!name || !abbr) return alert("队名和缩写不能为空！");
 
     let teams = getTeams();
-    if(teams[abbr]) return alert("该缩写的球队（文件）已存在！");
+    if(teams[abbr]) return alert("该缩写的球队在当前赛季已存在！");
 
-    // JSON 数据结构定义
     teams[abbr] = {
         abbr: abbr, name: name, level: level, captain: captain,
         players: [], points: 0, wins: 0, draws: 0, losses: 0,
@@ -503,19 +1029,87 @@ function submitCreateTeam() {
     renderLeaderboards();
 }
 
-// 3. 添加比赛及事件逻辑
 let currentEvents = [];
-async function openAddMatchModal() {
-    if (!(await authenticate())) return;
+
+async function openAddMatchModal(upcomingId = null) {
+    if (!isAdminLoggedIn && !currentRefUser) {
+        if (!(await authenticate())) return;
+    }
     let teams = Object.values(getTeams());
     if (teams.length < 2) return alert("系统内队伍不足两支，无法添加比赛！");
+
+    editingMatchIndex = null;
+    finishingUpcomingId = typeof upcomingId === 'string' ? upcomingId : null;
+
+    document.getElementById('modal-add-match-title').innerText = finishingUpcomingId ? '完赛并记录结果' : '添加比赛';
+    document.getElementById('btn-submit-match').innerText = '保存比赛结果';
+
+    let jsonGroup = document.getElementById('am-json-import-group');
+    if (jsonGroup) jsonGroup.style.display = 'block';
+
+    document.getElementById('am-time').value = '';
+    document.getElementById('am-referee').value = currentRefUser ? currentRefUser.name : '';
+    document.getElementById('am-assist-refs').value = '';
+    document.getElementById('am-score1').value = '0';
+    document.getElementById('am-score2').value = '0';
+    document.getElementById('am-refFee').value = '150';
 
     let t1Select = document.getElementById('am-team1');
     let t2Select = document.getElementById('am-team2');
     t1Select.innerHTML = t2Select.innerHTML = teams.map(t => `<option value="${t.abbr}">${t.name}</option>`).join('');
-    t2Select.selectedIndex = 1;
-    
+
+    if (finishingUpcomingId) {
+        let upcomingMatches = getUpcomingMatches();
+        let match = upcomingMatches.find(m => m.id === finishingUpcomingId);
+        if (match) {
+            document.getElementById('am-time').value = match.time ? match.time.replace(' ', 'T') : '';
+            document.getElementById('am-referee').value = match.referee || (currentRefUser ? currentRefUser.name : '');
+            document.getElementById('am-assist-refs').value = match.assistRefs || '';
+            if (match.team1) t1Select.value = match.team1;
+            if (match.team2) t2Select.value = match.team2;
+        }
+    } else {
+        t2Select.selectedIndex = 1;
+    }
+
     currentEvents = [];
+    renderEvents();
+    document.getElementById('modal-add-match').style.display = 'block';
+}
+
+async function openEditMatchModal(index) {
+    if (!(await authenticate())) return;
+    let matches = getMatches();
+    let match = matches[index];
+    if (!match) return alert("未找到指定的比赛记录！");
+
+    let teams = Object.values(getTeams());
+    if (teams.length < 2) return alert("系统内队伍数据异常！");
+
+    editingMatchIndex = index;
+    document.getElementById('modal-add-match-title').innerText = '编辑比赛记录';
+    document.getElementById('btn-submit-match').innerText = '保存修改';
+
+    let jsonGroup = document.getElementById('am-json-import-group');
+    if (jsonGroup) jsonGroup.style.display = 'none';
+
+    document.getElementById('am-time').value = match.time || '';
+    document.getElementById('am-referee').value = match.referee || '';
+    document.getElementById('am-assist-refs').value = match.assistRefs || '';
+
+    let scores = (match.score || "0:0").split(':');
+    document.getElementById('am-score1').value = scores[0] || '0';
+    document.getElementById('am-score2').value = scores[1] || '0';
+    document.getElementById('am-refFee').value = match.refFee !== undefined ? match.refFee : 150;
+
+    let t1Select = document.getElementById('am-team1');
+    let t2Select = document.getElementById('am-team2');
+    t1Select.innerHTML = t2Select.innerHTML = teams.map(t => `<option value="${t.abbr}">${t.name}</option>`).join('');
+
+    if (match.team1) t1Select.value = match.team1;
+    if (match.team2) t2Select.value = match.team2;
+
+    currentEvents = JSON.parse(JSON.stringify(match.events || []));
     renderEvents();
     document.getElementById('modal-add-match').style.display = 'block';
 }
@@ -529,14 +1123,14 @@ function renderEvents() {
     let t1 = document.getElementById('am-team1').value;
     let t2 = document.getElementById('am-team2').value;
     let teams = getTeams();
-    
+
     let html = currentEvents.map((ev, index) => {
         let playersOptions = (teams[ev.teamAbbr]?.players || []).map(p => `<option value="${p.id}" ${p.id==ev.playerId?'selected':''}>[${p.id}] ${p.name}</option>`).join('');
-        
+
         return `<div class="event-item">
             <select onchange="updateEvent(${index}, 'teamAbbr', this.value)">
-                <option value="${t1}" ${ev.teamAbbr===t1?'selected':''}>${teams[t1].name}</option>
-                <option value="${t2}" ${ev.teamAbbr===t2?'selected':''}>${teams[t2].name}</option>
+                <option value="${t1}" ${ev.teamAbbr===t1?'selected':''}>${teams[t1] ? teams[t1].name : t1}</option>
+                <option value="${t2}" ${ev.teamAbbr===t2?'selected':''}>${teams[t2] ? teams[t2].name : t2}</option>
             </select>
             <select onchange="updateEvent(${index}, 'type', this.value)">
                 <option value="进球" ${ev.type==='进球'?'selected':''}>进球</option>
@@ -554,118 +1148,189 @@ function renderEvents() {
 
 function updateEvent(index, key, value) { currentEvents[index][key] = value; if(key === 'teamAbbr') renderEvents(); }
 function removeEvent(index) { currentEvents.splice(index, 1); renderEvents(); }
-function updateMatchTeams() { renderEvents(); } // 队伍改变时更新事件下拉框
+function updateMatchTeams() { renderEvents(); }
 
-function submitAddMatch() {
-    let time = document.getElementById('am-time').value;
-    let t1Abbr = document.getElementById('am-team1').value;
-    let t2Abbr = document.getElementById('am-team2').value;
-    let s1 = parseInt(document.getElementById('am-score1').value);
-    let s2 = parseInt(document.getElementById('am-score2').value);
-    let refFee = parseFloat(document.getElementById('am-refFee').value);
+function revertMatchStats(match, teams) {
+    let t1 = teams[match.team1];
+    let t2 = teams[match.team2];
 
-    if(t1Abbr === t2Abbr) return alert("参赛队伍不能相同！");
+    let [s1, s2] = (match.score || "0:0").split(':').map(Number);
 
-    let teams = getTeams();
-    let team1 = teams[t1Abbr];
-    let team2 = teams[t2Abbr];
+    if (t1) {
+        t1.goalsFor = Math.max(0, t1.goalsFor - s1);
+        t1.goalsAgainst = Math.max(0, t1.goalsAgainst - s2);
+        t1.refFeeBalance += ((match.refFee || 0) / 2);
+        if (s1 > s2) { t1.wins = Math.max(0, t1.wins - 1); t1.points = Math.max(0, t1.points - 3); }
+        else if (s1 < s2) { t1.losses = Math.max(0, t1.losses - 1); }
+        else { t1.draws = Math.max(0, t1.draws - 1); t1.points = Math.max(0, t1.points - 1); }
+    }
+    if (t2) {
+        t2.goalsFor = Math.max(0, t2.goalsFor - s2);
+        t2.goalsAgainst = Math.max(0, t2.goalsAgainst - s1);
+        t2.refFeeBalance += ((match.refFee || 0) / 2);
+        if (s2 > s1) { t2.wins = Math.max(0, t2.wins - 1); t2.points = Math.max(0, t2.points - 3); }
+        else if (s2 < s1) { t2.losses = Math.max(0, t2.losses - 1); }
+        else { t2.draws = Math.max(0, t2.draws - 1); t2.points = Math.max(0, t2.points - 1); }
+    }
 
-    // 保存比赛 JSON 数据
-    let matchJson = { time, score: `${s1}:${s2}`, refFee, team1: t1Abbr, team2: t2Abbr, events: currentEvents };
-    let matches = getMatches();
-    matches.push(matchJson);
-    saveMatches(matches);
-
-    // -- 更新队伍基本数据 --
-    team1.goalsFor += s1; team1.goalsAgainst += s2;
-    team2.goalsFor += s2; team2.goalsAgainst += s1;
-    team1.refFeeBalance -= refFee / 2;
-    team2.refFeeBalance -= refFee / 2;
-
-    if(s1 > s2) { team1.wins++; team1.points += 3; team2.losses++; }
-    else if(s1 < s2) { team2.wins++; team2.points += 3; team1.losses++; }
-    else { team1.draws++; team2.draws++; team1.points += 1; team2.points += 1; }
-
-    // -- 处理出场状态与事件 --
-    // 获取两队赛前已被禁赛的球员，赛后恢复他们的状态
-    let suspendedBeforeMatch = [];
-    [team1, team2].forEach(team => {
-        team.players.forEach(p => { if(!p.isEligible) suspendedBeforeMatch.push(p.id); });
-    });
-
-    // 处理比赛事件
-    currentEvents.forEach(ev => {
-        if(!ev.playerId) return;
-        let targetTeam = ev.teamAbbr === t1Abbr ? team1 : team2;
+    (match.events || []).forEach(ev => {
+        if (!ev.playerId) return;
+        let targetTeam = teams[ev.teamAbbr];
+        if (!targetTeam) return;
         let player = targetTeam.players.find(p => p.id === ev.playerId);
-        if(!player) return;
+        if (!player) return;
 
-        if(ev.type === '进球') {
-            player.goals++;
-        } else if(ev.type === '红牌') {
-            player.redCards++;
-            player.isEligible = false;
-            targetTeam.depositBalance -= 30; // 扣保证金
-        } else if(ev.type === '黄牌') {
-            player.yellowCards++;
-            if(player.yellowCards % 3 === 0) player.isEligible = false;
+        if (ev.type === '进球') {
+            player.goals = Math.max(0, player.goals - 1);
+        } else if (ev.type === '红牌') {
+            player.redCards = Math.max(0, player.redCards - 1);
+            targetTeam.depositBalance += 30;
+        } else if (ev.type === '黄牌') {
+            player.yellowCards = Math.max(0, player.yellowCards - 1);
+        }
+    });
+}
+
+function applyMatchStats(match, teams) {
+    let t1 = teams[match.team1];
+    let t2 = teams[match.team2];
+    let [s1, s2] = (match.score || "0:0").split(':').map(Number);
+    let refFee = match.refFee || 0;
+
+    if (t1) {
+        t1.goalsFor += s1;
+        t1.goalsAgainst += s2;
+        t1.refFeeBalance -= refFee / 2;
+    }
+    if (t2) {
+        t2.goalsFor += s2;
+        t2.goalsAgainst += s1;
+        t2.refFeeBalance -= refFee / 2;
+    }
+
+    if (t1 && t2) {
+        if (s1 > s2) { t1.wins++; t1.points += 3; t2.losses++; }
+        else if (s1 < s2) { t2.wins++; t2.points += 3; t1.losses++; }
+        else { t1.draws++; t2.draws++; t1.points += 1; t2.points += 1; }
+    }
+
+    let suspendedBeforeMatch = [];
+    [t1, t2].forEach(team => {
+        if (team && team.players) {
+            team.players.forEach(p => { if (!p.isEligible) suspendedBeforeMatch.push(p.id); });
         }
     });
 
-    // 恢复赛前被禁赛的球员（如果本场没有再次获得红牌）
-    [team1, team2].forEach(team => {
-        team.players.forEach(p => {
-            if(suspendedBeforeMatch.includes(p.id) && currentEvents.findIndex(e => e.playerId === p.id && (e.type === '红牌' || (e.type === '黄牌' && p.yellowCards % 3 === 0))) === -1) {
-                p.isEligible = true; // 停赛一轮后恢复
-            }
-        });
+    (match.events || []).forEach(ev => {
+        if (!ev.playerId) return;
+        let targetTeam = ev.teamAbbr === match.team1 ? t1 : t2;
+        if (!targetTeam) return;
+        let player = targetTeam.players.find(p => p.id === ev.playerId);
+        if (!player) return;
+
+        if (ev.type === '进球') {
+            player.goals++;
+        } else if (ev.type === '红牌') {
+            player.redCards++;
+            player.isEligible = false;
+            targetTeam.depositBalance -= 30;
+        } else if (ev.type === '黄牌') {
+            player.yellowCards++;
+            if (player.yellowCards % 3 === 0) player.isEligible = false;
+        }
     });
 
-    saveTeams(teams);
-    closeModal('modal-add-match');
-    renderLeaderboards();
-    alert("比赛添加成功，各队数据及球员状态已更新！");
+    [t1, t2].forEach(team => {
+        if (team && team.players) {
+            team.players.forEach(p => {
+                if (suspendedBeforeMatch.includes(p.id) && (match.events || []).findIndex(e => e.playerId === p.id && (e.type === '红牌' || (e.type === '黄牌' && p.yellowCards % 3 === 0))) === -1) {
+                    p.isEligible = true;
+                }
+            });
+        }
+    });
 }
 
-// 4. 球队查看与编辑
-let currentEditingTeam = null;
+function submitAddMatch() {
+    let time = document.getElementById('am-time').value;
+    let referee = document.getElementById('am-referee').value;
+    let assistRefs = document.getElementById('am-assist-refs').value;
+    let t1Abbr = document.getElementById('am-team1').value;
+    let t2Abbr = document.getElementById('am-team2').value;
+    let s1 = parseInt(document.getElementById('am-score1').value) || 0;
+    let s2 = parseInt(document.getElementById('am-score2').value) || 0;
+    let refFee = parseFloat(document.getElementById('am-refFee').value) || 0;
 
+    if (t1Abbr === t2Abbr) return alert("参赛队伍不能相同！");
+
+    let matches = getMatches();
+    let teams = getTeams();
+
+    let newMatch = {
+        time, referee, assistRefs,
+        score: `${s1}:${s2}`, refFee, team1: t1Abbr, team2: t2Abbr, events: currentEvents
+    };
+
+    if (editingMatchIndex !== null && editingMatchIndex >= 0) {
+        let oldMatch = matches[editingMatchIndex];
+        revertMatchStats(oldMatch, teams);
+        applyMatchStats(newMatch, teams);
+        matches[editingMatchIndex] = newMatch;
+    } else {
+        applyMatchStats(newMatch, teams);
+        matches.push(newMatch);
+
+        if (finishingUpcomingId) {
+            let upcoming = getUpcomingMatches();
+            upcoming = upcoming.filter(m => m.id !== finishingUpcomingId);
+            saveUpcomingMatches(upcoming);
+            finishingUpcomingId = null;
+        }
+    }
+
+    saveMatches(matches);
+    saveTeams(teams);
+
+    closeModal('modal-add-match');
+    renderLeaderboards();
+    if (document.getElementById('view-matches').classList.contains('active-view')) {
+        renderMatchList();
+    }
+
+    alert(editingMatchIndex !== null ? "比赛修改成功，相关积分与球员数据已更新！" : "比赛添加成功，各队数据及球员状态已更新！");
+    editingMatchIndex = null;
+}
+
+let currentEditingTeam = null;
 function openEditTeamModal(abbr) {
     currentEditingTeam = abbr;
     let team = getTeams()[abbr];
     document.getElementById('et-title').innerText = `${team.name} 信息管理`;
-    
-    // 生成基本信息视图
-    // 替换 openEditTeamModal 函数中生成 basicHtml 的部分：
-let basicHtml = Object.keys(team).filter(k => k !== 'players' && k !== 'abbr').map(key => {
-    let labelMap = { name:'队名', level:'级别', captain:'队长', points:'积分', wins:'胜', draws:'平', losses:'负', goalsFor:'进球', goalsAgainst:'失球', forfeits:'弃赛', fairPlayPoints:'公平竞赛分', depositBalance:'保证金余额', refFeeBalance:'裁判费余额'};
-    
-    // 关键点：为“胜”和“平”添加自动触发计算的事件
-    let eventHandler = (key === 'wins' || key === 'draws') ? 'oninput="updatePoints()"' : '';
-    let isPoints = (key === 'points') ? 'readonly' : ''; // 积分设为只读，由系统计算
 
-    return `<div class="form-group" style="display:inline-block; width:45%;">
-        <label>${labelMap[key] || key}:</label>
-        <input type="text" id="edit-team-${key}" class="readonly-input team-data-input" 
-               value="${team[key]}" ${isPoints} ${eventHandler} readonly>
-    </div>`;
-}).join('');
+    let basicHtml = Object.keys(team).filter(k => k !== 'players' && k !== 'abbr').map(key => {
+        let labelMap = { name:'队名', level:'级别', captain:'队长', points:'积分', wins:'胜', draws:'平', losses:'负', goalsFor:'进球', goalsAgainst:'失球', forfeits:'弃赛', fairPlayPoints:'公平竞赛分', depositBalance:'保证金余额', refFeeBalance:'裁判费余额'};
+        let eventHandler = (key === 'wins' || key === 'draws') ? 'oninput="updatePoints()"' : '';
+        let isPoints = (key === 'points') ? 'readonly' : '';
+
+        return `<div class="form-group" style="display:inline-block; width:45%;">
+            <label>${labelMap[key] || key}:</label>
+            <input type="text" id="edit-team-${key}" class="readonly-input team-data-input"
+                   value="${team[key]}" ${isPoints} ${eventHandler} readonly>
+        </div>`;
+    }).join('');
     document.getElementById('et-basic-info').innerHTML = basicHtml;
 
-    // 渲染球员列表
     renderPlayerTable(team.players);
 
-    // 锁定状态
-    document.getElementById('btn-unlock-edit').style.display = 'inline-block';
+    document.getElementById('btn-unlock-edit').style.display = isAdminLoggedIn ? 'inline-block' : 'none';
     document.getElementById('btn-save-team').style.display = 'none';
     document.getElementById('et-excel-import').style.display = 'none';
     document.getElementById('modal-edit-team').style.display = 'block';
 }
-// 渲染球员列表（增加一列“操作”删除按钮）
+
 function renderPlayerTable(players) {
     let tbody = document.querySelector('#table-players tbody');
-    // 判断当前是否已经点击了“解锁编辑”
-    let isEditing = document.getElementById('btn-save-team') && 
+    let isEditing = document.getElementById('btn-save-team') &&
                       document.getElementById('btn-save-team').style.display !== 'none';
     let btnDisplay = isEditing ? 'inline-block' : 'none';
 
@@ -686,8 +1351,7 @@ function renderPlayerTable(players) {
             <button class="btn-del-player" onclick="deletePlayerRow(this)" style="background-color:#dc3545; color:white; border:none; border-radius:3px; padding:2px 8px; cursor:pointer; display:${btnDisplay};">移除</button>
         </td>
     </tr>`).join('');
-    
-    // 确保表头有“操作”列
+
     let ths = document.querySelectorAll('#table-players th');
     if (ths.length === 7) {
         let th = document.createElement('th');
@@ -696,7 +1360,6 @@ function renderPlayerTable(players) {
     }
 }
 
-// 移除单个球员行
 function deletePlayerRow(btn) {
     let row = btn.closest('tr');
     row.remove();
@@ -704,25 +1367,21 @@ function deletePlayerRow(btn) {
 
 async function unlockTeamEdit() {
     if (!(await authenticate())) return;
-    
-    // 1. 解禁所有输入框
+
     document.querySelectorAll('.team-data-input, .player-input').forEach(el => {
         el.removeAttribute('readonly');
         el.removeAttribute('disabled');
         el.classList.remove('readonly-input');
     });
 
-    // 2. 显示所有球员行的“移除”按钮
     document.querySelectorAll('.btn-del-player').forEach(btn => {
         btn.style.display = 'inline-block';
     });
 
-    // 3. 显示 Excel 导入区域与操作按钮
     document.getElementById('btn-unlock-edit').style.display = 'none';
     document.getElementById('btn-save-team').style.display = 'inline-block';
     document.getElementById('btn-delete-team').style.display = 'inline-block';
-    
-    // 显示 Excel 导入框
+
     const excelBox = document.getElementById('et-excel-import');
     if (excelBox) excelBox.style.display = 'block';
 
@@ -734,14 +1393,12 @@ async function unlockTeamEdit() {
 function saveTeamEdit() {
     let teams = getTeams();
     let team = teams[currentEditingTeam];
-    
-    // 保存基本信息
+
     Object.keys(team).filter(k => k !== 'players' && k !== 'abbr').forEach(key => {
         let val = document.getElementById(`edit-team-${key}`).value;
         team[key] = isNaN(val) ? val : Number(val);
     });
 
-    // 保存球员信息
     let newPlayers = [];
     let rows = document.querySelectorAll('#table-players tbody tr');
     rows.forEach(row => {
@@ -762,7 +1419,6 @@ function saveTeamEdit() {
     alert("球队信息保存成功！");
 }
 
-// 5. Excel 导入逻辑
 function handleExcelImport(event) {
     const file = event.target.files[0];
     if (!file) return;
@@ -773,23 +1429,22 @@ function handleExcelImport(event) {
         const firstSheetName = workbook.SheetNames[0];
         const worksheet = workbook.Sheets[firstSheetName];
         const json = XLSX.utils.sheet_to_json(worksheet);
-        
+
         let importedPlayers = json.map(row => ({
             id: String(row['编号'] || row['ID'] || ''),
             name: String(row['姓名'] || ''),
             docId: String(row['证件号'] || ''),
             goals: 0, redCards: 0, yellowCards: 0, isEligible: true
-        })).filter(p => p.id); // 过滤掉空行
+        })).filter(p => p.id);
 
-        renderPlayerTable(importedPlayers); // 渲染到表格中待保存
+        renderPlayerTable(importedPlayers);
         alert(`成功解析 ${importedPlayers.length} 名球员数据，请点击下方“保存更改”使数据生效。`);
     };
     reader.readAsArrayBuffer(file);
 }
 
-// 通用关闭模态框
 function closeModal(id) { document.getElementById(id).style.display = 'none'; }
-// 自动更新积分逻辑 (3*胜 + 1*平)
+
 function updatePoints() {
     let wins = parseInt(document.getElementById('edit-team-wins').value) || 0;
     let draws = parseInt(document.getElementById('edit-team-draws').value) || 0;
@@ -797,12 +1452,11 @@ function updatePoints() {
     document.getElementById('edit-team-points').value = totalPoints;
 }
 
-// 手动在网页中添加新球员行
 function addNewPlayerRow() {
     let tbody = document.querySelector('#table-players tbody');
     let newRow = document.createElement('tr');
     let idx = tbody.rows.length;
-    
+
     newRow.innerHTML = `
         <td><input class="player-input" data-idx="${idx}" data-key="id" placeholder="编号" style="width:40px"></td>
         <td><input class="player-input" data-idx="${idx}" data-key="name" placeholder="姓名" style="width:80px"></td>
@@ -820,15 +1474,9 @@ function addNewPlayerRow() {
     tbody.appendChild(newRow);
 }
 
-// 页面加载流程：先渲染本地缓存实现“秒开”，然后异步从云端同步最新 JSON
-window.onload = function() {
-    renderLeaderboards();
-    initDataFromCloud();
-};
-// 删除当前正在编辑的球队
 async function deleteCurrentTeam() {
     if (!(await authenticate())) return;
-    
+
     let teamName = document.getElementById('edit-team-name')?.value || currentEditingTeam;
     if (!confirm(`⚠️ 警告：确定要彻底删除球队【${teamName}】吗？\n删除后数据将自动同步写入 GitHub 且无法撤销！`)) {
         return;
@@ -836,46 +1484,219 @@ async function deleteCurrentTeam() {
 
     let teams = getTeams();
     delete teams[currentEditingTeam];
-    
-    // 保存更新后的 JSON 到本地并同步至 GitHub
+
     saveTeams(teams);
-    
+
     closeModal('modal-edit-team');
     renderLeaderboards();
     alert(`球队【${teamName}】已成功删除！`);
-}
-// 打开比赛记录列表
-function openMatchListModal() {
-    renderMatchList();
-    document.getElementById('modal-match-list').style.display = 'block';
 }
 
 function renderMatchList() {
     let matches = getMatches();
     let teams = getTeams();
     let tbody = document.querySelector('#table-matches tbody');
+    let opsDisplay = isAdminLoggedIn ? '' : 'style="display:none;"';
 
     if (matches.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="5">暂无比赛记录</td></tr>';
+        let colSpan = isAdminLoggedIn ? 5 : 4;
+        tbody.innerHTML = `<tr><td colspan="${colSpan}">暂无比赛记录</td></tr>`;
+    } else {
+        tbody.innerHTML = matches.map((m, idx) => {
+            let t1Name = teams[m.team1]?.name || m.team1;
+            let t2Name = teams[m.team2]?.name || m.team2;
+            let editBtn = isAdminLoggedIn ? `<button onclick="event.stopPropagation(); openEditMatchModal(${idx})" style="background-color:#ffc107; color:#212529; padding:4px 8px; margin-right:5px;">编辑</button>` : '';
+            let delBtn = isAdminLoggedIn ? `<button onclick="event.stopPropagation(); deleteMatch(${idx})" style="background-color:#dc3545; padding:4px 8px;">删除</button>` : '';
+            return `<tr onclick="openMatchDetailsModal(${idx})" style="cursor: pointer;" title="点击查看详情">
+                <td>${m.time ? m.time.replace('T', ' ') : '未指定'}</td>
+                <td>${t1Name} VS ${t2Name}</td>
+                <td><b style="font-size:1.1em; color:#0056b3;">${m.score}</b></td>
+                <td>${m.referee || '未记录'}</td>
+                <td ${opsDisplay}>${editBtn}${delBtn}</td>
+            </tr>`;
+        }).join('');
+    }
+
+    let upcoming = getUpcomingMatches();
+    let upcomingTbody = document.querySelector('#table-upcoming-matches tbody');
+    let showOpsCol = (isAdminLoggedIn || currentRefUser);
+
+    if (upcoming.length === 0) {
+        let colSpan = showOpsCol ? 7 : 6;
+        upcomingTbody.innerHTML = `<tr><td colspan="${colSpan}">暂无即将进行的比赛</td></tr>`;
+    } else {
+        upcomingTbody.innerHTML = upcoming.map((m) => {
+            let t1Name = teams[m.team1]?.name || m.team1;
+            let t2Name = teams[m.team2]?.name || m.team2;
+
+            // 渲染主裁判单元格
+            let refCellHtml = m.referee || '待定';
+            if (currentRefUser) {
+                if (!m.referee) {
+                    refCellHtml = `<button onclick="signupMainRef('${m.id}')" style="background-color:#28a745; padding:3px 8px; font-size:12px;">报名主裁</button>`;
+                } else if (m.referee === currentRefUser.name) {
+                    refCellHtml = `<b>${m.referee}</b> <button onclick="cancelMainRef('${m.id}')" style="background-color:#dc3545; padding:2px 6px; font-size:11px; margin-left:4px;">取消</button>`;
+                }
+            }
+
+            // 渲染助理裁判单元格
+            let assistArr = m.assistRefs ? m.assistRefs.split(',').map(s => s.trim()).filter(Boolean) : [];
+            let assistCellHtml = assistArr.length > 0 ? assistArr.join(', ') : '待定';
+            if (currentRefUser) {
+                let isSigned = assistArr.includes(currentRefUser.name);
+                if (isSigned) {
+                    assistCellHtml = assistArr.map(name => name === currentRefUser.name ? `<b>${name}</b> <button onclick="cancelAssistRef('${m.id}')" style="background-color:#dc3545; padding:2px 6px; font-size:11px;">取消</button>` : name).join(', ');
+                } else if (assistArr.length < 2) {
+                    let prefix = assistArr.length > 0 ? assistArr.join(', ') + ', ' : '';
+                    assistCellHtml = `${prefix}<button onclick="signupAssistRef('${m.id}')" style="background-color:#17a2b8; padding:3px 8px; font-size:12px;">报名助理裁判</button>`;
+                }
+            }
+
+            // 操作列按钮逻辑
+            let finishBtn = (currentRefUser || isAdminLoggedIn) ? `<button onclick="openAddMatchModal('${m.id}')" style="background-color:#28a745; color:white; padding:4px 8px; margin-right:5px;">完赛</button>` : '';
+            let editBtn = isAdminLoggedIn ? `<button onclick="openScheduleMatchModal('${m.id}')" style="background-color:#ffc107; color:#212529; padding:4px 8px; margin-right:5px;">编辑</button>` : '';
+            let delBtn = isAdminLoggedIn ? `<button onclick="deleteUpcomingMatch('${m.id}')" style="background-color:#dc3545; color:white; padding:4px 8px;">删除</button>` : '';
+
+            let opsColStyle = showOpsCol ? '' : 'style="display:none;"';
+
+            return `<tr>
+                <td>${t1Name} VS ${t2Name}</td>
+                <td>${m.time}</td>
+                <td>${m.location}</td>
+                <td>${refCellHtml}</td>
+                <td>${assistCellHtml}</td>
+                <td>${m.notes}</td>
+                <td ${opsColStyle} style="min-width: 140px;">${finishBtn}${editBtn}${delBtn}</td>
+            </tr>`;
+        }).join('');
+    }
+}
+
+function signupMainRef(matchId) {
+    if (!currentRefUser) return alert("请先登录裁判员账号！");
+    let upcoming = getUpcomingMatches();
+    let match = upcoming.find(m => m.id === matchId);
+    if (!match) return;
+
+    if (match.referee) return alert("该场比赛已有主裁判报名！");
+
+    match.referee = currentRefUser.name;
+    saveUpcomingMatches(upcoming);
+    renderMatchList();
+    alert(`成功报名担当本场主裁判！`);
+}
+
+function cancelMainRef(matchId) {
+    if (!currentRefUser) return;
+    let upcoming = getUpcomingMatches();
+    let match = upcoming.find(m => m.id === matchId);
+    if (match && match.referee === currentRefUser.name) {
+        match.referee = '';
+        saveUpcomingMatches(upcoming);
+        renderMatchList();
+        alert("已取消主裁判报名。");
+    }
+}
+
+function signupAssistRef(matchId) {
+    if (!currentRefUser) return alert("请先登录裁判员账号！");
+    let upcoming = getUpcomingMatches();
+    let match = upcoming.find(m => m.id === matchId);
+    if (!match) return;
+
+    let assistArr = match.assistRefs ? match.assistRefs.split(',').map(s => s.trim()).filter(Boolean) : [];
+    if (assistArr.length >= 2) return alert("该场比赛助理裁判已名额满员（最多2人）！");
+    if (assistArr.includes(currentRefUser.name)) return alert("您已报名该场比赛助理裁判！");
+
+    assistArr.push(currentRefUser.name);
+    match.assistRefs = assistArr.join(', ');
+    saveUpcomingMatches(upcoming);
+    renderMatchList();
+    alert(`成功报名担当本场助理裁判！`);
+}
+
+function cancelAssistRef(matchId) {
+    if (!currentRefUser) return;
+    let upcoming = getUpcomingMatches();
+    let match = upcoming.find(m => m.id === matchId);
+    if (!match) return;
+
+    let assistArr = match.assistRefs ? match.assistRefs.split(',').map(s => s.trim()).filter(Boolean) : [];
+    assistArr = assistArr.filter(name => name !== currentRefUser.name);
+    match.assistRefs = assistArr.join(', ');
+    saveUpcomingMatches(upcoming);
+    renderMatchList();
+    alert("已取消助理裁判报名。");
+}
+
+function openMatchDetailsModal(index) {
+    let matches = getMatches();
+    let match = matches[index];
+    let teams = getTeams();
+    let t1 = teams[match.team1];
+    let t2 = teams[match.team2];
+
+    if (!t1 || !t2) {
+        alert("球队数据异常或已被删除，无法查看详情。");
         return;
     }
 
-    tbody.innerHTML = matches.map((m, idx) => {
-        let t1Name = teams[m.team1]?.name || m.team1;
-        let t2Name = teams[m.team2]?.name || m.team2;
-        return `<tr>
-            <td>${m.time || '未指定'}</td>
-            <td>${t1Name} VS ${t2Name}</td>
-            <td><b>${m.score}</b></td>
-            <td>${m.refFee} 元</td>
-            <td>
-                <button onclick="deleteMatch(${idx})" style="background-color:#dc3545; padding:4px 8px;">删除此比赛</button>
-            </td>
-        </tr>`;
-    }).join('');
+    let headerHtml = `
+        <div style="font-size: 28px; font-weight: bold; display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 15px;">
+            <div style="flex: 1; text-align: right;">${t1.name}</div>
+            <div style="background-color: #0056b3; color: white; padding: 5px 15px; border-radius: 8px; letter-spacing: 2px;">${match.score}</div>
+            <div style="flex: 1; text-align: left;">${t2.name}</div>
+        </div>
+        <div style="color: #666; font-size: 15px; display: inline-block; text-align: left; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+            <div style="margin-bottom: 5px;">📅 <b>时间：</b>${match.time ? match.time.replace('T', ' ') : '未指定'}</div>
+            <div style="margin-bottom: 5px;">👔 <b>主裁判：</b>${match.referee || '未记录'} &nbsp;&nbsp;|&nbsp;&nbsp; <b>助理裁判：</b>${match.assistRefs || '未记录'}</div>
+            <div>💰 <b>裁判费支出：</b>${match.refFee !== undefined ? match.refFee : 150} 元</div>
+        </div>
+    `;
+    document.getElementById('md-header-info').innerHTML = headerHtml;
+
+    let events = match.events || [];
+    events.sort((a, b) => parseInt(a.time || 0) - parseInt(b.time || 0));
+
+    let timelineHtml = '';
+    if (events.length === 0) {
+        timelineHtml = '<div style="text-align: center; color: #999; padding: 20px;">本场比赛暂无记录的进球和红黄牌事件。</div>';
+    } else {
+        timelineHtml = events.map(ev => {
+            let isHome = ev.teamAbbr === match.team1;
+            let sideClass = isHome ? 'left' : 'right';
+
+            let iconStr, iconClass = '';
+            if (ev.type === '进球') { iconStr = '⚽'; }
+            else if (ev.type === '红牌') { iconStr = '🟥'; iconClass = 'card-red'; }
+            else { iconStr = '🟨'; iconClass = 'card-yellow'; }
+
+            let targetTeam = teams[ev.teamAbbr];
+            let player = targetTeam ? targetTeam.players.find(p => p.id === ev.playerId) : null;
+            let playerName = player ? player.name : '未知球员';
+            let timeStr = ev.time ? `${ev.time}'` : '';
+
+            let contentInnerHtml = isHome
+                ? `<strong>${playerName}</strong> <span style="color:#777; font-size:13px;">(${ev.type})</span> <span class="event-time">${timeStr}</span>`
+                : `<span class="event-time">${timeStr}</span> <strong>${playerName}</strong> <span style="color:#777; font-size:13px;">(${ev.type})</span>`;
+
+            let noteHtml = ev.note ? `<div style="font-size:12px; margin-top:6px; color:#666;">📝 备注: ${ev.note}</div>` : '';
+
+            return `
+            <div class="timeline-item ${sideClass}">
+                <div class="timeline-icon ${iconClass}">${iconStr}</div>
+                <div class="timeline-content">
+                    ${contentInnerHtml}
+                    ${noteHtml}
+                </div>
+            </div>`;
+        }).join('');
+    }
+
+    document.getElementById('md-timeline').innerHTML = timelineHtml;
+    document.getElementById('modal-match-details').style.display = 'block';
 }
 
-// 删除比赛并自动回滚球队积分及球员事件数据
 async function deleteMatch(index) {
     if (!(await authenticate())) return;
     if (!confirm('确定要删除这场比赛记录吗？\n删除将自动扣减/退回两队的比分、胜负平积分、裁判费余额，以及相关球员的进球与红黄牌记录！')) return;
@@ -884,48 +1705,8 @@ async function deleteMatch(index) {
     let match = matches[index];
     let teams = getTeams();
 
-    let t1 = teams[match.team1];
-    let t2 = teams[match.team2];
+    revertMatchStats(match, teams);
 
-    let [s1, s2] = (match.score || "0:0").split(':').map(Number);
-
-    // 1. 撤销球队比分、胜负平及积分
-    if (t1) {
-        t1.goalsFor = Math.max(0, t1.goalsFor - s1);
-        t1.goalsAgainst = Math.max(0, t1.goalsAgainst - s2);
-        t1.refFeeBalance += (match.refFee / 2);
-        if (s1 > s2) { t1.wins = Math.max(0, t1.wins - 1); t1.points = Math.max(0, t1.points - 3); }
-        else if (s1 < s2) { t1.losses = Math.max(0, t1.losses - 1); }
-        else { t1.draws = Math.max(0, t1.draws - 1); t1.points = Math.max(0, t1.points - 1); }
-    }
-    if (t2) {
-        t2.goalsFor = Math.max(0, t2.goalsFor - s2);
-        t2.goalsAgainst = Math.max(0, t2.goalsAgainst - s1);
-        t2.refFeeBalance += (match.refFee / 2);
-        if (s2 > s1) { t2.wins = Math.max(0, t2.wins - 1); t2.points = Math.max(0, t2.points - 3); }
-        else if (s2 < s1) { t2.losses = Math.max(0, t2.losses - 1); }
-        else { t2.draws = Math.max(0, t2.draws - 1); t2.points = Math.max(0, t2.points - 1); }
-    }
-
-    // 2. 撤销比赛事件（球员进球、红黄牌及保证金）
-    (match.events || []).forEach(ev => {
-        if (!ev.playerId) return;
-        let targetTeam = teams[ev.teamAbbr];
-        if (!targetTeam) return;
-        let player = targetTeam.players.find(p => p.id === ev.playerId);
-        if (!player) return;
-
-        if (ev.type === '进球') {
-            player.goals = Math.max(0, player.goals - 1);
-        } else if (ev.type === '红牌') {
-            player.redCards = Math.max(0, player.redCards - 1);
-            targetTeam.depositBalance += 30; // 退回保证金
-        } else if (ev.type === '黄牌') {
-            player.yellowCards = Math.max(0, player.yellowCards - 1);
-        }
-    });
-
-    // 3. 移除数据并保存更新至 GitHub
     matches.splice(index, 1);
     saveMatches(matches);
     saveTeams(teams);
@@ -934,6 +1715,394 @@ async function deleteMatch(index) {
     renderLeaderboards();
     alert('比赛记录已成功删除，所有关联数据已自动回滚！');
 }
+
+async function openScheduleMatchModal(editId = null) {
+    if (!(await authenticate())) return;
+    let teams = Object.values(getTeams());
+    if (teams.length < 2) return alert("系统内队伍不足两支！");
+
+    let t1Select = document.getElementById('sm-team1');
+    let t2Select = document.getElementById('sm-team2');
+    t1Select.innerHTML = t2Select.innerHTML = teams.map(t => `<option value="${t.abbr}">${t.name}</option>`).join('');
+
+    editingUpcomingId = typeof editId === 'string' ? editId : null;
+    document.getElementById('modal-schedule-match-title').innerText = editingUpcomingId ? '编辑安排的比赛' : '安排即将进行的比赛';
+    document.getElementById('btn-submit-schedule').innerText = editingUpcomingId ? '保存修改' : '安排比赛';
+
+    if (editingUpcomingId) {
+        let upcoming = getUpcomingMatches();
+        let match = upcoming.find(m => m.id === editingUpcomingId);
+        if (match) {
+            t1Select.value = match.team1;
+            t2Select.value = match.team2;
+            document.getElementById('sm-time').value = match.time ? match.time.replace(' ', 'T') : '';
+            document.getElementById('sm-location').value = match.location || '';
+            document.getElementById('sm-referee').value = match.referee || '';
+            document.getElementById('sm-assist-refs').value = match.assistRefs || '';
+            document.getElementById('sm-notes').value = match.notes || '';
+        }
+    } else {
+        t2Select.selectedIndex = 1;
+        document.getElementById('sm-time').value = '';
+        document.getElementById('sm-location').value = '';
+        document.getElementById('sm-referee').value = '';
+        document.getElementById('sm-assist-refs').value = '';
+        document.getElementById('sm-notes').value = '';
+    }
+
+    document.getElementById('modal-schedule-match').style.display = 'block';
+}
+
+function submitScheduleMatch() {
+    let t1Abbr = document.getElementById('sm-team1').value;
+    let t2Abbr = document.getElementById('sm-team2').value;
+    if(t1Abbr === t2Abbr) return alert("参赛队伍不能相同！");
+
+    let upcoming = getUpcomingMatches();
+    let matchData = {
+        team1: t1Abbr,
+        team2: t2Abbr,
+        time: document.getElementById('sm-time').value.replace('T', ' '),
+        location: document.getElementById('sm-location').value,
+        referee: document.getElementById('sm-referee').value,
+        assistRefs: document.getElementById('sm-assist-refs').value,
+        notes: document.getElementById('sm-notes').value
+    };
+
+    let msg = "";
+    if (editingUpcomingId) {
+        let idx = upcoming.findIndex(m => m.id === editingUpcomingId);
+        if (idx !== -1) {
+            upcoming[idx] = { ...upcoming[idx], ...matchData };
+        }
+        msg = "比赛修改成功！";
+        editingUpcomingId = null;
+    } else {
+        matchData.id = Date.now().toString();
+        upcoming.push(matchData);
+        msg = "比赛安排成功！";
+    }
+
+    saveUpcomingMatches(upcoming);
+    closeModal('modal-schedule-match');
+    renderMatchList();
+    alert(msg);
+}
+
+async function deleteUpcomingMatch(id) {
+    if (!(await authenticate())) return;
+    if (!confirm('确定要删除这场未进行的比赛安排吗？')) return;
+
+    let upcoming = getUpcomingMatches();
+    upcoming = upcoming.filter(m => m.id !== id);
+    saveUpcomingMatches(upcoming);
+
+    renderMatchList();
+    alert('比赛安排已删除！');
+}
+
+function handleScheduleExcelImport(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const data = new Uint8Array(e.target.result);
+            const workbook = XLSX.read(data, {type: 'array'});
+            const firstSheetName = workbook.SheetNames[0];
+            const worksheet = workbook.Sheets[firstSheetName];
+            const json = XLSX.utils.sheet_to_json(worksheet);
+
+            let upcoming = getUpcomingMatches();
+            let teams = getTeams();
+            let count = 0;
+
+            json.forEach(row => {
+                let t1Key = Object.keys(row).find(k => k.includes('主队'));
+                let t2Key = Object.keys(row).find(k => k.includes('客队'));
+                let timeKey = Object.keys(row).find(k => k.includes('时间') || k.includes('日期'));
+                let locKey = Object.keys(row).find(k => k.includes('地点') || k.includes('场地'));
+                let refKey = Object.keys(row).find(k => k.includes('主裁'));
+                let assistKey = Object.keys(row).find(k => k.includes('边裁') || k.includes('助理'));
+
+                let team1Name = t1Key ? String(row[t1Key]).trim() : '';
+                let team2Name = t2Key ? String(row[t2Key]).trim() : '';
+
+                if (team1Name && team2Name) {
+                    let t1Abbr = Object.keys(teams).find(k => teams[k].name.includes(team1Name) || team1Name.includes(teams[k].name)) || team1Name;
+                    let t2Abbr = Object.keys(teams).find(k => teams[k].name.includes(team2Name) || team2Name.includes(teams[k].name)) || team2Name;
+
+                    upcoming.push({
+                        id: Date.now().toString() + count,
+                        team1: t1Abbr,
+                        team2: t2Abbr,
+                        time: timeKey ? String(row[timeKey]) : '',
+                        location: locKey ? String(row[locKey]) : '',
+                        referee: refKey ? String(row[refKey]) : '',
+                        assistRefs: assistKey ? String(row[assistKey]) : '',
+                        notes: "从Excel批量导入"
+                    });
+                    count++;
+                }
+            });
+
+            if (count > 0) {
+                saveUpcomingMatches(upcoming);
+                renderMatchList();
+                alert(`成功识别并导入 ${count} 场比赛安排！`);
+            } else {
+                alert("未能在Excel中识别到有效的比赛信息。请确保表头包含“主队”、“客队”等关键词。");
+            }
+        } catch (err) {
+            alert("Excel解析失败：" + err.message);
+        }
+    };
+    reader.readAsArrayBuffer(file);
+    event.target.value = '';
+}
+
+function handleMatchJsonImport(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const data = JSON.parse(e.target.result);
+            const teams = getTeams();
+            let t1Abbr = '', t2Abbr = '';
+
+            for (let abbr in teams) {
+                if (teams[abbr].name === data.team1Name || data.team1Name.includes(teams[abbr].name) || teams[abbr].name.includes(data.team1Name)) t1Abbr = abbr;
+                if (teams[abbr].name === data.team2Name || data.team2Name.includes(teams[abbr].name) || teams[abbr].name.includes(data.team2Name)) t2Abbr = abbr;
+            }
+
+            if (t1Abbr) document.getElementById('am-team1').value = t1Abbr;
+            if (t2Abbr) document.getElementById('am-team2').value = t2Abbr;
+            updateMatchTeams();
+
+            document.getElementById('am-score1').value = data.team1Goal !== undefined ? data.team1Goal : 0;
+            document.getElementById('am-score2').value = data.team2Goal !== undefined ? data.team2Goal : 0;
+
+            currentEvents = [];
+            if (data.events && Array.isArray(data.events)) {
+                data.events.forEach(ev => {
+                    if (ev.team === 'C') return;
+
+                    let teamAbbr = ev.team === 'A' ? t1Abbr : (ev.team === 'B' ? t2Abbr : '');
+                    if (!teamAbbr) return;
+
+                    let type = '';
+                    if (ev.eventType.includes('进球') || ev.eventType.includes('点球') || ev.eventType.includes('⚽')) type = '进球';
+                    else if (ev.eventType.includes('红牌') || ev.eventType.includes('🟥')) type = '红牌';
+                    else if (ev.eventType.includes('黄牌') || ev.eventType.includes('🟨')) type = '黄牌';
+                    else return;
+
+                    let timeParts = String(ev.time || ev.duration || '').split(':');
+                    let timeVal = timeParts[0] ? timeParts[0].replace(/^0+/, '') || '0' : '';
+
+                    currentEvents.push({
+                        type: type,
+                        time: timeVal,
+                        playerId: String(ev.playerNumber || '').trim(),
+                        teamAbbr: teamAbbr,
+                        note: ev.eventType
+                    });
+                });
+            }
+
+            renderEvents();
+            alert("裁判JSON数据导入成功！\n比分已读取，进球与红黄牌事件已自动生成。请手动核对并设置比赛时间等未包含信息后保存。");
+        } catch (err) {
+            alert("JSON解析失败：" + err.message);
+        }
+    };
+    reader.readAsText(file);
+    event.target.value = '';
+}
+
+// --- 通知公告逻辑 ---
+let currentAnnouncementsPage = 1;
+const ANNOUNCEMENTS_PER_PAGE = 10;
+
+async function openPublishAnnouncementModal() {
+    if (!(await authenticate())) return;
+    document.getElementById('pa-title').value = '';
+    document.getElementById('pa-image').value = '';
+    document.getElementById('pa-summary').value = '';
+    document.getElementById('pa-content').value = '';
+    document.getElementById('modal-publish-announcement').style.display = 'block';
+}
+
+function submitAnnouncement() {
+    let title = document.getElementById('pa-title').value;
+    let image = document.getElementById('pa-image').value || 'https://placehold.co/400x200/e9ecef/666?text=Announcement';
+    let summary = document.getElementById('pa-summary').value;
+    let content = document.getElementById('pa-content').value;
+
+    if (!title) return alert("标题不能为空");
+
+    let announcement = {
+        id: Date.now().toString(),
+        title, image, summary, content,
+        date: new Date().toLocaleDateString()
+    };
+
+    let announcements = getAnnouncements();
+    announcements.unshift(announcement);
+    saveAnnouncements(announcements);
+
+    closeModal('modal-publish-announcement');
+    currentAnnouncementsPage = 1;
+    renderAnnouncements();
+    alert("公告发布成功！");
+}
+
+function renderAnnouncements(page = currentAnnouncementsPage) {
+    let announcements = getAnnouncements();
+    let container = document.getElementById('announcements-container');
+    let pagination = document.getElementById('announcements-pagination');
+
+    if (announcements.length === 0) {
+        container.innerHTML = '<div style="grid-column: 1 / -1; background: white; padding: 30px; text-align: center; color: #666; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);"><p>暂无公告</p></div>';
+        pagination.innerHTML = '';
+        return;
+    }
+
+    let totalPages = Math.ceil(announcements.length / ANNOUNCEMENTS_PER_PAGE);
+    if (page < 1) page = 1;
+    if (page > totalPages) page = totalPages;
+    currentAnnouncementsPage = page;
+
+    let start = (page - 1) * ANNOUNCEMENTS_PER_PAGE;
+    let end = start + ANNOUNCEMENTS_PER_PAGE;
+    let pageData = announcements.slice(start, end);
+
+    container.innerHTML = pageData.map(a => `
+        <div class="card">
+            <img src="${a.image}" class="card-img" onerror="this.src='https://placehold.co/400x200/e9ecef/666?text=Image+Not+Found'">
+            <div class="card-content">
+                <h3 class="card-title">${a.title}</h3>
+                <p class="card-summary">${a.summary}</p>
+                <div class="card-date">${a.date}</div>
+            </div>
+        </div>
+    `).join('');
+
+    let pageHtml = '';
+    pageHtml += `<button class="page-btn" ${page === 1 ? 'disabled' : ''} onclick="renderAnnouncements(${page - 1})">上一页</button>`;
+
+    for (let i = 1; i <= totalPages; i++) {
+        if (i === 1 || i === totalPages || (i >= page - 2 && i <= page + 2)) {
+            pageHtml += `<button class="page-btn ${i === page ? 'active' : ''}" onclick="renderAnnouncements(${i})">${i}</button>`;
+        } else if (i === page - 3 || i === page + 3) {
+            pageHtml += `<span style="padding: 0 5px;">...</span>`;
+        }
+    }
+
+    pageHtml += `<button class="page-btn" ${page === totalPages ? 'disabled' : ''} onclick="renderAnnouncements(${page + 1})">下一页</button>`;
+    pagination.innerHTML = pageHtml;
+}
+
+// --- 裁判员管理逻辑 (管理 Tab) ---
+function renderReferees(page = currentRefereesPage) {
+    let referees = getReferees();
+    let tbody = document.querySelector('#table-referees tbody');
+    let pagination = document.getElementById('referees-pagination');
+
+    if (referees.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4">暂无裁判员数据</td></tr>';
+        pagination.innerHTML = '';
+        return;
+    }
+
+    let totalPages = Math.ceil(referees.length / REFEREES_PER_PAGE);
+    if (page < 1) page = 1;
+    if (page > totalPages) page = totalPages;
+    currentRefereesPage = page;
+
+    let start = (page - 1) * REFEREES_PER_PAGE;
+    let end = start + REFEREES_PER_PAGE;
+    let pageData = referees.slice(start, end);
+
+    tbody.innerHTML = pageData.map((r, idx) => `
+        <tr>
+            <td><b>${r.name}</b></td>
+            <td><span class="badge-tag badge-ref">${r.level || '三级'}</span></td>
+            <td style="font-family: monospace; font-size:12px; color:#555;">${r.key}</td>
+            <td>
+                <button onclick="deleteReferee('${r.id}')" style="background-color:#dc3545; padding:4px 8px; font-size:12px;">删除</button>
+            </td>
+        </tr>
+    `).join('');
+
+    let pageHtml = '';
+    pageHtml += `<button class="page-btn" ${page === 1 ? 'disabled' : ''} onclick="renderReferees(${page - 1})">上一页</button>`;
+    for (let i = 1; i <= totalPages; i++) {
+        pageHtml += `<button class="page-btn ${i === page ? 'active' : ''}" onclick="renderReferees(${i})">${i}</button>`;
+    }
+    pageHtml += `<button class="page-btn" ${page === totalPages ? 'disabled' : ''} onclick="renderReferees(${page + 1})">下一页</button>`;
+    pagination.innerHTML = pageHtml;
+}
+
+function generateNewRefereeKeys() {
+    let pair = generateRefereeKeyPair();
+    document.getElementById('cr-prime-p').value = pair.p;
+    document.getElementById('cr-prime-q').value = pair.q;
+    document.getElementById('cr-key').value = pair.key;
+}
+
+function openCreateRefereeModal() {
+    document.getElementById('cr-name').value = '';
+    document.getElementById('cr-level').value = '一级';
+    generateNewRefereeKeys();
+    document.getElementById('modal-create-referee').style.display = 'block';
+}
+
+function submitCreateReferee() {
+    let name = document.getElementById('cr-name').value.trim();
+    let level = document.getElementById('cr-level').value;
+    let primeP = document.getElementById('cr-prime-p').value;
+    let primeQ = document.getElementById('cr-prime-q').value;
+    let key = document.getElementById('cr-key').value;
+
+    if (!name) return alert("请输入裁判员姓名！");
+
+    let referees = getReferees();
+    let newRef = {
+        id: 'ref_' + Date.now(),
+        name: name,
+        level: level,
+        key: key
+    };
+
+    referees.push(newRef);
+    saveReferees(referees);
+
+    closeModal('modal-create-referee');
+    renderReferees();
+
+    alert(`✅ 裁判员【${name}】添加成功！\n\n请务必告知该裁判登录凭证：\n账号：${primeP}\n密码：${primeQ}`);
+}
+
+async function deleteReferee(refId) {
+    if (!(await authenticate())) return;
+    if (!confirm('确定要删除该裁判员账户吗？')) return;
+
+    let referees = getReferees();
+    referees = referees.filter(r => r.id !== refId);
+    saveReferees(referees);
+
+    renderReferees();
+    alert('裁判员已成功删除！');
+}
+
+window.onload = function() {
+    isSessionValid();
+    checkRefSession();
+    updateAdminUI();
+    renderLeaderboards();
+    initDataFromCloud();
+};
 </script>
 </body>
 </html>
