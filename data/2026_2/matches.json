@@ -313,5 +313,37 @@
         "note": ""
       }
     ]
+  },
+  {
+    "time": "2026-09-20T15:46",
+    "referee": "刘俊辉",
+    "assistRefs": "",
+    "score": "3:0",
+    "refFee": 30,
+    "team1": "BX",
+    "team2": "MDQ",
+    "events": [
+      {
+        "type": "进球",
+        "time": "25:19",
+        "playerId": "39",
+        "teamAbbr": "BX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "36:58",
+        "playerId": "39",
+        "teamAbbr": "BX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "44:38",
+        "playerId": "28",
+        "teamAbbr": "BX",
+        "note": ""
+      }
+    ]
   }
 ]
