@@ -792,7 +792,7 @@
         "id": "5",
         "name": "程星策",
         "docId": "2401028",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -945,22 +945,22 @@
         "id": "8",
         "name": "马浩宇",
         "docId": "2401029",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
       }
     ],
-    "points": 0,
+    "points": 1,
     "wins": 0,
-    "draws": 0,
+    "draws": 1,
     "losses": 1,
-    "goalsFor": 0,
-    "goalsAgainst": 1,
+    "goalsFor": 2,
+    "goalsAgainst": 3,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 130
+    "refFeeBalance": 115
   },
   "BQB": {
     "abbr": "BQB",
@@ -1278,7 +1278,7 @@
         "id": "7",
         "name": "韩洋",
         "docId": "",
-        "goals": 0,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1401,16 +1401,16 @@
         "isEligible": true
       }
     ],
-    "points": 0,
+    "points": 1,
     "wins": 0,
-    "draws": 0,
+    "draws": 1,
     "losses": 1,
-    "goalsFor": 1,
-    "goalsAgainst": 2,
+    "goalsFor": 3,
+    "goalsAgainst": 4,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 135
+    "refFeeBalance": 120
   },
   "DPG": {
     "abbr": "DPG",
