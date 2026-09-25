@@ -281,5 +281,37 @@
         "note": ""
       }
     ]
+  },
+  {
+    "time": "2026-09-18T19:19",
+    "referee": "张兴源",
+    "assistRefs": "",
+    "score": "2:1",
+    "refFee": 30,
+    "team1": "BX",
+    "team2": "ZDY",
+    "events": [
+      {
+        "type": "进球",
+        "time": "6:20",
+        "playerId": "30",
+        "teamAbbr": "BX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "9:27",
+        "playerId": "11",
+        "teamAbbr": "ZDY",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "16:38",
+        "playerId": "77",
+        "teamAbbr": "BX",
+        "note": ""
+      }
+    ]
   }
 ]
