@@ -1,59 +1,29 @@
 [
   {
-    "id": "179002786698916",
-    "team1": "XJ",
-    "team2": "XZD",
-    "time": "",
-    "location": "",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "延期至待定时间"
-  },
-  {
-    "id": "179002786698917",
-    "team1": "XZT",
-    "team2": "QX",
-    "time": "",
-    "location": "",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "延期至待定时间"
-  },
-  {
-    "id": "179002786698918",
-    "team1": "MDQ",
-    "team2": "XWM",
-    "time": "2026-09-30 18:00",
+    "id": "179002786698921",
+    "team1": "DPG",
+    "team2": "AHZ",
+    "time": "9.3",
     "location": "北",
     "referee": "",
     "assistRefs": "",
     "notes": "从Excel批量导入"
   },
   {
-    "id": "179002786698919",
-    "team1": "ZDY",
-    "team2": "JGD",
-    "time": "",
-    "location": "",
+    "id": "179002786698936",
+    "team1": "BX",
+    "team2": "DPG",
+    "time": "10.3",
+    "location": "南",
     "referee": "",
     "assistRefs": "",
-    "notes": "延期至待定时间"
+    "notes": "从Excel批量导入"
   },
   {
-    "id": "179002786698920",
-    "team1": "BGT",
-    "team2": "SPR",
-    "time": "",
-    "location": "",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "延期至待定时间"
-  },
-  {
-    "id": "179002786698921",
-    "team1": "DPG",
-    "team2": "AHZ",
-    "time": "9.3",
+    "id": "179002786698937",
+    "team1": "XZT",
+    "team2": "BQB",
+    "time": "10.3",
     "location": "北",
     "referee": "",
     "assistRefs": "",
@@ -200,26 +170,6 @@
     "notes": "从Excel批量导入"
   },
   {
-    "id": "179002786698936",
-    "team1": "BX",
-    "team2": "DPG",
-    "time": "10.3",
-    "location": "南",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "从Excel批量导入"
-  },
-  {
-    "id": "179002786698937",
-    "team1": "XZT",
-    "team2": "BQB",
-    "time": "10.3",
-    "location": "北",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "从Excel批量导入"
-  },
-  {
     "id": "179002786698938",
     "team1": "XJ",
     "team2": "QX",
@@ -274,6 +224,26 @@
     "team1": "BQB",
     "team2": "SPR",
     "time": "11.01",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698954",
+    "team1": "QX",
+    "team2": "PSG",
+    "time": "11.1",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698955",
+    "team1": "XZD",
+    "team2": "SPR",
+    "time": "11.1",
     "location": "北",
     "referee": "",
     "assistRefs": "",
@@ -360,16 +330,6 @@
     "notes": "从Excel批量导入"
   },
   {
-    "id": "179002786698952",
-    "team1": "BGT",
-    "team2": "XZD",
-    "time": "11.07",
-    "location": "南",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "从Excel批量导入"
-  },
-  {
     "id": "179002786698953",
     "team1": "ZDY",
     "team2": "MDQ",
@@ -380,23 +340,63 @@
     "notes": "从Excel批量导入"
   },
   {
-    "id": "179002786698954",
-    "team1": "QX",
-    "team2": "PSG",
-    "time": "11.1",
+    "id": "179002786698918",
+    "team1": "MDQ",
+    "team2": "XWM",
+    "time": "2026-09-30 18:00",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698952",
+    "team1": "BGT",
+    "team2": "XZD",
+    "time": "2026-10-22 18:00",
     "location": "南",
     "referee": "",
     "assistRefs": "",
     "notes": "从Excel批量导入"
   },
   {
-    "id": "179002786698955",
-    "team1": "XZD",
-    "team2": "SPR",
-    "time": "11.1",
-    "location": "北",
+    "id": "179002786698916",
+    "team1": "XJ",
+    "team2": "XZD",
+    "time": "",
+    "location": "",
     "referee": "",
     "assistRefs": "",
-    "notes": "从Excel批量导入"
+    "notes": "延期至待定时间"
+  },
+  {
+    "id": "179002786698917",
+    "team1": "XZT",
+    "team2": "QX",
+    "time": "",
+    "location": "",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "延期至待定时间"
+  },
+  {
+    "id": "179002786698919",
+    "team1": "ZDY",
+    "team2": "JGD",
+    "time": "",
+    "location": "",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "延期至待定时间"
+  },
+  {
+    "id": "179002786698920",
+    "team1": "BGT",
+    "team2": "SPR",
+    "time": "",
+    "location": "",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "延期至待定时间"
   }
 ]
