@@ -300,6 +300,16 @@
     "notes": ""
   },
   {
+    "id": "179002786698921",
+    "team1": "DPG",
+    "team2": "AHZ",
+    "time": "2026-11-09 18:00",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
     "id": "179002786698955",
     "team1": "XZD",
     "team2": "SPR",
@@ -348,16 +358,6 @@
     "referee": "",
     "assistRefs": "",
     "notes": "延期至待定时间"
-  },
-  {
-    "id": "179002786698921",
-    "team1": "DPG",
-    "team2": "AHZ",
-    "time": "",
-    "location": "北",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "从Excel批量导入"
   },
   {
     "id": "179002786698928",
