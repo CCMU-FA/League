@@ -300,6 +300,16 @@
     "notes": ""
   },
   {
+    "id": "179002786698955",
+    "team1": "XZD",
+    "team2": "SPR",
+    "time": "2026-11-11 00:47",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
     "id": "179002786698916",
     "team1": "XJ",
     "team2": "XZD",
@@ -365,16 +375,6 @@
     "team2": "PSG",
     "time": "",
     "location": "南",
-    "referee": "",
-    "assistRefs": "",
-    "notes": ""
-  },
-  {
-    "id": "179002786698955",
-    "team1": "XZD",
-    "team2": "SPR",
-    "time": "",
-    "location": "北",
     "referee": "",
     "assistRefs": "",
     "notes": ""
