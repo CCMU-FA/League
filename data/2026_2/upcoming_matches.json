@@ -1,15 +1,5 @@
 [
   {
-    "id": "179002786698921",
-    "team1": "DPG",
-    "team2": "AHZ",
-    "time": "9.3",
-    "location": "北",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "从Excel批量导入"
-  },
-  {
     "id": "179002786698936",
     "team1": "BX",
     "team2": "DPG",
@@ -398,5 +388,15 @@
     "referee": "",
     "assistRefs": "",
     "notes": "延期至待定时间"
+  },
+  {
+    "id": "179002786698921",
+    "team1": "DPG",
+    "team2": "AHZ",
+    "time": "",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "从Excel批量导入"
   }
 ]
