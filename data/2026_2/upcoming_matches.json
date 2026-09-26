@@ -10,16 +10,6 @@
     "notes": "从Excel批量导入"
   },
   {
-    "id": "179002786698927",
-    "team1": "XJ",
-    "team2": "PSG",
-    "time": "10.24",
-    "location": "南",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "从Excel批量导入"
-  },
-  {
     "id": "179002786698928",
     "team1": "XZT",
     "team2": "SPR",
@@ -325,6 +315,16 @@
     "team2": "JGD",
     "time": "2026-10-23 18:00",
     "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
+    "id": "179002786698927",
+    "team1": "XJ",
+    "team2": "PSG",
+    "time": "2026-10-24 11:00",
+    "location": "南",
     "referee": "",
     "assistRefs": "",
     "notes": ""
