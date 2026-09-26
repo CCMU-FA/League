@@ -1,15 +1,5 @@
 [
   {
-    "id": "179002786698953",
-    "team1": "ZDY",
-    "team2": "MDQ",
-    "time": "11.09",
-    "location": "南",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "从Excel批量导入"
-  },
-  {
     "id": "179002786698918",
     "team1": "MDQ",
     "team2": "XWM",
