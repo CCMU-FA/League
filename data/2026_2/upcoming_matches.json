@@ -1,15 +1,5 @@
 [
   {
-    "id": "179002786698954",
-    "team1": "QX",
-    "team2": "PSG",
-    "time": "11.1",
-    "location": "南",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "从Excel批量导入"
-  },
-  {
     "id": "179002786698955",
     "team1": "XZD",
     "team2": "SPR",
@@ -398,5 +388,15 @@
     "referee": "",
     "assistRefs": "",
     "notes": "延期至待定时间"
+  },
+  {
+    "id": "179002786698954",
+    "team1": "QX",
+    "team2": "PSG",
+    "time": "",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
   }
 ]
