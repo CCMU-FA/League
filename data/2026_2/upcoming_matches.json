@@ -1,15 +1,5 @@
 [
   {
-    "id": "179002786698942",
-    "team1": "XZD",
-    "team2": "XZT",
-    "time": "11.01",
-    "location": "南",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "从Excel批量导入"
-  },
-  {
     "id": "179002786698943",
     "team1": "BQB",
     "team2": "SPR",
@@ -325,6 +315,16 @@
     "team2": "XWM",
     "time": "2026-11-01 18:00",
     "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
+    "id": "179002786698942",
+    "team1": "XZD",
+    "team2": "XZT",
+    "time": "2026-11-02 18:00",
+    "location": "南",
     "referee": "",
     "assistRefs": "",
     "notes": ""
