@@ -1,15 +1,5 @@
 [
   {
-    "id": "179002786698950",
-    "team1": "MDQ",
-    "team2": "JGD",
-    "time": "11.07",
-    "location": "北",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "从Excel批量导入"
-  },
-  {
     "id": "179002786698951",
     "team1": "BQB",
     "team2": "PSG",
@@ -308,6 +298,16 @@
     "referee": "",
     "assistRefs": "",
     "notes": "从Excel批量导入"
+  },
+  {
+    "id": "179002786698950",
+    "team1": "MDQ",
+    "team2": "JGD",
+    "time": "2026-11-08 15:00",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
   },
   {
     "id": "179002786698947",
