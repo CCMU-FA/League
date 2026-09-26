@@ -484,11 +484,11 @@
     "team2": "SPR",
     "events": [
       {
-        "type": "进球",
+        "type": "乌龙",
         "time": "10:54",
         "playerId": "7",
         "teamAbbr": "QX",
-        "note": "乌龙"
+        "note": ""
       },
       {
         "type": "黄牌",
@@ -500,7 +500,7 @@
       {
         "type": "进球",
         "time": "26:06",
-        "playerId": "",
+        "playerId": "50",
         "teamAbbr": "SPR",
         "note": ""
       },
