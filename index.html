@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>校园足球联赛球员管理系统</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- 公告正文 Markdown 渲染 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; background-color: #f5f7fa; }
         h1 { color: #333; text-align: center; margin-bottom: 20px; }
@@ -42,21 +45,87 @@
         .view-section.active-view { display: block; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* 卡片及分页样式 */
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
-        .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); }
-        .card-img { width: 100%; height: 160px; object-fit: cover; background-color: #e9ecef; }
-        .card-content { padding: 15px; }
-        .card-title { font-size: 18px; font-weight: bold; margin: 0 0 10px 0; color: #333; }
-        .card-summary { font-size: 14px; color: #666; margin: 0 0 10px 0; line-height: 1.5; }
-        .card-date { font-size: 12px; color: #999; text-align: right; }
+        /* 公告卡片及分页样式 */
+        .card-grid { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.14); }
+        .announcement-card { display: flex; position: relative; cursor: pointer; min-height: 150px; }
+        .announcement-card .card-img { width: 220px; min-width: 220px; height: 150px; object-fit: cover; background-color: #e9ecef; }
+        .announcement-card .card-content { padding: 18px 22px; flex: 1; min-width: 0; }
+        .card-title { font-size: 19px; font-weight: bold; margin: 0 0 10px 0; color: #333; padding-right: 150px; }
+        .card-summary { font-size: 14px; color: #666; margin: 0 0 14px 0; line-height: 1.6; }
+        .card-date { font-size: 12px; color: #999; }
+        .announcement-admin-actions { position: absolute; top: 12px; right: 14px; z-index: 2; display: flex; gap: 6px; }
+        .announcement-admin-actions button { margin: 0; padding: 5px 10px; font-size: 12px; }
+        .announcement-edit-btn { background-color: #ffc107; color: #212529; }
+        .announcement-edit-btn:hover { background-color: #e0a800; }
+        .announcement-delete-btn { background-color: #dc3545; }
+        .announcement-delete-btn:hover { background-color: #c82333; }
+
+        /* 公告详情 Markdown */
+        .announcement-detail-meta { color: #888; font-size: 13px; margin: 8px 0 25px; padding-bottom: 15px; border-bottom: 1px dashed #ddd; }
+        .announcement-markdown { color: #333; line-height: 1.8; font-size: 15px; overflow-wrap: break-word; }
+        .announcement-markdown h1, .announcement-markdown h2, .announcement-markdown h3,
+        .announcement-markdown h4, .announcement-markdown h5, .announcement-markdown h6 { color: #333; margin: 22px 0 10px; }
+        .announcement-markdown p { margin: 10px 0; }
+        .announcement-markdown ul, .announcement-markdown ol { padding-left: 25px; }
+        .announcement-markdown blockquote { margin: 15px 0; padding: 8px 15px; border-left: 4px solid #0056b3; background: #f8f9fa; color: #666; }
+        .announcement-markdown code { padding: 2px 5px; background: #f1f3f5; border-radius: 3px; }
+        .announcement-markdown pre { padding: 12px 15px; background: #f1f3f5; border-radius: 5px; overflow-x: auto; }
+        .announcement-markdown pre code { padding: 0; background: transparent; }
+        .announcement-markdown table { margin: 15px 0; box-shadow: none; }
+        .announcement-markdown th { background: #0056b3; }
+        .announcement-markdown img { max-width: 100%; height: auto; }
+        .announcement-markdown a { color: #0056b3; }
 
         .pagination { display: flex; justify-content: center; align-items: center; margin-top: 30px; gap: 5px; }
         .page-btn { padding: 8px 12px; border: 1px solid #ddd; background: white; cursor: pointer; border-radius: 4px; color: #0056b3; }
         .page-btn:hover { background: #f1f1f1; }
         .page-btn.active { background: #0056b3; color: white; border-color: #0056b3; }
         .page-btn:disabled { color: #ccc; cursor: not-allowed; background: #fafafa; border-color: #eee; }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            margin: 18px 0 28px;
+            flex-wrap: wrap;
+        }
+        .pagination .page-btn {
+            min-width: 38px;
+            height: 36px;
+            padding: 0 11px;
+            border: 1px solid #d9e1ea;
+            background: #fff;
+            cursor: pointer;
+            border-radius: 8px;
+            color: #245b8f;
+            font-size: 14px;
+            transition: all .18s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,.04);
+        }
+        .pagination .page-btn:hover:not(:disabled) {
+            background: #f0f7ff;
+            border-color: #8dbbe5;
+            transform: translateY(-1px);
+        }
+        .pagination .page-btn.active {
+            background: #0056b3;
+            color: #fff;
+            border-color: #0056b3;
+            box-shadow: 0 2px 6px rgba(0,86,179,.22);
+        }
+        .pagination .page-btn:disabled {
+            color: #b8c0c9;
+            cursor: not-allowed;
+            background: #f7f9fb;
+        }
+        .pagination .page-info {
+            color: #777;
+            font-size: 13px;
+            margin: 0 6px;
+        }
+
 
         /* 登录和管理按钮控制 */
         .top-left-auth { position: absolute; top: 20px; left: 20px; z-index: 1001; display: flex; gap: 10px; flex-wrap: wrap; }
@@ -85,8 +154,28 @@
             .timeline-item.left .event-time { margin-right: 8px; margin-left: 0; }
         }
 
+        @media screen and (max-width: 600px) {
+            .announcement-card { display: block; }
+            .announcement-card .card-img { width: 100%; height: 180px; }
+            .announcement-card .card-content { padding-top: 15px; }
+            .announcement-card .card-title { padding-right: 0; }
+            .announcement-admin-actions { position: static; padding: 0 15px 12px; }
+        }
+
         .badge-tag { display: inline-block; padding: 2px 6px; font-size: 12px; border-radius: 3px; font-weight: normal; }
         .badge-ref { background-color: #17a2b8; color: white; }
+
+        /* 比赛事件图标 */
+        .timeline-icon.penalty-goal-icon {
+            border-color: #28a745;
+            color: #28a745;
+            background-color: #eaf8ee;
+        }
+        .timeline-icon.penalty-miss-icon {
+            border-color: #e83e8c;
+            color: #e83e8c;
+            background-color: #fff0f6;
+        }
     </style>
 </head>
 <body>
@@ -186,6 +275,7 @@
             </thead>
             <tbody></tbody>
         </table>
+        <div id="completed-matches-pagination" class="pagination"></div>
 
         <h2 style="margin-top: 40px;">即将进行的比赛</h2>
         <table id="table-upcoming-matches">
@@ -194,6 +284,7 @@
             </thead>
             <tbody></tbody>
         </table>
+        <div id="upcoming-matches-pagination" class="pagination"></div>
     </div>
 
     <!-- 模块 3：通知公告 -->
@@ -303,12 +394,21 @@
     <div id="modal-publish-announcement" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-publish-announcement')">&times;</span>
-            <h2>发布通知公告</h2>
+            <h2 id="modal-publish-announcement-title">发布通知公告</h2>
             <div class="form-group"><label>标题:</label><input type="text" id="pa-title" style="width: 80%;"></div>
             <div class="form-group"><label>封面图URL:</label><input type="text" id="pa-image" style="width: 80%;" placeholder="留空则使用默认封面"></div>
             <div class="form-group"><label>简介:</label><input type="text" id="pa-summary" style="width: 80%;"></div>
-            <div class="form-group"><label style="vertical-align: top;">正文:</label><textarea id="pa-content" style="width: 80%; height: 100px; padding: 5px;"></textarea></div>
-            <button onclick="submitAnnouncement()">发布</button>
+            <div class="form-group"><label style="vertical-align: top;">正文:</label><textarea id="pa-content" style="width: 80%; height: 180px; padding: 5px;" placeholder="支持 Markdown，例如：## 比赛通知&#10;&#10;**请各队注意比赛时间。**"></textarea></div>
+            <button id="btn-submit-announcement" onclick="submitAnnouncement()">发布</button>
+        </div>
+    </div>
+
+    <div id="modal-announcement-details" class="modal">
+        <div class="modal-content" style="max-width: 850px;">
+            <span class="close" onclick="closeModal('modal-announcement-details')">&times;</span>
+            <h2 id="ad-title" style="margin-bottom: 0;"></h2>
+            <div id="ad-meta" class="announcement-detail-meta"></div>
+            <div id="ad-content" class="announcement-markdown"></div>
         </div>
     </div>
 
@@ -424,6 +524,10 @@
 let currentSeason = '2026_2'; // 默认赛季
 let editingMatchIndex = null; // 当前处于编辑状态的比赛索引
 let editingUpcomingId = null; // 当前处于编辑状态的未开赛安排ID
+let editingUpcomingOriginalTime = null; // 编辑时保存原始时间，用于兼容“只有日期”的旧数据
+let currentCompletedMatchesPage = 1;
+let currentUpcomingMatchesPage = 1;
+const MATCHES_PER_PAGE = 10;
 let finishingUpcomingId = null; // 当前正在完赛的未开赛安排ID
 let currentRefUser = null; // 当前登录的裁判员数据对象 { id, name, level, key }
 let currentRefereesPage = 1;
@@ -808,6 +912,9 @@ function updateAdminUI() {
     if (document.getElementById('view-matches').classList.contains('active-view')) {
         renderMatchList();
     }
+    if (document.getElementById('view-announcements').classList.contains('active-view')) {
+        renderAnnouncements();
+    }
 }
 
 function updateRefereeUI() {
@@ -1115,7 +1222,7 @@ async function openEditMatchModal(index) {
 }
 
 function addEventRow() {
-    currentEvents.push({ type: '进球', time: '', playerId: '', teamAbbr: document.getElementById('am-team1').value, note: '' });
+    currentEvents.push({ type: '进球', time: '', playerId: '', teamAbbr: document.getElementById('am-team1').value, goalTeamAbbr: document.getElementById('am-team1').value, note: '' });
     renderEvents();
 }
 
@@ -1125,7 +1232,15 @@ function renderEvents() {
     let teams = getTeams();
 
     let html = currentEvents.map((ev, index) => {
-        let playersOptions = (teams[ev.teamAbbr]?.players || []).map(p => `<option value="${p.id}" ${p.id==ev.playerId?'selected':''}>[${p.id}] ${p.name}</option>`).join('');
+        // 对于乌龙球：teamAbbr 表示“乌龙球员所属球队”，
+        // 因此球员选择必须来自该队；时间轴显示位置会自动放到对方进球球队一侧。
+        let playersOptions = (teams[ev.teamAbbr]?.players || [])
+            .map(p => `<option value="${p.id}" ${p.id==ev.playerId?'selected':''}>[${p.id}] ${p.name}</option>`)
+            .join('');
+
+        let typeHelp = ev.type === '乌龙'
+            ? '<span style="color:#dc3545; font-size:12px; margin-left:6px;">球员所属队伍选择为乌龙球员所在队</span>'
+            : '';
 
         return `<div class="event-item">
             <select onchange="updateEvent(${index}, 'teamAbbr', this.value)">
@@ -1134,19 +1249,41 @@ function renderEvents() {
             </select>
             <select onchange="updateEvent(${index}, 'type', this.value)">
                 <option value="进球" ${ev.type==='进球'?'selected':''}>进球</option>
+                <option value="点球" ${ev.type==='点球'?'selected':''}>点球</option>
+                <option value="点球不进" ${ev.type==='点球不进'?'selected':''}>点球不进</option>
+                <option value="乌龙" ${ev.type==='乌龙'?'selected':''}>乌龙</option>
                 <option value="红牌" ${ev.type==='红牌'?'selected':''}>红牌</option>
                 <option value="黄牌" ${ev.type==='黄牌'?'selected':''}>黄牌</option>
             </select>
-            <select onchange="updateEvent(${index}, 'playerId', this.value)"><option value="">选球员</option>${playersOptions}</select>
-            时间: <input type="text" style="width:50px" placeholder="分钟" value="${ev.time}" onchange="updateEvent(${index}, 'time', this.value)">
-            备注: <input type="text" style="width:100px" value="${ev.note}" onchange="updateEvent(${index}, 'note', this.value)">
+            ${typeHelp}
+            <select onchange="updateEvent(${index}, 'playerId', this.value)">
+                <option value="">选球员</option>${playersOptions}
+            </select>
+            时间: <input type="text" style="width:50px" placeholder="分钟" value="${ev.time || ''}" onchange="updateEvent(${index}, 'time', this.value)">
+            备注: <input type="text" style="width:100px" value="${ev.note || ''}" onchange="updateEvent(${index}, 'note', this.value)">
             <button onclick="removeEvent(${index})" style="background-color:red; padding: 2px 5px;">X</button>
         </div>`;
     }).join('');
     document.getElementById('eventList').innerHTML = html;
 }
 
-function updateEvent(index, key, value) { currentEvents[index][key] = value; if(key === 'teamAbbr') renderEvents(); }
+function updateEvent(index, key, value) {
+    currentEvents[index][key] = value;
+
+    if (key === 'teamAbbr') {
+        if (currentEvents[index].type !== '乌龙') {
+            currentEvents[index].goalTeamAbbr = value;
+        }
+        renderEvents();
+    } else if (key === 'type') {
+        if (value !== '乌龙') {
+            currentEvents[index].goalTeamAbbr = currentEvents[index].teamAbbr;
+        } else {
+            delete currentEvents[index].goalTeamAbbr;
+        }
+        renderEvents();
+    }
+}
 function removeEvent(index) { currentEvents.splice(index, 1); renderEvents(); }
 function updateMatchTeams() { renderEvents(); }
 
@@ -1180,7 +1317,7 @@ function revertMatchStats(match, teams) {
         let player = targetTeam.players.find(p => p.id === ev.playerId);
         if (!player) return;
 
-        if (ev.type === '进球') {
+        if (ev.type === '进球' || ev.type === '点球') {
             player.goals = Math.max(0, player.goals - 1);
         } else if (ev.type === '红牌') {
             player.redCards = Math.max(0, player.redCards - 1);
@@ -1228,7 +1365,7 @@ function applyMatchStats(match, teams) {
         let player = targetTeam.players.find(p => p.id === ev.playerId);
         if (!player) return;
 
-        if (ev.type === '进球') {
+        if (ev.type === '进球' || ev.type === '点球') {
             player.goals++;
         } else if (ev.type === '红牌') {
             player.redCards++;
@@ -1288,6 +1425,7 @@ function submitAddMatch() {
         }
     }
 
+    matches = sortMatchesByTime(matches);
     saveMatches(matches);
     saveTeams(teams);
 
@@ -1492,84 +1630,117 @@ async function deleteCurrentTeam() {
     alert(`球队【${teamName}】已成功删除！`);
 }
 
-function renderMatchList() {
+function getMatchTimeValue(match) {
+    if (!match || !match.time) return Number.POSITIVE_INFINITY;
+    let value = String(match.time).replace('T', ' ').trim();
+    let timestamp = new Date(value).getTime();
+    return Number.isNaN(timestamp) ? Number.POSITIVE_INFINITY : timestamp;
+}
+
+function sortMatchesByTime(matches) {
+    return [...matches].sort((a, b) => {
+        const ta = getMatchTimeValue(a);
+        const tb = getMatchTimeValue(b);
+        if (ta !== tb) return ta - tb;
+        return String(a.id || '').localeCompare(String(b.id || ''));
+    });
+}
+
+function renderMatchPagination(containerId, page, total, renderFn) {
+    const pagination = document.getElementById(containerId);
+    if (!pagination) return;
+    const totalPages = Math.max(1, Math.ceil(total / MATCHES_PER_PAGE));
+    if (total <= MATCHES_PER_PAGE) {
+        pagination.innerHTML = '';
+        return;
+    }
+    page = Math.min(Math.max(1, page), totalPages);
+    let html = `<button class="page-btn" ${page === 1 ? 'disabled' : ''} onclick="${renderFn}(${page - 1})">上一页</button>`;
+    const start = Math.max(1, page - 2);
+    const end = Math.min(totalPages, page + 2);
+    if (start > 1) html += `<button class="page-btn" onclick="${renderFn}(1)">1</button>${start > 2 ? '<span class="page-info">…</span>' : ''}`;
+    for (let i = start; i <= end; i++) html += `<button class="page-btn ${i === page ? 'active' : ''}" onclick="${renderFn}(${i})">${i}</button>`;
+    if (end < totalPages) html += `${end < totalPages - 1 ? '<span class="page-info">…</span>' : ''}<button class="page-btn" onclick="${renderFn}(${totalPages})">${totalPages}</button>`;
+    html += `<span class="page-info">共 ${total} 场</span><button class="page-btn" ${page === totalPages ? 'disabled' : ''} onclick="${renderFn}(${page + 1})">下一页</button>`;
+    pagination.innerHTML = html;
+}
+
+function renderCompletedMatches(page = currentCompletedMatchesPage) {
     let matches = getMatches();
     let teams = getTeams();
     let tbody = document.querySelector('#table-matches tbody');
     let opsDisplay = isAdminLoggedIn ? '' : 'style="display:none;"';
+    let sorted = matches.map((m, idx) => ({ match: m, originalIndex: idx }))
+        .sort((a, b) => {
+            const ta = getMatchTimeValue(a.match), tb = getMatchTimeValue(b.match);
+            return ta !== tb ? ta - tb : a.originalIndex - b.originalIndex;
+        });
+    const totalPages = Math.max(1, Math.ceil(sorted.length / MATCHES_PER_PAGE));
+    currentCompletedMatchesPage = Math.min(Math.max(1, page), totalPages);
+    const pageData = sorted.slice((currentCompletedMatchesPage - 1) * MATCHES_PER_PAGE, currentCompletedMatchesPage * MATCHES_PER_PAGE);
 
-    if (matches.length === 0) {
+    if (sorted.length === 0) {
         let colSpan = isAdminLoggedIn ? 5 : 4;
         tbody.innerHTML = `<tr><td colspan="${colSpan}">暂无比赛记录</td></tr>`;
     } else {
-        tbody.innerHTML = matches.map((m, idx) => {
+        tbody.innerHTML = pageData.map(({match: m, originalIndex: idx}) => {
             let t1Name = teams[m.team1]?.name || m.team1;
             let t2Name = teams[m.team2]?.name || m.team2;
             let editBtn = isAdminLoggedIn ? `<button onclick="event.stopPropagation(); openEditMatchModal(${idx})" style="background-color:#ffc107; color:#212529; padding:4px 8px; margin-right:5px;">编辑</button>` : '';
             let delBtn = isAdminLoggedIn ? `<button onclick="event.stopPropagation(); deleteMatch(${idx})" style="background-color:#dc3545; padding:4px 8px;">删除</button>` : '';
             return `<tr onclick="openMatchDetailsModal(${idx})" style="cursor: pointer;" title="点击查看详情">
-                <td>${m.time ? m.time.replace('T', ' ') : '未指定'}</td>
-                <td>${t1Name} VS ${t2Name}</td>
-                <td><b style="font-size:1.1em; color:#0056b3;">${m.score}</b></td>
-                <td>${m.referee || '未记录'}</td>
-                <td ${opsDisplay}>${editBtn}${delBtn}</td>
-            </tr>`;
+                <td>${m.time ? m.time.replace('T', ' ') : '未指定'}</td><td>${t1Name} VS ${t2Name}</td>
+                <td><b style="font-size:1.1em; color:#0056b3;">${m.score}</b></td><td>${m.referee || '未记录'}</td>
+                <td ${opsDisplay}>${editBtn}${delBtn}</td></tr>`;
         }).join('');
     }
+    renderMatchPagination('completed-matches-pagination', currentCompletedMatchesPage, sorted.length, 'renderCompletedMatches');
+}
 
-    let upcoming = getUpcomingMatches();
-    let upcomingTbody = document.querySelector('#table-upcoming-matches tbody');
+function renderUpcomingMatches(page = currentUpcomingMatchesPage) {
+    let upcoming = sortMatchesByTime(getUpcomingMatches());
+    let teams = getTeams();
+    let tbody = document.querySelector('#table-upcoming-matches tbody');
     let showOpsCol = (isAdminLoggedIn || currentRefUser);
+    const totalPages = Math.max(1, Math.ceil(upcoming.length / MATCHES_PER_PAGE));
+    currentUpcomingMatchesPage = Math.min(Math.max(1, page), totalPages);
+    const pageData = upcoming.slice((currentUpcomingMatchesPage - 1) * MATCHES_PER_PAGE, currentUpcomingMatchesPage * MATCHES_PER_PAGE);
 
     if (upcoming.length === 0) {
         let colSpan = showOpsCol ? 7 : 6;
-        upcomingTbody.innerHTML = `<tr><td colspan="${colSpan}">暂无即将进行的比赛</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="${colSpan}">暂无即将进行的比赛</td></tr>`;
     } else {
-        upcomingTbody.innerHTML = upcoming.map((m) => {
+        tbody.innerHTML = pageData.map((m) => {
             let t1Name = teams[m.team1]?.name || m.team1;
             let t2Name = teams[m.team2]?.name || m.team2;
-
-            // 渲染主裁判单元格
             let refCellHtml = m.referee || '待定';
             if (currentRefUser) {
-                if (!m.referee) {
-                    refCellHtml = `<button onclick="signupMainRef('${m.id}')" style="background-color:#28a745; padding:3px 8px; font-size:12px;">报名主裁</button>`;
-                } else if (m.referee === currentRefUser.name) {
-                    refCellHtml = `<b>${m.referee}</b> <button onclick="cancelMainRef('${m.id}')" style="background-color:#dc3545; padding:2px 6px; font-size:11px; margin-left:4px;">取消</button>`;
-                }
+                if (!m.referee) refCellHtml = `<button onclick="signupMainRef('${m.id}')" style="background-color:#28a745; padding:3px 8px; font-size:12px;">报名主裁</button>`;
+                else if (m.referee === currentRefUser.name) refCellHtml = `<b>${m.referee}</b> <button onclick="cancelMainRef('${m.id}')" style="background-color:#dc3545; padding:2px 6px; font-size:11px; margin-left:4px;">取消</button>`;
             }
-
-            // 渲染助理裁判单元格
             let assistArr = m.assistRefs ? m.assistRefs.split(',').map(s => s.trim()).filter(Boolean) : [];
             let assistCellHtml = assistArr.length > 0 ? assistArr.join(', ') : '待定';
             if (currentRefUser) {
                 let isSigned = assistArr.includes(currentRefUser.name);
-                if (isSigned) {
-                    assistCellHtml = assistArr.map(name => name === currentRefUser.name ? `<b>${name}</b> <button onclick="cancelAssistRef('${m.id}')" style="background-color:#dc3545; padding:2px 6px; font-size:11px;">取消</button>` : name).join(', ');
-                } else if (assistArr.length < 2) {
+                if (isSigned) assistCellHtml = assistArr.map(name => name === currentRefUser.name ? `<b>${name}</b> <button onclick="cancelAssistRef('${m.id}')" style="background-color:#dc3545; padding:2px 6px; font-size:11px;">取消</button>` : name).join(', ');
+                else if (assistArr.length < 2) {
                     let prefix = assistArr.length > 0 ? assistArr.join(', ') + ', ' : '';
                     assistCellHtml = `${prefix}<button onclick="signupAssistRef('${m.id}')" style="background-color:#17a2b8; padding:3px 8px; font-size:12px;">报名助理裁判</button>`;
                 }
             }
-
-            // 操作列按钮逻辑
             let finishBtn = (currentRefUser || isAdminLoggedIn) ? `<button onclick="openAddMatchModal('${m.id}')" style="background-color:#28a745; color:white; padding:4px 8px; margin-right:5px;">完赛</button>` : '';
             let editBtn = isAdminLoggedIn ? `<button onclick="openScheduleMatchModal('${m.id}')" style="background-color:#ffc107; color:#212529; padding:4px 8px; margin-right:5px;">编辑</button>` : '';
             let delBtn = isAdminLoggedIn ? `<button onclick="deleteUpcomingMatch('${m.id}')" style="background-color:#dc3545; color:white; padding:4px 8px;">删除</button>` : '';
-
             let opsColStyle = showOpsCol ? '' : 'style="display:none;"';
-
-            return `<tr>
-                <td>${t1Name} VS ${t2Name}</td>
-                <td>${m.time}</td>
-                <td>${m.location}</td>
-                <td>${refCellHtml}</td>
-                <td>${assistCellHtml}</td>
-                <td>${m.notes}</td>
-                <td ${opsColStyle} style="min-width: 140px;">${finishBtn}${editBtn}${delBtn}</td>
-            </tr>`;
+            return `<tr><td>${t1Name} VS ${t2Name}</td><td>${m.time}</td><td>${m.location}</td><td>${refCellHtml}</td><td>${assistCellHtml}</td><td>${m.notes}</td><td ${opsColStyle} style="min-width: 140px;">${finishBtn}${editBtn}${delBtn}</td></tr>`;
         }).join('');
     }
+    renderMatchPagination('upcoming-matches-pagination', currentUpcomingMatchesPage, upcoming.length, 'renderUpcomingMatches');
+}
+
+function renderMatchList() {
+    renderCompletedMatches(currentCompletedMatchesPage);
+    renderUpcomingMatches(currentUpcomingMatchesPage);
 }
 
 function signupMainRef(matchId) {
@@ -1663,22 +1834,46 @@ function openMatchDetailsModal(index) {
         timelineHtml = '<div style="text-align: center; color: #999; padding: 20px;">本场比赛暂无记录的进球和红黄牌事件。</div>';
     } else {
         timelineHtml = events.map(ev => {
-            let isHome = ev.teamAbbr === match.team1;
+            // 普通进球/点球：事件球队就是进球球队。
+            // 乌龙球：ev.teamAbbr 是“乌龙球员所属球队”，真正取得进球的是对方，
+            // 因此时间轴显示位置必须反转。
+            let scoringTeamAbbr = ev.type === '乌龙'
+                ? (ev.teamAbbr === match.team1 ? match.team2 : match.team1)
+                : (ev.goalTeamAbbr || ev.teamAbbr);
+
+            let isHome = scoringTeamAbbr === match.team1;
             let sideClass = isHome ? 'left' : 'right';
 
             let iconStr, iconClass = '';
-            if (ev.type === '进球') { iconStr = '⚽'; }
-            else if (ev.type === '红牌') { iconStr = '🟥'; iconClass = 'card-red'; }
-            else { iconStr = '🟨'; iconClass = 'card-yellow'; }
+            if (ev.type === '点球') {
+                iconStr = '⚽';
+                iconClass = 'penalty-goal-icon';
+            } else if (ev.type === '点球不进') {
+                iconStr = '⚽';
+                iconClass = 'penalty-miss-icon';
+            } else if (ev.type === '乌龙' || ev.type === '进球') {
+                iconStr = '⚽';
+            } else if (ev.type === '红牌') {
+                iconStr = '🟥';
+                iconClass = 'card-red';
+            } else {
+                iconStr = '🟨';
+                iconClass = 'card-yellow';
+            }
 
             let targetTeam = teams[ev.teamAbbr];
-            let player = targetTeam ? targetTeam.players.find(p => p.id === ev.playerId) : null;
+            let player = targetTeam ? targetTeam.players.find(p => String(p.id) === String(ev.playerId)) : null;
             let playerName = player ? player.name : '未知球员';
             let timeStr = ev.time ? `${ev.time}'` : '';
 
+            let displayType = ev.type;
+            if (ev.type === '乌龙') {
+                displayType = '乌龙';
+            }
+
             let contentInnerHtml = isHome
-                ? `<strong>${playerName}</strong> <span style="color:#777; font-size:13px;">(${ev.type})</span> <span class="event-time">${timeStr}</span>`
-                : `<span class="event-time">${timeStr}</span> <strong>${playerName}</strong> <span style="color:#777; font-size:13px;">(${ev.type})</span>`;
+                ? `<strong>${playerName}</strong> <span style="color:#777; font-size:13px;">(${displayType})</span> <span class="event-time">${timeStr}</span>`
+                : `<span class="event-time">${timeStr}</span> <strong>${playerName}</strong> <span style="color:#777; font-size:13px;">(${displayType})</span>`;
 
             let noteHtml = ev.note ? `<div style="font-size:12px; margin-top:6px; color:#666;">📝 备注: ${ev.note}</div>` : '';
 
@@ -1708,6 +1903,7 @@ async function deleteMatch(index) {
     revertMatchStats(match, teams);
 
     matches.splice(index, 1);
+    matches = sortMatchesByTime(matches);
     saveMatches(matches);
     saveTeams(teams);
 
@@ -1725,25 +1921,39 @@ async function openScheduleMatchModal(editId = null) {
     let t2Select = document.getElementById('sm-team2');
     t1Select.innerHTML = t2Select.innerHTML = teams.map(t => `<option value="${t.abbr}">${t.name}</option>`).join('');
 
-    editingUpcomingId = typeof editId === 'string' ? editId : null;
+    editingUpcomingId = editId !== null && editId !== undefined ? String(editId) : null;
+    editingUpcomingOriginalTime = null;
     document.getElementById('modal-schedule-match-title').innerText = editingUpcomingId ? '编辑安排的比赛' : '安排即将进行的比赛';
     document.getElementById('btn-submit-schedule').innerText = editingUpcomingId ? '保存修改' : '安排比赛';
 
     if (editingUpcomingId) {
         let upcoming = getUpcomingMatches();
-        let match = upcoming.find(m => m.id === editingUpcomingId);
+        let match = upcoming.find(m => String(m.id) === editingUpcomingId);
         if (match) {
             t1Select.value = match.team1;
             t2Select.value = match.team2;
-            document.getElementById('sm-time').value = match.time ? match.time.replace(' ', 'T') : '';
+            editingUpcomingOriginalTime = match.time != null ? String(match.time).trim() : '';
+
+            // datetime-local 必须是 YYYY-MM-DDTHH:mm。
+            // 对旧数据中“只有日期”的情况补 00:00，仅用于表单显示，不直接覆盖原始值。
+            document.getElementById('sm-time').value = normalizeMatchTimeForInput(editingUpcomingOriginalTime);
             document.getElementById('sm-location').value = match.location || '';
             document.getElementById('sm-referee').value = match.referee || '';
             document.getElementById('sm-assist-refs').value = match.assistRefs || '';
             document.getElementById('sm-notes').value = match.notes || '';
+        } else {
+            editingUpcomingId = null;
+            editingUpcomingOriginalTime = null;
         }
-    } else {
+    }
+
+    if (!editingUpcomingId) {
         t2Select.selectedIndex = 1;
-        document.getElementById('sm-time').value = '';
+        const now = new Date();
+        const yyyy = now.getFullYear();
+        const mm = String(now.getMonth() + 1).padStart(2, '0');
+        const dd = String(now.getDate()).padStart(2, '0');
+        document.getElementById('sm-time').value = `${yyyy}-${mm}-${dd}T18:00`;
         document.getElementById('sm-location').value = '';
         document.getElementById('sm-referee').value = '';
         document.getElementById('sm-assist-refs').value = '';
@@ -1753,16 +1963,55 @@ async function openScheduleMatchModal(editId = null) {
     document.getElementById('modal-schedule-match').style.display = 'block';
 }
 
+function normalizeMatchTimeForInput(rawTime) {
+    if (!rawTime) return '';
+    let value = String(rawTime).trim().replace(/\//g, '-').replace('T', ' ');
+
+    // 已经包含日期+时间
+    const full = value.match(/^(\d{4}-\d{1,2}-\d{1,2})\s+(\d{1,2}):(\d{2})(?::\d{2})?/);
+    if (full) {
+        return `${full[1]}T${String(full[2]).padStart(2, '0')}:${full[3]}`;
+    }
+
+    // 只有日期：保留日期，并在 datetime-local 中显示为 00:00
+    const dateOnly = value.match(/^(\d{4}-\d{1,2}-\d{1,2})$/);
+    if (dateOnly) {
+        const parts = dateOnly[1].split('-').map(v => String(v).padStart(2, '0'));
+        return `${parts[0]}-${parts[1]}-${parts[2]}T00:00`;
+    }
+
+    // 只有时间：补当前日期
+    const timeOnly = value.match(/^(\d{1,2}):(\d{2})(?::\d{2})?$/);
+    if (timeOnly) {
+        const now = new Date();
+        const datePart = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+        return `${datePart}T${String(timeOnly[1]).padStart(2,'0')}:${timeOnly[2]}`;
+    }
+
+    return '';
+}
+
 function submitScheduleMatch() {
     let t1Abbr = document.getElementById('sm-team1').value;
     let t2Abbr = document.getElementById('sm-team2').value;
     if(t1Abbr === t2Abbr) return alert("参赛队伍不能相同！");
 
     let upcoming = getUpcomingMatches();
+    let inputTime = document.getElementById('sm-time').value;
+    let savedTime = inputTime ? inputTime.replace('T', ' ') : '';
+
+    // 如果旧记录原本只有日期，打开编辑时显示为 00:00；若用户未修改，则继续保存为原来的日期格式，避免无意义地改动旧数据。
+    if (editingUpcomingOriginalTime) {
+        const originalNormalized = normalizeMatchTimeForInput(editingUpcomingOriginalTime);
+        if (originalNormalized && inputTime === originalNormalized && /^\d{4}[-/]\d{1,2}[-/]\d{1,2}$/.test(editingUpcomingOriginalTime)) {
+            savedTime = editingUpcomingOriginalTime;
+        }
+    }
+
     let matchData = {
         team1: t1Abbr,
         team2: t2Abbr,
-        time: document.getElementById('sm-time').value.replace('T', ' '),
+        time: savedTime,
         location: document.getElementById('sm-location').value,
         referee: document.getElementById('sm-referee').value,
         assistRefs: document.getElementById('sm-assist-refs').value,
@@ -1777,12 +2026,14 @@ function submitScheduleMatch() {
         }
         msg = "比赛修改成功！";
         editingUpcomingId = null;
+        editingUpcomingOriginalTime = null;
     } else {
         matchData.id = Date.now().toString();
         upcoming.push(matchData);
         msg = "比赛安排成功！";
     }
 
+    upcoming = sortMatchesByTime(upcoming);
     saveUpcomingMatches(upcoming);
     closeModal('modal-schedule-match');
     renderMatchList();
@@ -1885,6 +2136,17 @@ function handleMatchJsonImport(event) {
 
             currentEvents = [];
             if (data.events && Array.isArray(data.events)) {
+                // 裁判APP中 group C 的“开始”事件记录比赛实际开始时间。
+                const startEvent = data.events.find(ev =>
+                    ev && ev.team === 'C' && String(ev.eventType || '').includes('开始')
+                );
+                if (startEvent) {
+                    let rawStart = startEvent.time || startEvent.duration || startEvent.timestamp || startEvent.datetime || '';
+                    rawStart = String(rawStart).trim();
+                    if (rawStart) {
+                        document.getElementById('am-time').value = normalizeMatchTimeForInput(rawStart);
+                    }
+                }
                 data.events.forEach(ev => {
                     if (ev.team === 'C') return;
 
@@ -1892,7 +2154,10 @@ function handleMatchJsonImport(event) {
                     if (!teamAbbr) return;
 
                     let type = '';
-                    if (ev.eventType.includes('进球') || ev.eventType.includes('点球') || ev.eventType.includes('⚽')) type = '进球';
+                    if (ev.eventType.includes('点球不进')) type = '点球不进';
+                    else if (ev.eventType.includes('乌龙')) type = '乌龙';
+                    else if (ev.eventType.includes('点球')) type = '点球';
+                    else if (ev.eventType.includes('进球') || ev.eventType.includes('⚽')) type = '进球';
                     else if (ev.eventType.includes('红牌') || ev.eventType.includes('🟥')) type = '红牌';
                     else if (ev.eventType.includes('黄牌') || ev.eventType.includes('🟨')) type = '黄牌';
                     else return;
@@ -1923,9 +2188,28 @@ function handleMatchJsonImport(event) {
 // --- 通知公告逻辑 ---
 let currentAnnouncementsPage = 1;
 const ANNOUNCEMENTS_PER_PAGE = 10;
+let currentEditingAnnouncementId = null;
 
-async function openPublishAnnouncementModal() {
-    if (!(await authenticate())) return;
+function getAnnouncementTime(dateValue) {
+    if (!dateValue) return '未记录';
+    return String(dateValue).replace('T', ' ');
+}
+
+function escapeHtml(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+function openPublishAnnouncementModal() {
+    currentEditingAnnouncementId = null;
+
+    document.getElementById('modal-publish-announcement-title').innerText = '发布通知公告';
+    document.getElementById('btn-submit-announcement').innerText = '发布';
+
     document.getElementById('pa-title').value = '';
     document.getElementById('pa-image').value = '';
     document.getElementById('pa-summary').value = '';
@@ -1933,28 +2217,76 @@ async function openPublishAnnouncementModal() {
     document.getElementById('modal-publish-announcement').style.display = 'block';
 }
 
+async function openEditAnnouncementModal(id) {
+    if (!(await authenticate())) return;
+
+    let announcements = getAnnouncements();
+    let announcement = announcements.find(a => String(a.id) === String(id));
+    if (!announcement) return alert('未找到指定的公告！');
+
+    currentEditingAnnouncementId = String(id);
+
+    document.getElementById('modal-publish-announcement-title').innerText = '编辑通知公告';
+    document.getElementById('btn-submit-announcement').innerText = '保存修改';
+
+    document.getElementById('pa-title').value = announcement.title || '';
+    document.getElementById('pa-image').value = announcement.image || '';
+    document.getElementById('pa-summary').value = announcement.summary || '';
+    document.getElementById('pa-content').value = announcement.content || '';
+
+    document.getElementById('modal-publish-announcement').style.display = 'block';
+}
+
 function submitAnnouncement() {
-    let title = document.getElementById('pa-title').value;
-    let image = document.getElementById('pa-image').value || 'https://placehold.co/400x200/e9ecef/666?text=Announcement';
-    let summary = document.getElementById('pa-summary').value;
+    let title = document.getElementById('pa-title').value.trim();
+    let image = document.getElementById('pa-image').value.trim() ||
+        'https://placehold.co/400x200/e9ecef/666?text=Announcement';
+    let summary = document.getElementById('pa-summary').value.trim();
     let content = document.getElementById('pa-content').value;
 
     if (!title) return alert("标题不能为空");
 
-    let announcement = {
-        id: Date.now().toString(),
-        title, image, summary, content,
-        date: new Date().toLocaleDateString()
-    };
-
     let announcements = getAnnouncements();
-    announcements.unshift(announcement);
-    saveAnnouncements(announcements);
+    let now = new Date().toLocaleString('zh-CN', { hour12: false });
 
-    closeModal('modal-publish-announcement');
-    currentAnnouncementsPage = 1;
-    renderAnnouncements();
-    alert("公告发布成功！");
+    if (currentEditingAnnouncementId !== null) {
+        let index = announcements.findIndex(a => String(a.id) === String(currentEditingAnnouncementId));
+        if (index === -1) return alert("未找到需要编辑的公告！");
+
+        announcements[index] = {
+            ...announcements[index],
+            title,
+            image,
+            summary,
+            content,
+            updatedAt: now
+        };
+
+        saveAnnouncements(announcements);
+        closeModal('modal-publish-announcement');
+        renderAnnouncements();
+        alert("公告修改成功！");
+    } else {
+        let announcement = {
+            id: Date.now().toString(),
+            title,
+            image,
+            summary,
+            content,
+            date: now,
+            updatedAt: now
+        };
+
+        announcements.unshift(announcement);
+        saveAnnouncements(announcements);
+
+        closeModal('modal-publish-announcement');
+        currentAnnouncementsPage = 1;
+        renderAnnouncements();
+        alert("公告发布成功！");
+    }
+
+    currentEditingAnnouncementId = null;
 }
 
 function renderAnnouncements(page = currentAnnouncementsPage) {
@@ -1963,7 +2295,7 @@ function renderAnnouncements(page = currentAnnouncementsPage) {
     let pagination = document.getElementById('announcements-pagination');
 
     if (announcements.length === 0) {
-        container.innerHTML = '<div style="grid-column: 1 / -1; background: white; padding: 30px; text-align: center; color: #666; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);"><p>暂无公告</p></div>';
+        container.innerHTML = '<div style="background: white; padding: 30px; text-align: center; color: #666; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);"><p>暂无公告</p></div>';
         pagination.innerHTML = '';
         return;
     }
@@ -1977,16 +2309,33 @@ function renderAnnouncements(page = currentAnnouncementsPage) {
     let end = start + ANNOUNCEMENTS_PER_PAGE;
     let pageData = announcements.slice(start, end);
 
-    container.innerHTML = pageData.map(a => `
-        <div class="card">
-            <img src="${a.image}" class="card-img" onerror="this.src='https://placehold.co/400x200/e9ecef/666?text=Image+Not+Found'">
-            <div class="card-content">
-                <h3 class="card-title">${a.title}</h3>
-                <p class="card-summary">${a.summary}</p>
-                <div class="card-date">${a.date}</div>
+    container.innerHTML = pageData.map(a => {
+        let id = escapeHtml(a.id);
+        let title = escapeHtml(a.title || '无标题');
+        let summary = escapeHtml(a.summary || '暂无简介');
+        let image = escapeHtml(a.image || 'https://placehold.co/400x200/e9ecef/666?text=Announcement');
+        let date = escapeHtml(getAnnouncementTime(a.date));
+
+        let adminActions = isAdminLoggedIn ? `
+            <div class="announcement-admin-actions" onclick="event.stopPropagation();">
+                <button class="announcement-edit-btn" onclick="openEditAnnouncementModal('${id}')">编辑</button>
+                <button class="announcement-delete-btn" onclick="deleteAnnouncement('${id}')">删除</button>
             </div>
-        </div>
-    `).join('');
+        ` : '';
+
+        return `
+            <div class="card announcement-card" onclick="openAnnouncementDetailsModal('${id}')">
+                <img src="${image}" class="card-img"
+                     onerror="this.src='https://placehold.co/400x200/e9ecef/666?text=Image+Not+Found'">
+                <div class="card-content">
+                    <h3 class="card-title">${title}</h3>
+                    <p class="card-summary">${summary}</p>
+                    <div class="card-date">发布时间：${date}</div>
+                </div>
+                ${adminActions}
+            </div>
+        `;
+    }).join('');
 
     let pageHtml = '';
     pageHtml += `<button class="page-btn" ${page === 1 ? 'disabled' : ''} onclick="renderAnnouncements(${page - 1})">上一页</button>`;
@@ -2001,6 +2350,58 @@ function renderAnnouncements(page = currentAnnouncementsPage) {
 
     pageHtml += `<button class="page-btn" ${page === totalPages ? 'disabled' : ''} onclick="renderAnnouncements(${page + 1})">下一页</button>`;
     pagination.innerHTML = pageHtml;
+}
+
+function openAnnouncementDetailsModal(id) {
+    let announcements = getAnnouncements();
+    let announcement = announcements.find(a => String(a.id) === String(id));
+    if (!announcement) return alert('未找到指定的公告！');
+
+    document.getElementById('ad-title').innerText = announcement.title || '无标题';
+
+    let editTime = announcement.updatedAt || announcement.date || '未记录';
+    document.getElementById('ad-meta').innerText = `编辑时间：${getAnnouncementTime(editTime)}`;
+
+    let markdown = announcement.content || '暂无正文';
+
+    try {
+        marked.setOptions({
+            breaks: true,
+            gfm: true
+        });
+
+        let rendered = marked.parse(markdown);
+
+        // Markdown 允许标题、列表、代码块、表格等常用语法，
+        // 但最终插入 DOM 前通过 DOMPurify 清理危险 HTML。
+        document.getElementById('ad-content').innerHTML =
+            DOMPurify.sanitize(rendered);
+    } catch (err) {
+        // 如果 Markdown 库加载失败，至少保证正文以纯文本安全显示。
+        document.getElementById('ad-content').innerText = markdown;
+    }
+
+    document.getElementById('modal-announcement-details').style.display = 'block';
+}
+
+async function deleteAnnouncement(id) {
+    if (!(await authenticate())) return;
+
+    let announcements = getAnnouncements();
+    let index = announcements.findIndex(a => String(a.id) === String(id));
+    if (index === -1) return alert('未找到指定的公告！');
+
+    let title = announcements[index].title || '无标题';
+    if (!confirm(`确定要删除公告【${title}】吗？\n删除后将同步保存，无法自动恢复。`)) return;
+
+    announcements.splice(index, 1);
+    saveAnnouncements(announcements);
+
+    let totalPages = Math.max(1, Math.ceil(announcements.length / ANNOUNCEMENTS_PER_PAGE));
+    if (currentAnnouncementsPage > totalPages) currentAnnouncementsPage = totalPages;
+
+    renderAnnouncements();
+    alert('公告已成功删除！');
 }
 
 // --- 裁判员管理逻辑 (管理 Tab) ---
