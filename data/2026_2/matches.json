@@ -315,6 +315,16 @@
     ]
   },
   {
+    "time": "2026-09-20T15:45",
+    "referee": "周子意",
+    "assistRefs": "",
+    "score": "3:0",
+    "refFee": 0,
+    "team1": "XZD",
+    "team2": "PSG",
+    "events": []
+  },
+  {
     "time": "2026-09-20T15:46",
     "referee": "刘俊辉",
     "assistRefs": "",
@@ -347,16 +357,6 @@
     ]
   },
   {
-    "time": "2026-09-20T15:45",
-    "referee": "周子意",
-    "assistRefs": "",
-    "score": "3:0",
-    "refFee": 0,
-    "team1": "XZD",
-    "team2": "PSG",
-    "events": []
-  },
-  {
     "time": "2026-09-21T18:12",
     "referee": "张兴源",
     "assistRefs": "",
@@ -385,6 +385,46 @@
         "playerId": "10",
         "teamAbbr": "XWM",
         "note": ""
+      }
+    ]
+  },
+  {
+    "time": "2026-09-21T18:16",
+    "referee": "都熠桐",
+    "assistRefs": "",
+    "score": "2:2",
+    "refFee": 30,
+    "team1": "JGD",
+    "team2": "DSM",
+    "events": [
+      {
+        "type": "进球",
+        "time": "12:07",
+        "playerId": "7",
+        "teamAbbr": "JGD",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "19:50",
+        "playerId": "7",
+        "teamAbbr": "JGD",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "24:14",
+        "playerId": "5",
+        "teamAbbr": "DSM",
+        "note": ""
+      },
+      {
+        "type": "点球",
+        "time": "25:30",
+        "playerId": "8",
+        "teamAbbr": "DSM",
+        "note": "",
+        "goalTeamAbbr": "DSM"
       }
     ]
   },
@@ -431,45 +471,6 @@
         "playerId": "6",
         "teamAbbr": "XJ",
         "note": ""
-      }
-    ]
-  },
-  {
-    "time": "2026-09-21T18:16",
-    "referee": "都熠桐",
-    "assistRefs": "",
-    "score": "2:2",
-    "refFee": 30,
-    "team1": "JGD",
-    "team2": "DSM",
-    "events": [
-      {
-        "type": "进球",
-        "time": "12:07",
-        "playerId": "7",
-        "teamAbbr": "JGD",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "19:50",
-        "playerId": "7",
-        "teamAbbr": "JGD",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "24:14",
-        "playerId": "5",
-        "teamAbbr": "DSM",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "25:30",
-        "playerId": "8",
-        "teamAbbr": "DSM",
-        "note": "点球"
       }
     ]
   },
