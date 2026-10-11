@@ -1,5 +1,15 @@
 [
   {
+    "id": "179002786698934",
+    "team1": "XWM",
+    "team2": "JGD",
+    "time": "2026-10-12 17:00",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
     "id": "179002786698952",
     "team1": "BGT",
     "team2": "XZD",
@@ -115,16 +125,6 @@
     "team2": "BGT",
     "time": "2026-10-28 18:00",
     "location": "南",
-    "referee": "",
-    "assistRefs": "",
-    "notes": ""
-  },
-  {
-    "id": "179002786698934",
-    "team1": "XWM",
-    "team2": "JGD",
-    "time": "2026-10-29 17:00",
-    "location": "北",
     "referee": "",
     "assistRefs": "",
     "notes": ""
