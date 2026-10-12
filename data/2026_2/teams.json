@@ -1359,7 +1359,7 @@
         "id": "3",
         "name": "胡子净",
         "docId": "",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1431,13 +1431,13 @@
     "points": 1,
     "wins": 0,
     "draws": 1,
-    "losses": 1,
-    "goalsFor": 3,
-    "goalsAgainst": 4,
+    "losses": 2,
+    "goalsFor": 4,
+    "goalsAgainst": 6,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 120
+    "refFeeBalance": 105
   },
   "DPG": {
     "abbr": "DPG",
@@ -2826,7 +2826,7 @@
         "id": "10",
         "name": "郑梓健",
         "docId": "122026010153",
-        "goals": 1,
+        "goals": 3,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2886,15 +2886,15 @@
         "isEligible": true
       }
     ],
-    "points": 6,
-    "wins": 2,
+    "points": 9,
+    "wins": 3,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 2,
-    "goalsAgainst": 0,
+    "goalsFor": 4,
+    "goalsAgainst": 1,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 115
+    "refFeeBalance": 100
   }
 }
