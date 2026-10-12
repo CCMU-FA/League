@@ -646,5 +646,40 @@
         "note": ""
       }
     ]
+  },
+  {
+    "time": "2026-10-12T17:22",
+    "referee": "张兴源",
+    "assistRefs": "",
+    "score": "2:1",
+    "refFee": 30,
+    "team1": "XWM",
+    "team2": "JGD",
+    "events": [
+      {
+        "type": "进球",
+        "time": "3:48",
+        "playerId": "3",
+        "teamAbbr": "JGD",
+        "goalTeamAbbr": "JGD",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "26:36",
+        "playerId": "10",
+        "teamAbbr": "XWM",
+        "goalTeamAbbr": "XWM",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "39:49",
+        "playerId": "10",
+        "teamAbbr": "XWM",
+        "goalTeamAbbr": "XWM",
+        "note": ""
+      }
+    ]
   }
 ]
