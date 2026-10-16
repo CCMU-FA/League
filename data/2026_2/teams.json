@@ -407,7 +407,7 @@
         "docId": "2511002",
         "goals": 1,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -585,13 +585,13 @@
     "points": 6,
     "wins": 2,
     "draws": 0,
-    "losses": 1,
+    "losses": 2,
     "goalsFor": 12,
-    "goalsAgainst": 2,
+    "goalsAgainst": 8,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 100
+    "refFeeBalance": 25
   },
   "BGT": {
     "abbr": "BGT",
@@ -2781,7 +2781,7 @@
         "id": "20",
         "name": "毕宸睿",
         "docId": "2637010",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2790,7 +2790,7 @@
         "id": "28",
         "name": "方天",
         "docId": "122026010247",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2826,7 +2826,7 @@
         "id": "10",
         "name": "郑梓健",
         "docId": "122026010153",
-        "goals": 3,
+        "goals": 4,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2835,7 +2835,7 @@
         "id": "4",
         "name": "李唯豪",
         "docId": "2201037",
-        "goals": 0,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2886,15 +2886,15 @@
         "isEligible": true
       }
     ],
-    "points": 9,
-    "wins": 3,
+    "points": 12,
+    "wins": 4,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 4,
+    "goalsFor": 10,
     "goalsAgainst": 1,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 100
+    "refFeeBalance": 25
   }
 }
