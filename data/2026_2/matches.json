@@ -683,6 +683,33 @@
     ]
   },
   {
+    "time": "2026-10-22T17:00",
+    "referee": "肖天时",
+    "assistRefs": "",
+    "score": "0:2",
+    "refFee": 150,
+    "team1": "BX",
+    "team2": "JGD",
+    "events": [
+      {
+        "type": "进球",
+        "time": "14",
+        "playerId": "18",
+        "teamAbbr": "JGD",
+        "goalTeamAbbr": "JGD",
+        "note": "点球"
+      },
+      {
+        "type": "进球",
+        "time": "20",
+        "playerId": "6",
+        "teamAbbr": "JGD",
+        "goalTeamAbbr": "JGD",
+        "note": ""
+      }
+    ]
+  },
+  {
     "time": "2026-10-25T17:32",
     "referee": "张兴源",
     "assistRefs": "",
