@@ -20,16 +20,6 @@
     "notes": ""
   },
   {
-    "id": "179002786698922",
-    "team1": "DPG",
-    "team2": "DSM",
-    "time": "2026-10-23 18:00",
-    "location": "南",
-    "referee": "",
-    "assistRefs": "",
-    "notes": ""
-  },
-  {
     "id": "179002786698927",
     "team1": "XJ",
     "team2": "PSG",
@@ -38,6 +28,16 @@
     "referee": "",
     "assistRefs": "",
     "notes": ""
+  },
+  {
+    "id": "179002786698922",
+    "team1": "DPG",
+    "team2": "DSM",
+    "time": "2026-10-25 17:00",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "已延期"
   },
   {
     "id": "179002786698926",
