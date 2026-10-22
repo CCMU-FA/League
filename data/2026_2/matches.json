@@ -710,6 +710,59 @@
     ]
   },
   {
+    "time": "2026-10-22T18:00",
+    "referee": "赵立强",
+    "assistRefs": "",
+    "score": "5:0",
+    "refFee": 150,
+    "team1": "BGT",
+    "team2": "XZD",
+    "events": [
+      {
+        "type": "进球",
+        "time": "47",
+        "playerId": "7",
+        "teamAbbr": "BGT",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "38",
+        "playerId": "7",
+        "teamAbbr": "BGT",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "33",
+        "playerId": "7",
+        "teamAbbr": "BGT",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "黄牌",
+        "time": "30",
+        "playerId": "27",
+        "teamAbbr": "XZD",
+        "note": "黄牌🟨"
+      },
+      {
+        "type": "进球",
+        "time": "21",
+        "playerId": "7",
+        "teamAbbr": "BGT",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "16",
+        "playerId": "7",
+        "teamAbbr": "BGT",
+        "note": "进球⚽️"
+      }
+    ]
+  },
+  {
     "time": "2026-10-25T17:32",
     "referee": "张兴源",
     "assistRefs": "",
