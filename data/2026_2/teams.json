@@ -1437,7 +1437,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 30
+    "refFeeBalance": 90
   },
   "DPG": {
     "abbr": "DPG",
@@ -1950,7 +1950,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 45
+    "refFeeBalance": 105
   },
   "XZD": {
     "abbr": "XZD",
