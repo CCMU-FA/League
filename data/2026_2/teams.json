@@ -621,7 +621,7 @@
         "id": "7",
         "name": "里扎别克·胡斯曼",
         "docId": "",
-        "goals": 1,
+        "goals": 5,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2000,7 +2000,7 @@
         "docId": "",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -2135,7 +2135,7 @@
     "draws": 0,
     "losses": 1,
     "goalsFor": 4,
-    "goalsAgainst": 2,
+    "goalsAgainst": 5,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
