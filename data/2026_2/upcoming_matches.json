@@ -20,16 +20,6 @@
     "notes": ""
   },
   {
-    "id": "179002786698922",
-    "team1": "DPG",
-    "team2": "DSM",
-    "time": "2026-10-25 17:00",
-    "location": "南",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "已延期"
-  },
-  {
     "id": "179002786698930",
     "team1": "DPG",
     "team2": "MDQ",
@@ -325,6 +315,16 @@
     "team2": "SPR",
     "time": "",
     "location": "",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "延期至待定时间"
+  },
+  {
+    "id": "179002786698922",
+    "team1": "DPG",
+    "team2": "DSM",
+    "time": "",
+    "location": "南",
     "referee": "",
     "assistRefs": "",
     "notes": "延期至待定时间"
