@@ -683,6 +683,66 @@
     ]
   },
   {
+    "time": "2026-10-16T17:32",
+    "referee": "张兴源",
+    "assistRefs": "",
+    "score": "0:6",
+    "refFee": 30,
+    "team1": "ZDY",
+    "team2": "XWM",
+    "events": [
+      {
+        "type": "进球",
+        "time": "45",
+        "playerId": "20",
+        "teamAbbr": "XWM",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "41",
+        "playerId": "10",
+        "teamAbbr": "XWM",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "黄牌",
+        "time": "31",
+        "playerId": "19",
+        "teamAbbr": "ZDY",
+        "note": "黄牌🟨"
+      },
+      {
+        "type": "进球",
+        "time": "26",
+        "playerId": "7",
+        "teamAbbr": "XWM",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "20",
+        "playerId": "4",
+        "teamAbbr": "XWM",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "5",
+        "playerId": "28",
+        "teamAbbr": "XWM",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "3",
+        "playerId": "4",
+        "teamAbbr": "XWM",
+        "note": "进球⚽️"
+      }
+    ]
+  },
+  {
     "time": "2026-10-22T17:00",
     "referee": "肖天时",
     "assistRefs": "",
@@ -852,66 +912,6 @@
         "teamAbbr": "BQB",
         "goalTeamAbbr": "BQB",
         "note": ""
-      }
-    ]
-  },
-  {
-    "time": "2026-10-25T17:32",
-    "referee": "张兴源",
-    "assistRefs": "",
-    "score": "0:6",
-    "refFee": 30,
-    "team1": "ZDY",
-    "team2": "XWM",
-    "events": [
-      {
-        "type": "进球",
-        "time": "45",
-        "playerId": "20",
-        "teamAbbr": "XWM",
-        "note": "进球⚽️"
-      },
-      {
-        "type": "进球",
-        "time": "41",
-        "playerId": "10",
-        "teamAbbr": "XWM",
-        "note": "进球⚽️"
-      },
-      {
-        "type": "黄牌",
-        "time": "31",
-        "playerId": "19",
-        "teamAbbr": "ZDY",
-        "note": "黄牌🟨"
-      },
-      {
-        "type": "进球",
-        "time": "26",
-        "playerId": "7",
-        "teamAbbr": "XWM",
-        "note": "进球⚽️"
-      },
-      {
-        "type": "进球",
-        "time": "20",
-        "playerId": "4",
-        "teamAbbr": "XWM",
-        "note": "进球⚽️"
-      },
-      {
-        "type": "进球",
-        "time": "5",
-        "playerId": "28",
-        "teamAbbr": "XWM",
-        "note": "进球⚽️"
-      },
-      {
-        "type": "进球",
-        "time": "3",
-        "playerId": "4",
-        "teamAbbr": "XWM",
-        "note": "进球⚽️"
       }
     ]
   }
