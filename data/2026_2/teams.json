@@ -207,7 +207,7 @@
         "id": "29",
         "name": "周子意",
         "docId": "",
-        "goals": 0,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -225,7 +225,7 @@
         "id": "21",
         "name": "杜天雨",
         "docId": "",
-        "goals": 2,
+        "goals": 4,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -297,7 +297,7 @@
         "id": "17",
         "name": "苏绍轩",
         "docId": "",
-        "goals": 0,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -375,16 +375,16 @@
         "isEligible": true
       }
     ],
-    "points": 3,
-    "wins": 1,
+    "points": 6,
+    "wins": 2,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 4,
-    "goalsAgainst": 1,
+    "goalsFor": 10,
+    "goalsAgainst": 4,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 130
+    "refFeeBalance": 110
   },
   "ZDY": {
     "abbr": "ZDY",
@@ -2154,7 +2154,7 @@
         "goals": 0,
         "redCards": 1,
         "yellowCards": 0,
-        "isEligible": false
+        "isEligible": true
       },
       {
         "id": "8",
@@ -2241,7 +2241,7 @@
         "id": "6",
         "name": "KHALED",
         "docId": "2511515",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 1,
         "isEligible": true
@@ -2295,7 +2295,7 @@
         "id": "21",
         "name": "AHMED TETA OMAR EDRIS",
         "docId": "2611544",
-        "goals": 1,
+        "goals": 3,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2313,13 +2313,13 @@
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 2,
-    "goalsFor": 1,
-    "goalsAgainst": 6,
+    "losses": 3,
+    "goalsFor": 4,
+    "goalsAgainst": 12,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 70,
-    "refFeeBalance": 55
+    "refFeeBalance": 35
   },
   "SPR": {
     "abbr": "SPR",
