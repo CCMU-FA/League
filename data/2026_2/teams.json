@@ -1108,9 +1108,9 @@
         "name": "承茂森",
         "docId": "2618040",
         "goals": 0,
-        "redCards": 1,
+        "redCards": 2,
         "yellowCards": 0,
-        "isEligible": true
+        "isEligible": false
       },
       {
         "id": "78",
@@ -1125,7 +1125,7 @@
         "id": "69",
         "name": "汤硕",
         "docId": "2501194",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1145,20 +1145,20 @@
         "docId": "2211128",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       }
     ],
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 2,
-    "goalsFor": 2,
-    "goalsAgainst": 7,
+    "losses": 3,
+    "goalsFor": 3,
+    "goalsAgainst": 12,
     "forfeits": 0,
     "fairPlayPoints": 100,
-    "depositBalance": 70,
-    "refFeeBalance": 110
+    "depositBalance": 40,
+    "refFeeBalance": 90
   },
   "AHZ": {
     "abbr": "AHZ",
@@ -1683,7 +1683,7 @@
         "id": "2",
         "name": "廖杨阳",
         "docId": "2411149",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1710,7 +1710,7 @@
         "id": "10",
         "name": "徐易行",
         "docId": "2411232",
-        "goals": 0,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1773,7 +1773,7 @@
         "id": "20",
         "name": "阿卜杜哈力克·吐尔逊",
         "docId": "2411161",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1788,16 +1788,16 @@
         "isEligible": true
       }
     ],
-    "points": 3,
-    "wins": 1,
+    "points": 6,
+    "wins": 2,
     "draws": 0,
     "losses": 1,
-    "goalsFor": 2,
-    "goalsAgainst": 5,
+    "goalsFor": 7,
+    "goalsAgainst": 6,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 110
+    "refFeeBalance": 90
   },
   "BX": {
     "abbr": "BX",
