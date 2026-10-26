@@ -782,6 +782,80 @@
     ]
   },
   {
+    "time": "2026-10-23T17:00",
+    "referee": "张家齐",
+    "assistRefs": "",
+    "score": "5:1",
+    "refFee": 40,
+    "team1": "QX",
+    "team2": "BQB",
+    "events": [
+      {
+        "type": "红牌",
+        "time": "8:28",
+        "playerId": "15",
+        "teamAbbr": "BQB",
+        "goalTeamAbbr": "BQB",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "10:27",
+        "playerId": "10",
+        "teamAbbr": "QX",
+        "goalTeamAbbr": "QX",
+        "note": ""
+      },
+      {
+        "type": "乌龙",
+        "time": "18:22",
+        "playerId": "18",
+        "teamAbbr": "BQB",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "24:40",
+        "playerId": "20",
+        "teamAbbr": "QX",
+        "goalTeamAbbr": "QX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "38:19",
+        "playerId": "10",
+        "teamAbbr": "QX",
+        "goalTeamAbbr": "QX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "41:36",
+        "playerId": "2",
+        "teamAbbr": "QX",
+        "goalTeamAbbr": "QX",
+        "note": ""
+      },
+      {
+        "type": "黄牌",
+        "time": "43:26",
+        "playerId": "42",
+        "teamAbbr": "BQB",
+        "goalTeamAbbr": "BQB",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "44:17",
+        "playerId": "69",
+        "teamAbbr": "BQB",
+        "goalTeamAbbr": "BQB",
+        "note": ""
+      }
+    ]
+  },
+  {
     "time": "2026-10-25T17:32",
     "referee": "张兴源",
     "assistRefs": "",
