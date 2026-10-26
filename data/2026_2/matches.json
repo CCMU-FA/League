@@ -914,5 +914,79 @@
         "note": ""
       }
     ]
+  },
+  {
+    "time": "2026-10-25T11:27",
+    "referee": "",
+    "assistRefs": "",
+    "score": "6:3",
+    "refFee": 40,
+    "team1": "XJ",
+    "team2": "PSG",
+    "events": [
+      {
+        "type": "进球",
+        "time": "45",
+        "playerId": "21",
+        "teamAbbr": "PSG",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "37",
+        "playerId": "21",
+        "teamAbbr": "XJ",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "37",
+        "playerId": "21",
+        "teamAbbr": "XJ",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "31",
+        "playerId": "6",
+        "teamAbbr": "PSG",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "28",
+        "playerId": "29",
+        "teamAbbr": "XJ",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "24",
+        "playerId": "17",
+        "teamAbbr": "XJ",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "17",
+        "playerId": "21",
+        "teamAbbr": "PSG",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "13",
+        "playerId": "29",
+        "teamAbbr": "XJ",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "10",
+        "playerId": "17",
+        "teamAbbr": "XJ",
+        "note": "进球⚽️"
+      }
+    ]
   }
 ]
