@@ -1467,7 +1467,7 @@
         "id": "79",
         "name": "吴昱宸",
         "docId": "2618089",
-        "goals": 2,
+        "goals": 5,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1488,7 +1488,7 @@
         "goals": 0,
         "redCards": 0,
         "yellowCards": 3,
-        "isEligible": false
+        "isEligible": true
       },
       {
         "id": "11",
@@ -1514,7 +1514,7 @@
         "docId": "2601085",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -1530,7 +1530,7 @@
         "id": "7",
         "name": "肖钧仁",
         "docId": "2602009",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1608,16 +1608,16 @@
         "isEligible": true
       }
     ],
-    "points": 3,
-    "wins": 1,
+    "points": 6,
+    "wins": 2,
     "draws": 0,
     "losses": 1,
-    "goalsFor": 2,
-    "goalsAgainst": 2,
+    "goalsFor": 6,
+    "goalsAgainst": 3,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 120
+    "refFeeBalance": 45
   },
   "QX": {
     "abbr": "QX",
@@ -2709,13 +2709,13 @@
     "points": 3,
     "wins": 1,
     "draws": 0,
-    "losses": 3,
-    "goalsFor": 13,
-    "goalsAgainst": 10,
+    "losses": 4,
+    "goalsFor": 14,
+    "goalsAgainst": 14,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 30
+    "refFeeBalance": -45
   },
   "XWM": {
     "abbr": "XWM",
