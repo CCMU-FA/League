@@ -988,5 +988,51 @@
         "note": "进球⚽️"
       }
     ]
+  },
+  {
+    "time": "2026-10-26T17:00",
+    "referee": "张兴源",
+    "assistRefs": "",
+    "score": "4:1",
+    "refFee": 150,
+    "team1": "DPG",
+    "team2": "MDQ",
+    "events": [
+      {
+        "type": "进球",
+        "time": "47",
+        "playerId": "79",
+        "teamAbbr": "DPG",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "41",
+        "playerId": "79",
+        "teamAbbr": "DPG",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "18",
+        "playerId": "79",
+        "teamAbbr": "DPG",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "黄牌",
+        "time": "16",
+        "playerId": "66",
+        "teamAbbr": "DPG",
+        "note": "黄牌🟨"
+      },
+      {
+        "type": "进球",
+        "time": "4",
+        "playerId": "7",
+        "teamAbbr": "DPG",
+        "note": "进球⚽️"
+      }
+    ]
   }
 ]
