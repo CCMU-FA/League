@@ -1266,7 +1266,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 55
+    "refFeeBalance": 110
   },
   "JGD": {
     "abbr": "JGD",
@@ -2715,7 +2715,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": -45
+    "refFeeBalance": 10
   },
   "XWM": {
     "abbr": "XWM",
