@@ -1034,5 +1034,65 @@
         "note": "进球⚽️"
       }
     ]
+  },
+  {
+    "time": "2026-10-26T18:00",
+    "referee": "刘俊辉",
+    "assistRefs": "",
+    "score": "4:0",
+    "refFee": 30,
+    "team1": "XJ",
+    "team2": "XZT",
+    "events": [
+      {
+        "type": "进球",
+        "time": "56",
+        "playerId": "10",
+        "teamAbbr": "XJ",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "黄牌",
+        "time": "48",
+        "playerId": "29",
+        "teamAbbr": "XJ",
+        "note": "黄牌🟨"
+      },
+      {
+        "type": "进球",
+        "time": "46",
+        "playerId": "5",
+        "teamAbbr": "XJ",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "黄牌",
+        "time": "45",
+        "playerId": "5",
+        "teamAbbr": "XJ",
+        "note": "黄牌🟨"
+      },
+      {
+        "type": "黄牌",
+        "time": "34",
+        "playerId": "28",
+        "teamAbbr": "XZT",
+        "note": "黄牌🟨"
+      },
+      {
+        "type": "进球",
+        "time": "28",
+        "playerId": "3",
+        "teamAbbr": "XJ",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "7",
+        "playerId": "6",
+        "teamAbbr": "XJ",
+        "note": "进球⚽️"
+      }
+    ]
   }
 ]
