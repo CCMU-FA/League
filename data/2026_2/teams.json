@@ -47,7 +47,7 @@
         "docId": "2311W015",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -189,13 +189,13 @@
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 0,
+    "losses": 1,
     "goalsFor": 0,
-    "goalsAgainst": 0,
+    "goalsAgainst": 4,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 150
+    "refFeeBalance": 135
   },
   "XJ": {
     "abbr": "XJ",
@@ -209,7 +209,7 @@
         "docId": "",
         "goals": 2,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -243,7 +243,7 @@
         "id": "6",
         "name": "赵立强",
         "docId": "",
-        "goals": 1,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -270,7 +270,7 @@
         "id": "3",
         "name": "侬佳昊",
         "docId": "",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -315,9 +315,9 @@
         "id": "5",
         "name": "彭伟宸",
         "docId": "",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -333,7 +333,7 @@
         "id": "10",
         "name": "孙铭远",
         "docId": "",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -375,16 +375,16 @@
         "isEligible": true
       }
     ],
-    "points": 6,
-    "wins": 2,
+    "points": 9,
+    "wins": 3,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 10,
+    "goalsFor": 14,
     "goalsAgainst": 4,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 110
+    "refFeeBalance": 95
   },
   "ZDY": {
     "abbr": "ZDY",
