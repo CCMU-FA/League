@@ -20,6 +20,16 @@
     "notes": ""
   },
   {
+    "team1": "MDQ",
+    "team2": "XWM",
+    "time": "2026-10-28 18:00",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "",
+    "id": "1790441181671"
+  },
+  {
     "team1": "DPG",
     "team2": "XZT",
     "time": "2026-10-29 17:00",
@@ -298,16 +308,6 @@
     "referee": "",
     "assistRefs": "",
     "notes": "延期至待定时间"
-  },
-  {
-    "team1": "MDQ",
-    "team2": "XWM",
-    "time": "",
-    "location": "",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "延期至待定时间",
-    "id": "1790441181671"
   },
   {
     "team1": "BX",
