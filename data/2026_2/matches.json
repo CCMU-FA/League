@@ -1096,6 +1096,52 @@
     ]
   },
   {
+    "time": "2026-10-28T18:00",
+    "referee": "张兴源",
+    "assistRefs": "都熠桐",
+    "score": "2:2",
+    "refFee": 150,
+    "team1": "XJ",
+    "team2": "BGT",
+    "events": [
+      {
+        "type": "进球",
+        "time": "37",
+        "playerId": "7",
+        "teamAbbr": "BGT",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "31",
+        "playerId": "17",
+        "teamAbbr": "XJ",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "黄牌",
+        "time": "27",
+        "playerId": "21",
+        "teamAbbr": "XJ",
+        "note": "黄牌🟨"
+      },
+      {
+        "type": "进球",
+        "time": "18",
+        "playerId": "7",
+        "teamAbbr": "BGT",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "15",
+        "playerId": "17",
+        "teamAbbr": "XJ",
+        "note": "进球⚽️"
+      }
+    ]
+  },
+  {
     "time": "2026-10-29T18:00",
     "referee": "肖天时",
     "assistRefs": "",
