@@ -227,7 +227,7 @@
         "docId": "",
         "goals": 4,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -297,7 +297,7 @@
         "id": "17",
         "name": "苏绍轩",
         "docId": "",
-        "goals": 2,
+        "goals": 4,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -375,16 +375,16 @@
         "isEligible": true
       }
     ],
-    "points": 9,
+    "points": 10,
     "wins": 3,
-    "draws": 0,
+    "draws": 1,
     "losses": 0,
-    "goalsFor": 14,
-    "goalsAgainst": 4,
+    "goalsFor": 16,
+    "goalsAgainst": 6,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 95
+    "refFeeBalance": 20
   },
   "ZDY": {
     "abbr": "ZDY",
@@ -621,7 +621,7 @@
         "id": "7",
         "name": "里扎别克·胡斯曼",
         "docId": "",
-        "goals": 5,
+        "goals": 7,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -789,16 +789,16 @@
         "isEligible": true
       }
     ],
-    "points": 6,
+    "points": 7,
     "wins": 2,
-    "draws": 0,
+    "draws": 1,
     "losses": 0,
-    "goalsFor": 6,
-    "goalsAgainst": 2,
+    "goalsFor": 8,
+    "goalsAgainst": 4,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 70,
-    "refFeeBalance": 100
+    "refFeeBalance": 25
   },
   "DSM": {
     "abbr": "DSM",
