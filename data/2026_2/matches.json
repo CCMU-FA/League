@@ -1094,5 +1094,15 @@
         "note": "进球⚽️"
       }
     ]
+  },
+  {
+    "time": "2026-10-29T18:00",
+    "referee": "肖天时",
+    "assistRefs": "",
+    "score": "3:0",
+    "refFee": 0,
+    "team1": "DSM",
+    "team2": "AHZ",
+    "events": []
   }
 ]
