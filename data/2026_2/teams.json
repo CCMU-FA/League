@@ -2313,13 +2313,13 @@
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 3,
-    "goalsFor": 4,
-    "goalsAgainst": 12,
+    "losses": 4,
+    "goalsFor": 5,
+    "goalsAgainst": 14,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 70,
-    "refFeeBalance": 35
+    "refFeeBalance": -40
   },
   "SPR": {
     "abbr": "SPR",
@@ -2517,16 +2517,16 @@
         "isEligible": true
       }
     ],
-    "points": 3,
-    "wins": 1,
+    "points": 6,
+    "wins": 2,
     "draws": 0,
     "losses": 0,
-    "goalsFor": 4,
-    "goalsAgainst": 0,
+    "goalsFor": 6,
+    "goalsAgainst": 1,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 130
+    "refFeeBalance": 55
   },
   "MDQ": {
     "abbr": "MDQ",
