@@ -2706,16 +2706,16 @@
         "isEligible": true
       }
     ],
-    "points": 3,
+    "points": 4,
     "wins": 1,
-    "draws": 0,
+    "draws": 1,
     "losses": 4,
     "goalsFor": 14,
     "goalsAgainst": 14,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 70
+    "refFeeBalance": 50
   },
   "XWM": {
     "abbr": "XWM",
@@ -2886,15 +2886,15 @@
         "isEligible": true
       }
     ],
-    "points": 12,
+    "points": 13,
     "wins": 4,
-    "draws": 0,
+    "draws": 1,
     "losses": 0,
     "goalsFor": 10,
     "goalsAgainst": 1,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 85
+    "refFeeBalance": 65
   }
 }
