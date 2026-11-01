@@ -1170,5 +1170,15 @@
     "team1": "DSM",
     "team2": "AHZ",
     "events": []
+  },
+  {
+    "time": "2026-11-01T18:00",
+    "referee": "佧米力江",
+    "assistRefs": "",
+    "score": "3:1",
+    "refFee": 150,
+    "team1": "XJ",
+    "team2": "QX",
+    "events": []
   }
 ]
