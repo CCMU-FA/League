@@ -375,16 +375,16 @@
         "isEligible": true
       }
     ],
-    "points": 10,
-    "wins": 3,
+    "points": 13,
+    "wins": 4,
     "draws": 1,
     "losses": 0,
-    "goalsFor": 16,
-    "goalsAgainst": 6,
+    "goalsFor": 19,
+    "goalsAgainst": 7,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 20
+    "refFeeBalance": -55
   },
   "ZDY": {
     "abbr": "ZDY",
@@ -1791,13 +1791,13 @@
     "points": 6,
     "wins": 2,
     "draws": 0,
-    "losses": 1,
-    "goalsFor": 7,
-    "goalsAgainst": 6,
+    "losses": 2,
+    "goalsFor": 8,
+    "goalsAgainst": 9,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 90
+    "refFeeBalance": 15
   },
   "BX": {
     "abbr": "BX",
