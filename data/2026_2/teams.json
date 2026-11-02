@@ -585,13 +585,13 @@
     "points": 6,
     "wins": 2,
     "draws": 0,
-    "losses": 2,
+    "losses": 3,
     "goalsFor": 12,
-    "goalsAgainst": 8,
+    "goalsAgainst": 15,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 85
+    "refFeeBalance": 65
   },
   "BGT": {
     "abbr": "BGT",
@@ -810,7 +810,7 @@
         "id": "14",
         "name": "何嘉泽",
         "docId": "2401026",
-        "goals": 1,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -819,7 +819,7 @@
         "id": "5",
         "name": "程星策",
         "docId": "2401028",
-        "goals": 2,
+        "goals": 3,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -855,7 +855,7 @@
         "id": "6",
         "name": "林梓恒",
         "docId": "2401046",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -954,7 +954,7 @@
         "id": "4",
         "name": "林悦泽",
         "docId": "2501007",
-        "goals": 0,
+        "goals": 4,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -978,16 +978,16 @@
         "isEligible": true
       }
     ],
-    "points": 7,
-    "wins": 2,
+    "points": 10,
+    "wins": 3,
     "draws": 1,
     "losses": 1,
-    "goalsFor": 7,
+    "goalsFor": 14,
     "goalsAgainst": 4,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 100
+    "refFeeBalance": 80
   },
   "BQB": {
     "abbr": "BQB",
