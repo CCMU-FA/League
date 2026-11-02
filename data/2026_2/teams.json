@@ -798,7 +798,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 70,
-    "refFeeBalance": 25
+    "refFeeBalance": 80
   },
   "DSM": {
     "abbr": "DSM",
@@ -2139,7 +2139,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 130
+    "refFeeBalance": 185
   },
   "PSG": {
     "abbr": "PSG",
