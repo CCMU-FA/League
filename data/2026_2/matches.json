@@ -1180,5 +1180,15 @@
     "team1": "XJ",
     "team2": "QX",
     "events": []
+  },
+  {
+    "time": "2026-11-02T17:00",
+    "referee": "",
+    "assistRefs": "",
+    "score": "3:0",
+    "refFee": 0,
+    "team1": "JGD",
+    "team2": "AHZ",
+    "events": []
   }
 ]
