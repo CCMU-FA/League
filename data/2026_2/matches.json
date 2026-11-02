@@ -1109,11 +1109,20 @@
     "time": "2026-10-28T17:00",
     "referee": "赵立强",
     "assistRefs": "",
-    "score": "0:0",
+    "score": "0:1",
     "refFee": 40,
     "team1": "MDQ",
     "team2": "XWM",
-    "events": []
+    "events": [
+      {
+        "type": "进球",
+        "time": "31:04",
+        "playerId": "10",
+        "teamAbbr": "XWM",
+        "goalTeamAbbr": "XWM",
+        "note": ""
+      }
+    ]
   },
   {
     "time": "2026-10-28T18:00",
