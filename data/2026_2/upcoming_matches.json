@@ -1,5 +1,15 @@
 [
   {
+    "id": "179002786698942",
+    "team1": "XZD",
+    "team2": "XZT",
+    "time": "2026-11-02 17:00",
+    "location": "南",
+    "referee": "张兴源",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
     "id": "179002786698943",
     "team1": "BQB",
     "team2": "SPR",
@@ -16,16 +26,6 @@
     "time": "2026-11-02 18:00",
     "location": "北",
     "referee": "",
-    "assistRefs": "",
-    "notes": ""
-  },
-  {
-    "id": "179002786698942",
-    "team1": "XZD",
-    "team2": "XZT",
-    "time": "2026-11-02 18:00",
-    "location": "南",
-    "referee": "张兴源",
     "assistRefs": "",
     "notes": ""
   },
