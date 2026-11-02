@@ -1391,10 +1391,43 @@
     "referee": "佧米力江",
     "assistRefs": "",
     "score": "3:1",
-    "refFee": 150,
+    "refFee": 40,
     "team1": "XJ",
     "team2": "QX",
-    "events": []
+    "events": [
+      {
+        "type": "进球",
+        "time": "2:53",
+        "playerId": "10",
+        "teamAbbr": "QX",
+        "goalTeamAbbr": "QX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "5:54",
+        "playerId": "10",
+        "teamAbbr": "XJ",
+        "goalTeamAbbr": "XJ",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "33:54",
+        "playerId": "17",
+        "teamAbbr": "XJ",
+        "goalTeamAbbr": "XJ",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "49:56",
+        "playerId": "17",
+        "teamAbbr": "XJ",
+        "goalTeamAbbr": "XJ",
+        "note": ""
+      }
+    ]
   },
   {
     "time": "2026-11-02T17:00",
