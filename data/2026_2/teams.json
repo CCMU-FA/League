@@ -2706,12 +2706,12 @@
         "isEligible": true
       }
     ],
-    "points": 4,
+    "points": 3,
     "wins": 1,
-    "draws": 1,
-    "losses": 4,
+    "draws": 0,
+    "losses": 5,
     "goalsFor": 14,
-    "goalsAgainst": 14,
+    "goalsAgainst": 15,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
@@ -2826,7 +2826,7 @@
         "id": "10",
         "name": "郑梓健",
         "docId": "122026010153",
-        "goals": 4,
+        "goals": 5,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2886,11 +2886,11 @@
         "isEligible": true
       }
     ],
-    "points": 13,
-    "wins": 4,
-    "draws": 1,
+    "points": 15,
+    "wins": 5,
+    "draws": 0,
     "losses": 0,
-    "goalsFor": 10,
+    "goalsFor": 11,
     "goalsAgainst": 1,
     "forfeits": 0,
     "fairPlayPoints": 100,
