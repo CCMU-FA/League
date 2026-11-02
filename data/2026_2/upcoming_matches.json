@@ -1,15 +1,5 @@
 [
   {
-    "id": "179002786698937",
-    "team1": "XZT",
-    "team2": "BQB",
-    "time": "2026-10-30 18:00",
-    "location": "南",
-    "referee": "",
-    "assistRefs": "",
-    "notes": ""
-  },
-  {
     "id": "179002786698938",
     "team1": "XJ",
     "team2": "QX",
@@ -255,6 +245,16 @@
     "team2": "DPG",
     "time": "",
     "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "延期至待定时间"
+  },
+  {
+    "id": "179002786698937",
+    "team1": "XZT",
+    "team2": "BQB",
+    "time": "",
+    "location": "南",
     "referee": "",
     "assistRefs": "",
     "notes": "延期至待定时间"
