@@ -1100,10 +1100,35 @@
     "referee": "佧米力江",
     "assistRefs": "",
     "score": "1:2",
-    "refFee": 150,
+    "refFee": 40,
     "team1": "PSG",
     "team2": "SPR",
-    "events": []
+    "events": [
+      {
+        "type": "进球",
+        "time": "25:55",
+        "playerId": "2",
+        "teamAbbr": "PSG",
+        "goalTeamAbbr": "PSG",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "44:56",
+        "playerId": "50",
+        "teamAbbr": "SPR",
+        "goalTeamAbbr": "SPR",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "49:57",
+        "playerId": "50",
+        "teamAbbr": "SPR",
+        "goalTeamAbbr": "SPR",
+        "note": ""
+      }
+    ]
   },
   {
     "time": "2026-10-28T17:00",
