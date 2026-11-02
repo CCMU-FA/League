@@ -1170,7 +1170,7 @@
         "id": "5",
         "name": "闫舒睿",
         "docId": "",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1197,7 +1197,7 @@
         "id": "42",
         "name": "覃翊宸",
         "docId": "",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1215,7 +1215,7 @@
         "id": "29",
         "name": "王铭宇",
         "docId": "",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1260,13 +1260,13 @@
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 4,
-    "goalsFor": 0,
-    "goalsAgainst": 24,
+    "losses": 5,
+    "goalsFor": 3,
+    "goalsAgainst": 37,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 110
+    "refFeeBalance": 95
   },
   "JGD": {
     "abbr": "JGD",
@@ -1809,7 +1809,7 @@
         "id": "9",
         "name": "殷浩源",
         "docId": "2401138",
-        "goals": 0,
+        "goals": 4,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1827,7 +1827,7 @@
         "id": "39",
         "name": "胡佳涵",
         "docId": "2401126",
-        "goals": 2,
+        "goals": 6,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1845,7 +1845,7 @@
         "id": "77",
         "name": "邓奕涵",
         "docId": "2401095",
-        "goals": 1,
+        "goals": 4,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1926,7 +1926,7 @@
         "id": "30",
         "name": "蒋一川",
         "docId": "2414029",
-        "goals": 1,
+        "goals": 3,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1941,16 +1941,16 @@
         "isEligible": true
       }
     ],
-    "points": 6,
-    "wins": 2,
+    "points": 9,
+    "wins": 3,
     "draws": 0,
     "losses": 1,
-    "goalsFor": 5,
-    "goalsAgainst": 3,
+    "goalsFor": 18,
+    "goalsAgainst": 6,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 105
+    "refFeeBalance": 90
   },
   "XZD": {
     "abbr": "XZD",
