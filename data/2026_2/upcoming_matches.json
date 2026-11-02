@@ -1,5 +1,15 @@
 [
   {
+    "team1": "BX",
+    "team2": "AHZ",
+    "time": "2026-10-29 18:18",
+    "location": "南",
+    "referee": "王唯一",
+    "assistRefs": "",
+    "notes": "",
+    "id": "1790441448205"
+  },
+  {
     "id": "179002786698936",
     "team1": "BX",
     "team2": "DPG",
@@ -36,16 +46,6 @@
     "time": "2026-11-02 18:00",
     "location": "北",
     "referee": "张家齐",
-    "assistRefs": "",
-    "notes": ""
-  },
-  {
-    "id": "179002786698944",
-    "team1": "ZDY",
-    "team2": "DSM",
-    "time": "2026-11-03 18:00",
-    "location": "北",
-    "referee": "杜天雨",
     "assistRefs": "",
     "notes": ""
   },
@@ -238,15 +238,5 @@
     "referee": "",
     "assistRefs": "",
     "notes": "延期至待定时间"
-  },
-  {
-    "team1": "BX",
-    "team2": "AHZ",
-    "time": "",
-    "location": "",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "延期至待定时间",
-    "id": "1790441448205"
   }
 ]
