@@ -1181,6 +1181,145 @@
     "events": []
   },
   {
+    "time": "2026-10-29T18:18",
+    "referee": "王唯一",
+    "assistRefs": "",
+    "score": "13:3",
+    "refFee": 30,
+    "team1": "BX",
+    "team2": "AHZ",
+    "events": [
+      {
+        "type": "进球",
+        "time": "1",
+        "playerId": "39",
+        "teamAbbr": "BX",
+        "goalTeamAbbr": "BX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "5",
+        "playerId": "77",
+        "teamAbbr": "BX",
+        "goalTeamAbbr": "BX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "13",
+        "playerId": "42",
+        "teamAbbr": "AHZ",
+        "goalTeamAbbr": "AHZ",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "19",
+        "playerId": "29",
+        "teamAbbr": "AHZ",
+        "goalTeamAbbr": "AHZ",
+        "note": ""
+      },
+      {
+        "type": "点球",
+        "time": "25",
+        "playerId": "39",
+        "teamAbbr": "BX",
+        "goalTeamAbbr": "BX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "26",
+        "playerId": "9",
+        "teamAbbr": "BX",
+        "goalTeamAbbr": "BX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "30",
+        "playerId": "9",
+        "teamAbbr": "BX",
+        "goalTeamAbbr": "BX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "30",
+        "playerId": "39",
+        "teamAbbr": "BX",
+        "goalTeamAbbr": "BX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "38",
+        "playerId": "9",
+        "teamAbbr": "BX",
+        "goalTeamAbbr": "BX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "41",
+        "playerId": "30",
+        "teamAbbr": "BX",
+        "goalTeamAbbr": "BX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "42",
+        "playerId": "5",
+        "teamAbbr": "AHZ",
+        "goalTeamAbbr": "AHZ",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "43",
+        "playerId": "30",
+        "teamAbbr": "BX",
+        "note": "",
+        "goalTeamAbbr": "BX"
+      },
+      {
+        "type": "进球",
+        "time": "47",
+        "playerId": "77",
+        "teamAbbr": "BX",
+        "goalTeamAbbr": "BX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "48",
+        "playerId": "39",
+        "teamAbbr": "BX",
+        "goalTeamAbbr": "BX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "50",
+        "playerId": "77",
+        "teamAbbr": "BX",
+        "goalTeamAbbr": "BX",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "52",
+        "playerId": "9",
+        "teamAbbr": "BX",
+        "goalTeamAbbr": "BX",
+        "note": ""
+      }
+    ]
+  },
+  {
     "time": "2026-11-01T17:27",
     "referee": "杜天雨",
     "assistRefs": "",
