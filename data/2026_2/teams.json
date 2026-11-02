@@ -2214,7 +2214,7 @@
         "id": "2",
         "name": "CHIPS",
         "docId": "2411390",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2319,7 +2319,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 70,
-    "refFeeBalance": -40
+    "refFeeBalance": 15
   },
   "SPR": {
     "abbr": "SPR",
@@ -2466,7 +2466,7 @@
         "id": "50",
         "name": "施喜强",
         "docId": "2431002",
-        "goals": 1,
+        "goals": 3,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2526,7 +2526,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 55
+    "refFeeBalance": 110
   },
   "MDQ": {
     "abbr": "MDQ",
