@@ -1827,7 +1827,7 @@
         "id": "39",
         "name": "胡佳涵",
         "docId": "2401126",
-        "goals": 2,
+        "goals": 3,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1944,13 +1944,13 @@
     "points": 6,
     "wins": 2,
     "draws": 0,
-    "losses": 1,
-    "goalsFor": 5,
-    "goalsAgainst": 3,
+    "losses": 2,
+    "goalsFor": 6,
+    "goalsAgainst": 5,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 105
+    "refFeeBalance": 30
   },
   "XZD": {
     "abbr": "XZD",
@@ -2790,7 +2790,7 @@
         "id": "28",
         "name": "方天",
         "docId": "122026010247",
-        "goals": 1,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2886,15 +2886,15 @@
         "isEligible": true
       }
     ],
-    "points": 13,
-    "wins": 4,
+    "points": 16,
+    "wins": 5,
     "draws": 1,
     "losses": 0,
-    "goalsFor": 10,
-    "goalsAgainst": 1,
+    "goalsFor": 12,
+    "goalsAgainst": 2,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 65
+    "refFeeBalance": -10
   }
 }
