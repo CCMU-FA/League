@@ -1172,6 +1172,73 @@
     "events": []
   },
   {
+    "time": "2026-11-01T17:27",
+    "referee": "杜天雨",
+    "assistRefs": "",
+    "score": "0:7",
+    "refFee": 40,
+    "team1": "ZDY",
+    "team2": "DSM",
+    "events": [
+      {
+        "type": "进球",
+        "time": "5:03",
+        "playerId": "6",
+        "teamAbbr": "DSM",
+        "goalTeamAbbr": "DSM",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "15:25",
+        "playerId": "4",
+        "teamAbbr": "DSM",
+        "goalTeamAbbr": "DSM",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "21:38",
+        "playerId": "4",
+        "teamAbbr": "DSM",
+        "goalTeamAbbr": "DSM",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "24:33",
+        "playerId": "5",
+        "teamAbbr": "DSM",
+        "goalTeamAbbr": "DSM",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "41:03",
+        "playerId": "4",
+        "teamAbbr": "DSM",
+        "goalTeamAbbr": "DSM",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "43:21",
+        "playerId": "14",
+        "teamAbbr": "DSM",
+        "goalTeamAbbr": "DSM",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "46:30",
+        "playerId": "4",
+        "teamAbbr": "DSM",
+        "goalTeamAbbr": "DSM",
+        "note": ""
+      }
+    ]
+  },
+  {
     "time": "2026-11-01T18:00",
     "referee": "佧米力江",
     "assistRefs": "",
