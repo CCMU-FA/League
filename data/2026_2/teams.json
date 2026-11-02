@@ -36,7 +36,7 @@
         "id": "18",
         "name": "张家铭",
         "docId": "2218024",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -189,13 +189,13 @@
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 1,
-    "goalsFor": 0,
-    "goalsAgainst": 4,
+    "losses": 2,
+    "goalsFor": 1,
+    "goalsAgainst": 6,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 135
+    "refFeeBalance": 60
   },
   "XJ": {
     "abbr": "XJ",
@@ -297,7 +297,7 @@
         "id": "17",
         "name": "苏绍轩",
         "docId": "",
-        "goals": 6,
+        "goals": 4,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -333,7 +333,7 @@
         "id": "10",
         "name": "孙铭远",
         "docId": "",
-        "goals": 2,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -375,16 +375,16 @@
         "isEligible": true
       }
     ],
-    "points": 13,
-    "wins": 4,
+    "points": 10,
+    "wins": 3,
     "draws": 1,
     "losses": 0,
-    "goalsFor": 19,
-    "goalsAgainst": 7,
+    "goalsFor": 16,
+    "goalsAgainst": 6,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 0
+    "refFeeBalance": 20
   },
   "ZDY": {
     "abbr": "ZDY",
@@ -585,13 +585,13 @@
     "points": 6,
     "wins": 2,
     "draws": 0,
-    "losses": 3,
+    "losses": 2,
     "goalsFor": 12,
-    "goalsAgainst": 15,
+    "goalsAgainst": 8,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 65
+    "refFeeBalance": 85
   },
   "BGT": {
     "abbr": "BGT",
@@ -789,16 +789,16 @@
         "isEligible": true
       }
     ],
-    "points": 10,
-    "wins": 3,
+    "points": 7,
+    "wins": 2,
     "draws": 1,
     "losses": 0,
-    "goalsFor": 13,
+    "goalsFor": 8,
     "goalsAgainst": 4,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 70,
-    "refFeeBalance": 80
+    "refFeeBalance": 25
   },
   "DSM": {
     "abbr": "DSM",
@@ -810,7 +810,7 @@
         "id": "14",
         "name": "何嘉泽",
         "docId": "2401026",
-        "goals": 2,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -819,7 +819,7 @@
         "id": "5",
         "name": "程星策",
         "docId": "2401028",
-        "goals": 3,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -855,7 +855,7 @@
         "id": "6",
         "name": "林梓恒",
         "docId": "2401046",
-        "goals": 1,
+        "goals": 0,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -954,7 +954,7 @@
         "id": "4",
         "name": "林悦泽",
         "docId": "2501007",
-        "goals": 4,
+        "goals": 0,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -978,16 +978,16 @@
         "isEligible": true
       }
     ],
-    "points": 10,
-    "wins": 3,
+    "points": 7,
+    "wins": 2,
     "draws": 1,
     "losses": 1,
-    "goalsFor": 14,
+    "goalsFor": 7,
     "goalsAgainst": 4,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 80
+    "refFeeBalance": 100
   },
   "BQB": {
     "abbr": "BQB",
@@ -1044,9 +1044,9 @@
         "id": "30",
         "name": "刘俊辉",
         "docId": "2514006",
-        "goals": 3,
+        "goals": 1,
         "redCards": 0,
-        "yellowCards": 1,
+        "yellowCards": 0,
         "isEligible": true
       },
       {
@@ -1110,7 +1110,7 @@
         "goals": 0,
         "redCards": 2,
         "yellowCards": 0,
-        "isEligible": true
+        "isEligible": false
       },
       {
         "id": "78",
@@ -1149,16 +1149,16 @@
         "isEligible": true
       }
     ],
-    "points": 1,
+    "points": 0,
     "wins": 0,
-    "draws": 1,
+    "draws": 0,
     "losses": 3,
-    "goalsFor": 5,
-    "goalsAgainst": 14,
+    "goalsFor": 3,
+    "goalsAgainst": 12,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 40,
-    "refFeeBalance": 70
+    "refFeeBalance": 90
   },
   "AHZ": {
     "abbr": "AHZ",
@@ -1170,7 +1170,7 @@
         "id": "5",
         "name": "闫舒睿",
         "docId": "",
-        "goals": 1,
+        "goals": 0,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1197,9 +1197,9 @@
         "id": "42",
         "name": "覃翊宸",
         "docId": "",
-        "goals": 1,
+        "goals": 0,
         "redCards": 0,
-        "yellowCards": 1,
+        "yellowCards": 0,
         "isEligible": true
       },
       {
@@ -1215,7 +1215,7 @@
         "id": "29",
         "name": "王铭宇",
         "docId": "",
-        "goals": 1,
+        "goals": 0,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1260,13 +1260,13 @@
     "points": 0,
     "wins": 0,
     "draws": 0,
-    "losses": 5,
-    "goalsFor": 3,
-    "goalsAgainst": 37,
+    "losses": 3,
+    "goalsFor": 0,
+    "goalsAgainst": 21,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 95
+    "refFeeBalance": 110
   },
   "JGD": {
     "abbr": "JGD",
@@ -1428,11 +1428,11 @@
         "isEligible": true
       }
     ],
-    "points": 7,
-    "wins": 2,
+    "points": 4,
+    "wins": 1,
     "draws": 1,
     "losses": 2,
-    "goalsFor": 9,
+    "goalsFor": 6,
     "goalsAgainst": 6,
     "forfeits": 0,
     "fairPlayPoints": 100,
@@ -1710,7 +1710,7 @@
         "id": "10",
         "name": "徐易行",
         "docId": "2411232",
-        "goals": 3,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1791,13 +1791,13 @@
     "points": 6,
     "wins": 2,
     "draws": 0,
-    "losses": 2,
-    "goalsFor": 8,
-    "goalsAgainst": 9,
+    "losses": 1,
+    "goalsFor": 7,
+    "goalsAgainst": 6,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 70
+    "refFeeBalance": 90
   },
   "BX": {
     "abbr": "BX",
@@ -1809,7 +1809,7 @@
         "id": "9",
         "name": "殷浩源",
         "docId": "2401138",
-        "goals": 4,
+        "goals": 0,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1827,7 +1827,7 @@
         "id": "39",
         "name": "胡佳涵",
         "docId": "2401126",
-        "goals": 6,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1845,7 +1845,7 @@
         "id": "77",
         "name": "邓奕涵",
         "docId": "2401095",
-        "goals": 4,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1926,7 +1926,7 @@
         "id": "30",
         "name": "蒋一川",
         "docId": "2414029",
-        "goals": 3,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1941,16 +1941,16 @@
         "isEligible": true
       }
     ],
-    "points": 9,
-    "wins": 3,
+    "points": 6,
+    "wins": 2,
     "draws": 0,
     "losses": 1,
-    "goalsFor": 18,
-    "goalsAgainst": 6,
+    "goalsFor": 5,
+    "goalsAgainst": 3,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 90
+    "refFeeBalance": 105
   },
   "XZD": {
     "abbr": "XZD",
@@ -1971,7 +1971,7 @@
         "id": "10",
         "name": "陈舒简",
         "docId": "",
-        "goals": 1,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2043,7 +2043,7 @@
         "id": "6",
         "name": "沈未泽",
         "docId": "",
-        "goals": 1,
+        "goals": 0,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2061,7 +2061,7 @@
         "id": "61",
         "name": "王巍",
         "docId": "",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2124,22 +2124,22 @@
         "id": "37",
         "name": "姚旭阳",
         "docId": "",
-        "goals": 1,
+        "goals": 0,
         "redCards": 0,
-        "yellowCards": 1,
+        "yellowCards": 0,
         "isEligible": true
       }
     ],
-    "points": 4,
-    "wins": 1,
-    "draws": 1,
-    "losses": 2,
+    "points": 6,
+    "wins": 2,
+    "draws": 0,
+    "losses": 1,
     "goalsFor": 6,
-    "goalsAgainst": 7,
+    "goalsAgainst": 6,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 165
+    "refFeeBalance": 55
   },
   "PSG": {
     "abbr": "PSG",
@@ -2214,7 +2214,7 @@
         "id": "2",
         "name": "CHIPS",
         "docId": "2411390",
-        "goals": 1,
+        "goals": 0,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2319,7 +2319,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 70,
-    "refFeeBalance": 15
+    "refFeeBalance": -40
   },
   "SPR": {
     "abbr": "SPR",
@@ -2466,7 +2466,7 @@
         "id": "50",
         "name": "施喜强",
         "docId": "2431002",
-        "goals": 3,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2526,7 +2526,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 110
+    "refFeeBalance": 55
   },
   "MDQ": {
     "abbr": "MDQ",
@@ -2574,7 +2574,7 @@
         "id": "14",
         "name": "高晨洋",
         "docId": "2611226",
-        "goals": 2,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2601,7 +2601,7 @@
         "id": "91",
         "name": "马泽明",
         "docId": "2601216",
-        "goals": 2,
+        "goals": 0,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2610,7 +2610,7 @@
         "id": "6",
         "name": "陈兆霖",
         "docId": "122026010027",
-        "goals": 4,
+        "goals": 0,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2628,7 +2628,7 @@
         "id": "3",
         "name": "叶梓皓",
         "docId": "2615042",
-        "goals": 5,
+        "goals": 0,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2706,12 +2706,12 @@
         "isEligible": true
       }
     ],
-    "points": 3,
+    "points": 4,
     "wins": 1,
-    "draws": 0,
-    "losses": 5,
+    "draws": 1,
+    "losses": 4,
     "goalsFor": 14,
-    "goalsAgainst": 15,
+    "goalsAgainst": 14,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
@@ -2826,7 +2826,7 @@
         "id": "10",
         "name": "郑梓健",
         "docId": "122026010153",
-        "goals": 5,
+        "goals": 4,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2886,11 +2886,11 @@
         "isEligible": true
       }
     ],
-    "points": 15,
-    "wins": 5,
-    "draws": 0,
+    "points": 13,
+    "wins": 4,
+    "draws": 1,
     "losses": 0,
-    "goalsFor": 11,
+    "goalsFor": 10,
     "goalsAgainst": 1,
     "forfeits": 0,
     "fairPlayPoints": 100,
