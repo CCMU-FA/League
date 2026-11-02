@@ -1211,6 +1211,55 @@
     ]
   },
   {
+    "time": "2026-11-02T17:00",
+    "referee": "赵立强",
+    "assistRefs": "",
+    "score": "3:1",
+    "refFee": 40,
+    "team1": "SPR",
+    "team2": "BQB",
+    "events": [
+      {
+        "type": "黄牌",
+        "time": "34",
+        "playerId": "18",
+        "teamAbbr": "BQB",
+        "note": "黄牌🟨"
+      },
+      {
+        "type": "进球",
+        "time": "14",
+        "playerId": "30",
+        "teamAbbr": "BQB",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "05",
+        "playerId": "98",
+        "teamAbbr": "SPR",
+        "goalTeamAbbr": "SPR",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "17",
+        "playerId": "50",
+        "teamAbbr": "SPR",
+        "goalTeamAbbr": "SPR",
+        "note": ""
+      },
+      {
+        "type": "进球",
+        "time": "45",
+        "playerId": "50",
+        "teamAbbr": "SPR",
+        "goalTeamAbbr": "SPR",
+        "note": ""
+      }
+    ]
+  },
+  {
     "time": "2026-11-02T18:00",
     "referee": "张兴源",
     "assistRefs": "",
