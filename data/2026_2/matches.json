@@ -1209,5 +1209,37 @@
         "note": "进球⚽️"
       }
     ]
+  },
+  {
+    "time": "2026-11-02T18:00",
+    "referee": "张兴源",
+    "assistRefs": "",
+    "score": "2:1",
+    "refFee": 150,
+    "team1": "XWM",
+    "team2": "BX",
+    "events": [
+      {
+        "type": "进球",
+        "time": "45",
+        "playerId": "39",
+        "teamAbbr": "BX",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "35",
+        "playerId": "17",
+        "teamAbbr": "XWM",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "30",
+        "playerId": "28",
+        "teamAbbr": "XWM",
+        "note": "进球⚽️"
+      }
+    ]
   }
 ]
