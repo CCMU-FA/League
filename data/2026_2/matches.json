@@ -774,7 +774,7 @@
     "referee": "赵立强",
     "assistRefs": "",
     "score": "5:0",
-    "refFee": 40,
+    "refFee": 150,
     "team1": "BGT",
     "team2": "XZD",
     "events": [
@@ -834,106 +834,10 @@
       {
         "type": "进球",
         "time": "",
-        "playerId": "6",
+        "playerId": "",
         "teamAbbr": "MDQ",
         "goalTeamAbbr": "MDQ",
-        "note": ""
-      },
-      {
-        "type": "黄牌",
-        "time": "",
-        "playerId": "42",
-        "teamAbbr": "AHZ",
-        "goalTeamAbbr": "AHZ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "",
-        "playerId": "6",
-        "teamAbbr": "MDQ",
-        "goalTeamAbbr": "MDQ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "",
-        "playerId": "6",
-        "teamAbbr": "MDQ",
-        "goalTeamAbbr": "MDQ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "",
-        "playerId": "14",
-        "teamAbbr": "MDQ",
-        "goalTeamAbbr": "MDQ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "",
-        "playerId": "91",
-        "teamAbbr": "MDQ",
-        "goalTeamAbbr": "MDQ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "",
-        "playerId": "6",
-        "teamAbbr": "MDQ",
-        "goalTeamAbbr": "MDQ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "",
-        "playerId": "3",
-        "teamAbbr": "MDQ",
-        "goalTeamAbbr": "MDQ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "",
-        "playerId": "91",
-        "teamAbbr": "MDQ",
-        "goalTeamAbbr": "MDQ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "",
-        "playerId": "3",
-        "teamAbbr": "MDQ",
-        "goalTeamAbbr": "MDQ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "",
-        "playerId": "3",
-        "teamAbbr": "MDQ",
-        "goalTeamAbbr": "MDQ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "",
-        "playerId": "3",
-        "teamAbbr": "MDQ",
-        "goalTeamAbbr": "MDQ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "",
-        "playerId": "3",
-        "teamAbbr": "MDQ",
-        "goalTeamAbbr": "MDQ",
-        "note": ""
+        "note": "---- 蒙的全队 : 爱好者队 ---- ---- 比分：12 : 0 ----黄牌：0 : 1 ----红牌：0 : 0  0:00 【开场🏁】    (17:15:35) 07:42 蒙的全队【进球⚽️】 未填写  (17:23:18) 11:08 爱好者队【黄牌🟨】 7 ,手球  (17:26:43) 11:39 蒙的全队【进球⚽️】 6  (17:27:16) 14:50 蒙的全队【进球⚽️】 6  (17:30:26) 16:15 蒙的全队【进球⚽️】 14  (17:31:52) 17:22 蒙的全队【进球⚽️】 91  (17:32:59) 20:18 蒙的全队【进球⚽️】 6  (17:35:55) 24:57 【停止🚩】    (17:40:34)  24:57 蒙的全队【换人🙎🏻‍♂️】 未填写  (17:45:28) 24:57 爱好者队【换人🙎🏻‍♂️】 未填写  (17:45:35) 24:57 爱好者队【换人🙎🏻‍♂️】 未填写  (17:46:34) 25:00 【开场🏁】    (17:48:44) 29:09 蒙的全队【进球⚽️】 3  (17:52:54) 35:22 蒙的全队【进球⚽️】 91  (17:59:06) 35:28 蒙的全队【换人🙎🏻‍♂️】 未填写  (17:59:13) 37:29 蒙的全队【进球⚽️】 3  (18:01:14) 47:33 蒙的全队【进球⚽️】 3  (18:11:18) 48:24 蒙的全队【进球⚽️】 3  (18:12:09) 49:13 蒙的全队【进球⚽️】 3  (18:12:57) 50:10 【停止🚩】    (18:13:55)"
       }
     ]
   },
@@ -1132,65 +1036,6 @@
     ]
   },
   {
-    "time": "2026-10-26T17:13",
-    "referee": "赵立强",
-    "assistRefs": "",
-    "score": "2:2",
-    "refFee": 40,
-    "team1": "XZD",
-    "team2": "BQB",
-    "events": [
-      {
-        "type": "进球",
-        "time": "11:41",
-        "playerId": "30",
-        "teamAbbr": "BQB",
-        "goalTeamAbbr": "BQB",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "15:37",
-        "playerId": "6",
-        "teamAbbr": "XZD",
-        "goalTeamAbbr": "XZD",
-        "note": ""
-      },
-      {
-        "type": "黄牌",
-        "time": "21:00",
-        "playerId": "37",
-        "teamAbbr": "XZD",
-        "goalTeamAbbr": "XZD",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "27:42",
-        "playerId": "30",
-        "teamAbbr": "BQB",
-        "goalTeamAbbr": "BQB",
-        "note": ""
-      },
-      {
-        "type": "黄牌",
-        "time": "40:16",
-        "playerId": "30",
-        "teamAbbr": "BQB",
-        "goalTeamAbbr": "BQB",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "43:14",
-        "playerId": "37",
-        "teamAbbr": "XZD",
-        "goalTeamAbbr": "XZD",
-        "note": ""
-      }
-    ]
-  },
-  {
     "time": "2026-10-26T18:00",
     "referee": "刘俊辉",
     "assistRefs": "",
@@ -1255,54 +1100,20 @@
     "referee": "佧米力江",
     "assistRefs": "",
     "score": "1:2",
-    "refFee": 40,
+    "refFee": 150,
     "team1": "PSG",
     "team2": "SPR",
-    "events": [
-      {
-        "type": "进球",
-        "time": "25:55",
-        "playerId": "2",
-        "teamAbbr": "PSG",
-        "goalTeamAbbr": "PSG",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "44:56",
-        "playerId": "50",
-        "teamAbbr": "SPR",
-        "goalTeamAbbr": "SPR",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "49:57",
-        "playerId": "50",
-        "teamAbbr": "SPR",
-        "goalTeamAbbr": "SPR",
-        "note": ""
-      }
-    ]
+    "events": []
   },
   {
     "time": "2026-10-28T17:00",
     "referee": "赵立强",
     "assistRefs": "",
-    "score": "0:1",
+    "score": "0:0",
     "refFee": 40,
     "team1": "MDQ",
     "team2": "XWM",
-    "events": [
-      {
-        "type": "进球",
-        "time": "31:04",
-        "playerId": "10",
-        "teamAbbr": "XWM",
-        "goalTeamAbbr": "XWM",
-        "note": ""
-      }
-    ]
+    "events": []
   },
   {
     "time": "2026-10-28T18:00",
@@ -1352,7 +1163,7 @@
   },
   {
     "time": "2026-10-29T18:00",
-    "referee": "弃赛",
+    "referee": "肖天时",
     "assistRefs": "",
     "score": "3:0",
     "refFee": 0,
@@ -1361,262 +1172,42 @@
     "events": []
   },
   {
-    "time": "2026-10-29T18:18",
-    "referee": "王唯一",
-    "assistRefs": "",
-    "score": "13:3",
-    "refFee": 30,
-    "team1": "BX",
-    "team2": "AHZ",
-    "events": [
-      {
-        "type": "进球",
-        "time": "1",
-        "playerId": "39",
-        "teamAbbr": "BX",
-        "goalTeamAbbr": "BX",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "5",
-        "playerId": "77",
-        "teamAbbr": "BX",
-        "goalTeamAbbr": "BX",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "13",
-        "playerId": "42",
-        "teamAbbr": "AHZ",
-        "goalTeamAbbr": "AHZ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "19",
-        "playerId": "29",
-        "teamAbbr": "AHZ",
-        "goalTeamAbbr": "AHZ",
-        "note": ""
-      },
-      {
-        "type": "点球",
-        "time": "25",
-        "playerId": "39",
-        "teamAbbr": "BX",
-        "goalTeamAbbr": "BX",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "26",
-        "playerId": "9",
-        "teamAbbr": "BX",
-        "goalTeamAbbr": "BX",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "30",
-        "playerId": "9",
-        "teamAbbr": "BX",
-        "goalTeamAbbr": "BX",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "30",
-        "playerId": "39",
-        "teamAbbr": "BX",
-        "goalTeamAbbr": "BX",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "38",
-        "playerId": "9",
-        "teamAbbr": "BX",
-        "goalTeamAbbr": "BX",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "41",
-        "playerId": "30",
-        "teamAbbr": "BX",
-        "goalTeamAbbr": "BX",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "42",
-        "playerId": "5",
-        "teamAbbr": "AHZ",
-        "goalTeamAbbr": "AHZ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "43",
-        "playerId": "30",
-        "teamAbbr": "BX",
-        "note": "",
-        "goalTeamAbbr": "BX"
-      },
-      {
-        "type": "进球",
-        "time": "47",
-        "playerId": "77",
-        "teamAbbr": "BX",
-        "goalTeamAbbr": "BX",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "48",
-        "playerId": "39",
-        "teamAbbr": "BX",
-        "goalTeamAbbr": "BX",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "50",
-        "playerId": "77",
-        "teamAbbr": "BX",
-        "goalTeamAbbr": "BX",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "52",
-        "playerId": "9",
-        "teamAbbr": "BX",
-        "goalTeamAbbr": "BX",
-        "note": ""
-      }
-    ]
-  },
-  {
-    "time": "2026-11-01T17:27",
-    "referee": "杜天雨",
-    "assistRefs": "",
-    "score": "0:7",
-    "refFee": 40,
-    "team1": "ZDY",
-    "team2": "DSM",
-    "events": [
-      {
-        "type": "进球",
-        "time": "5:03",
-        "playerId": "6",
-        "teamAbbr": "DSM",
-        "goalTeamAbbr": "DSM",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "15:25",
-        "playerId": "4",
-        "teamAbbr": "DSM",
-        "goalTeamAbbr": "DSM",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "21:38",
-        "playerId": "4",
-        "teamAbbr": "DSM",
-        "goalTeamAbbr": "DSM",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "24:33",
-        "playerId": "5",
-        "teamAbbr": "DSM",
-        "goalTeamAbbr": "DSM",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "41:03",
-        "playerId": "4",
-        "teamAbbr": "DSM",
-        "goalTeamAbbr": "DSM",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "43:21",
-        "playerId": "14",
-        "teamAbbr": "DSM",
-        "goalTeamAbbr": "DSM",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "46:30",
-        "playerId": "4",
-        "teamAbbr": "DSM",
-        "goalTeamAbbr": "DSM",
-        "note": ""
-      }
-    ]
-  },
-  {
-    "time": "2026-11-01T18:00",
-    "referee": "佧米力江",
-    "assistRefs": "",
-    "score": "3:1",
-    "refFee": 40,
-    "team1": "XJ",
-    "team2": "QX",
-    "events": [
-      {
-        "type": "进球",
-        "time": "2:53",
-        "playerId": "10",
-        "teamAbbr": "QX",
-        "goalTeamAbbr": "QX",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "5:54",
-        "playerId": "10",
-        "teamAbbr": "XJ",
-        "goalTeamAbbr": "XJ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "33:54",
-        "playerId": "17",
-        "teamAbbr": "XJ",
-        "goalTeamAbbr": "XJ",
-        "note": ""
-      },
-      {
-        "type": "进球",
-        "time": "49:56",
-        "playerId": "17",
-        "teamAbbr": "XJ",
-        "goalTeamAbbr": "XJ",
-        "note": ""
-      }
-    ]
-  },
-  {
     "time": "2026-11-02T17:00",
-    "referee": "弃权",
+    "referee": "张兴源",
     "assistRefs": "",
-    "score": "3:0",
-    "refFee": 0,
-    "team1": "JGD",
-    "team2": "AHZ",
-    "events": []
+    "score": "2:1",
+    "refFee": 150,
+    "team1": "XZD",
+    "team2": "XZT",
+    "events": [
+      {
+        "type": "进球",
+        "time": "45",
+        "playerId": "18",
+        "teamAbbr": "XZT",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "黄牌",
+        "time": "25",
+        "playerId": "19",
+        "teamAbbr": "XZT",
+        "note": "黄牌🟨"
+      },
+      {
+        "type": "进球",
+        "time": "24",
+        "playerId": "10",
+        "teamAbbr": "XZD",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "24",
+        "playerId": "61",
+        "teamAbbr": "XZD",
+        "note": "进球⚽️"
+      }
+    ]
   }
 ]
