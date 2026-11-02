@@ -1,8 +1,48 @@
 [
   {
-    "id": "179002786698942",
-    "team1": "XZD",
+    "team1": "DPG",
     "team2": "XZT",
+    "time": "2026-10-29 17:00",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "占位符，东单班级体育活动",
+    "id": "1792675564090"
+  },
+  {
+    "id": "179002786698936",
+    "team1": "BX",
+    "team2": "DPG",
+    "time": "2026-10-30 18:00",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
+    "id": "179002786698937",
+    "team1": "XZT",
+    "team2": "BQB",
+    "time": "2026-10-30 18:00",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
+    "id": "179002786698938",
+    "team1": "XJ",
+    "team2": "QX",
+    "time": "2026-11-01 18:00",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
+    "id": "179002786698940",
+    "team1": "JGD",
+    "team2": "AHZ",
     "time": "2026-11-02 17:00",
     "location": "南",
     "referee": "",
@@ -15,7 +55,7 @@
     "team2": "SPR",
     "time": "2026-11-02 17:00",
     "location": "北",
-    "referee": "赵立强",
+    "referee": "",
     "assistRefs": "",
     "notes": ""
   },
@@ -25,7 +65,27 @@
     "team2": "XWM",
     "time": "2026-11-02 18:00",
     "location": "北",
-    "referee": "张家齐",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
+    "id": "179002786698942",
+    "team1": "XZD",
+    "team2": "XZT",
+    "time": "2026-11-02 18:00",
+    "location": "南",
+    "referee": "张兴源",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
+    "id": "179002786698944",
+    "team1": "ZDY",
+    "team2": "DSM",
+    "time": "2026-11-03 18:00",
+    "location": "北",
+    "referee": "",
     "assistRefs": "",
     "notes": ""
   },
@@ -210,23 +270,13 @@
     "notes": "延期至待定时间"
   },
   {
-    "id": "179002786698936",
     "team1": "BX",
-    "team2": "DPG",
+    "team2": "AHZ",
     "time": "",
-    "location": "北",
+    "location": "",
     "referee": "",
     "assistRefs": "",
-    "notes": "延期至待定时间"
-  },
-  {
-    "id": "179002786698937",
-    "team1": "XZT",
-    "team2": "BQB",
-    "time": "",
-    "location": "南",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "延期至待定时间"
+    "notes": "延期至待定时间",
+    "id": "1790441448205"
   }
 ]
