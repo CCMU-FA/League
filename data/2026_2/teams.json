@@ -1199,7 +1199,7 @@
         "docId": "",
         "goals": 1,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -2574,7 +2574,7 @@
         "id": "14",
         "name": "高晨洋",
         "docId": "2611226",
-        "goals": 1,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2601,7 +2601,7 @@
         "id": "91",
         "name": "马泽明",
         "docId": "2601216",
-        "goals": 0,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2610,7 +2610,7 @@
         "id": "6",
         "name": "陈兆霖",
         "docId": "122026010027",
-        "goals": 0,
+        "goals": 4,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2628,7 +2628,7 @@
         "id": "3",
         "name": "叶梓皓",
         "docId": "2615042",
-        "goals": 0,
+        "goals": 5,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
