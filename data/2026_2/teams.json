@@ -297,7 +297,7 @@
         "id": "17",
         "name": "苏绍轩",
         "docId": "",
-        "goals": 4,
+        "goals": 6,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -333,7 +333,7 @@
         "id": "10",
         "name": "孙铭远",
         "docId": "",
-        "goals": 1,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -384,7 +384,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": -55
+    "refFeeBalance": 0
   },
   "ZDY": {
     "abbr": "ZDY",
@@ -1710,7 +1710,7 @@
         "id": "10",
         "name": "徐易行",
         "docId": "2411232",
-        "goals": 2,
+        "goals": 3,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1797,7 +1797,7 @@
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 15
+    "refFeeBalance": 70
   },
   "BX": {
     "abbr": "BX",
