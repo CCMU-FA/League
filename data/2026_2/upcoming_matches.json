@@ -20,16 +20,6 @@
     "notes": ""
   },
   {
-    "id": "179002786698946",
-    "team1": "XZT",
-    "team2": "PSG",
-    "time": "2026-11-05 18:00",
-    "location": "北",
-    "referee": "",
-    "assistRefs": "",
-    "notes": ""
-  },
-  {
     "id": "179002786698919",
     "team1": "ZDY",
     "team2": "JGD",
@@ -195,6 +185,16 @@
     "team2": "BQB",
     "time": "",
     "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "延期至待定时间"
+  },
+  {
+    "id": "179002786698946",
+    "team1": "XZT",
+    "team2": "PSG",
+    "time": "",
+    "location": "北",
     "referee": "",
     "assistRefs": "",
     "notes": "延期至待定时间"
