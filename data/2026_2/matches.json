@@ -1290,5 +1290,15 @@
         "note": "进球⚽️"
       }
     ]
+  },
+  {
+    "time": "2026-11-06T18:00",
+    "referee": "弃权",
+    "assistRefs": "",
+    "score": "3:0",
+    "refFee": 0,
+    "team1": "XWM",
+    "team2": "AHZ",
+    "events": []
   }
 ]
