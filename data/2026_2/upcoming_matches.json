@@ -30,6 +30,16 @@
     "notes": ""
   },
   {
+    "id": "179002786698919",
+    "team1": "ZDY",
+    "team2": "JGD",
+    "time": "2026-11-06 17:00",
+    "location": "",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "延期至待定时间"
+  },
+  {
     "id": "179002786698948",
     "team1": "BX",
     "team2": "DSM",
@@ -123,16 +133,6 @@
     "id": "179002786698917",
     "team1": "XZT",
     "team2": "QX",
-    "time": "",
-    "location": "",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "延期至待定时间"
-  },
-  {
-    "id": "179002786698919",
-    "team1": "ZDY",
-    "team2": "JGD",
     "time": "",
     "location": "",
     "referee": "",
