@@ -30,16 +30,6 @@
     "notes": ""
   },
   {
-    "id": "179002786698950",
-    "team1": "MDQ",
-    "team2": "JGD",
-    "time": "2026-11-08 15:00",
-    "location": "北",
-    "referee": "",
-    "assistRefs": "",
-    "notes": ""
-  },
-  {
     "id": "179002786698951",
     "team1": "BQB",
     "team2": "PSG",
@@ -56,6 +46,16 @@
     "time": "2026-11-08 18:00",
     "location": "南",
     "referee": "赵立强",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
+    "id": "179002786698950",
+    "team1": "MDQ",
+    "team2": "JGD",
+    "time": "2026-11-09 17:00",
+    "location": "北",
+    "referee": "",
     "assistRefs": "",
     "notes": ""
   },
