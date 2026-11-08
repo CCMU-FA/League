@@ -1149,16 +1149,16 @@
         "isEligible": true
       }
     ],
-    "points": 0,
+    "points": 1,
     "wins": 0,
-    "draws": 0,
+    "draws": 1,
     "losses": 4,
     "goalsFor": 4,
     "goalsAgainst": 15,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 40,
-    "refFeeBalance": 70
+    "refFeeBalance": -5
   },
   "AHZ": {
     "abbr": "AHZ",
@@ -2310,16 +2310,16 @@
         "isEligible": true
       }
     ],
-    "points": 0,
+    "points": 1,
     "wins": 0,
-    "draws": 0,
+    "draws": 1,
     "losses": 4,
     "goalsFor": 5,
     "goalsAgainst": 14,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 70,
-    "refFeeBalance": -40
+    "refFeeBalance": -115
   },
   "SPR": {
     "abbr": "SPR",
