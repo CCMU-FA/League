@@ -630,7 +630,7 @@
         "id": "26",
         "name": "木热地力·木塔力甫",
         "docId": "112026020216",
-        "goals": 1,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 1,
         "isEligible": true
@@ -693,7 +693,7 @@
         "id": "35",
         "name": "乃吉米丁",
         "docId": "2638017",
-        "goals": 0,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -789,16 +789,16 @@
         "isEligible": true
       }
     ],
-    "points": 7,
+    "points": 8,
     "wins": 2,
-    "draws": 1,
+    "draws": 2,
     "losses": 0,
-    "goalsFor": 8,
-    "goalsAgainst": 4,
+    "goalsFor": 11,
+    "goalsAgainst": 7,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 70,
-    "refFeeBalance": 25
+    "refFeeBalance": 5
   },
   "DSM": {
     "abbr": "DSM",
@@ -1710,7 +1710,7 @@
         "id": "10",
         "name": "徐易行",
         "docId": "2411232",
-        "goals": 2,
+        "goals": 4,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1764,7 +1764,7 @@
         "id": "22",
         "name": "龚思豪",
         "docId": "2411175",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1788,16 +1788,16 @@
         "isEligible": true
       }
     ],
-    "points": 6,
+    "points": 7,
     "wins": 2,
-    "draws": 0,
+    "draws": 1,
     "losses": 1,
-    "goalsFor": 7,
-    "goalsAgainst": 6,
+    "goalsFor": 10,
+    "goalsAgainst": 9,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 90
+    "refFeeBalance": 70
   },
   "BX": {
     "abbr": "BX",
