@@ -1310,5 +1310,15 @@
     "team1": "BX",
     "team2": "DSM",
     "events": []
+  },
+  {
+    "time": "2026-11-08T15:00",
+    "referee": "赵立强",
+    "assistRefs": "",
+    "score": "0:0",
+    "refFee": 150,
+    "team1": "BQB",
+    "team2": "PSG",
+    "events": []
   }
 ]
