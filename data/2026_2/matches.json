@@ -1320,5 +1320,58 @@
     "team1": "BQB",
     "team2": "PSG",
     "events": []
+  },
+  {
+    "time": "2026-11-08T18:00",
+    "referee": "赵立强",
+    "assistRefs": "",
+    "score": "3:3",
+    "refFee": 40,
+    "team1": "BGT",
+    "team2": "QX",
+    "events": [
+      {
+        "type": "进球",
+        "time": "47",
+        "playerId": "26",
+        "teamAbbr": "BGT",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "45",
+        "playerId": "35",
+        "teamAbbr": "BGT",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "38",
+        "playerId": "10",
+        "teamAbbr": "QX",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "32",
+        "playerId": "35",
+        "teamAbbr": "BGT",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "27",
+        "playerId": "10",
+        "teamAbbr": "QX",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "19",
+        "playerId": "22",
+        "teamAbbr": "QX",
+        "note": "进球⚽️"
+      }
+    ]
   }
 ]
