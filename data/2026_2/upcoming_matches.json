@@ -20,11 +20,31 @@
     "notes": ""
   },
   {
-    "id": "179002786698919",
-    "team1": "ZDY",
-    "team2": "JGD",
-    "time": "2026-11-06 17:00",
-    "location": "",
+    "id": "179002786698946",
+    "team1": "XZT",
+    "team2": "PSG",
+    "time": "2026-11-05 18:00",
+    "location": "北",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
+    "id": "179002786698948",
+    "team1": "BX",
+    "team2": "DSM",
+    "time": "2026-11-06 18:00",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
+    "id": "179002786698949",
+    "team1": "XWM",
+    "team2": "AHZ",
+    "time": "2026-11-06 18:00",
+    "location": "北",
     "referee": "",
     "assistRefs": "",
     "notes": ""
@@ -33,9 +53,29 @@
     "id": "179002786698950",
     "team1": "MDQ",
     "team2": "JGD",
-    "time": "2026-11-09 17:00",
+    "time": "2026-11-08 15:00",
     "location": "北",
-    "referee": "王巍",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
+    "id": "179002786698951",
+    "team1": "BQB",
+    "team2": "PSG",
+    "time": "2026-11-08 15:00",
+    "location": "南",
+    "referee": "",
+    "assistRefs": "",
+    "notes": ""
+  },
+  {
+    "id": "179002786698947",
+    "team1": "QX",
+    "team2": "BGT",
+    "time": "2026-11-08 18:00",
+    "location": "南",
+    "referee": "",
     "assistRefs": "",
     "notes": ""
   },
@@ -45,7 +85,7 @@
     "team2": "AHZ",
     "time": "2026-11-09 18:00",
     "location": "北",
-    "referee": "赵立强",
+    "referee": "",
     "assistRefs": "",
     "notes": ""
   },
@@ -75,7 +115,7 @@
     "team2": "XZD",
     "time": "",
     "location": "",
-    "referee": "",
+    "referee": "张兴源",
     "assistRefs": "",
     "notes": "延期至待定时间"
   },
@@ -83,6 +123,16 @@
     "id": "179002786698917",
     "team1": "XZT",
     "team2": "QX",
+    "time": "",
+    "location": "",
+    "referee": "",
+    "assistRefs": "",
+    "notes": "延期至待定时间"
+  },
+  {
+    "id": "179002786698919",
+    "team1": "ZDY",
+    "team2": "JGD",
     "time": "",
     "location": "",
     "referee": "",
@@ -145,16 +195,6 @@
     "team2": "BQB",
     "time": "",
     "location": "南",
-    "referee": "",
-    "assistRefs": "",
-    "notes": "延期至待定时间"
-  },
-  {
-    "id": "179002786698946",
-    "team1": "XZT",
-    "team2": "PSG",
-    "time": "",
-    "location": "北",
     "referee": "",
     "assistRefs": "",
     "notes": "延期至待定时间"
