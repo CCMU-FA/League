@@ -1292,84 +1292,61 @@
     ]
   },
   {
-    "time": "2026-11-06T18:00",
-    "referee": "弃权",
+    "time": "",
+    "referee": "张兴源",
     "assistRefs": "",
-    "score": "3:0",
-    "refFee": 0,
-    "team1": "XWM",
-    "team2": "AHZ",
-    "events": []
-  },
-  {
-    "time": "2026-11-06T18:00",
-    "referee": "弃权",
-    "assistRefs": "",
-    "score": "3:0",
-    "refFee": 0,
-    "team1": "BX",
-    "team2": "DSM",
-    "events": []
-  },
-  {
-    "time": "2026-11-08T15:00",
-    "referee": "赵立强",
-    "assistRefs": "",
-    "score": "0:0",
+    "score": "0:4",
     "refFee": 150,
-    "team1": "BQB",
-    "team2": "PSG",
-    "events": []
-  },
-  {
-    "time": "2026-11-08T18:00",
-    "referee": "赵立强",
-    "assistRefs": "",
-    "score": "3:3",
-    "refFee": 40,
-    "team1": "BGT",
-    "team2": "QX",
+    "team1": "XZD",
+    "team2": "XJ",
     "events": [
       {
         "type": "进球",
-        "time": "47",
+        "time": "48",
+        "playerId": "16",
+        "teamAbbr": "XJ",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "37",
+        "playerId": "10",
+        "teamAbbr": "XJ",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "黄牌",
+        "time": "34",
+        "playerId": "10",
+        "teamAbbr": "XJ",
+        "note": "黄牌🟨"
+      },
+      {
+        "type": "黄牌",
+        "time": "30",
+        "playerId": "27",
+        "teamAbbr": "XZD",
+        "note": "黄牌🟨"
+      },
+      {
+        "type": "进球",
+        "time": "28",
         "playerId": "26",
-        "teamAbbr": "BGT",
+        "teamAbbr": "XJ",
         "note": "进球⚽️"
       },
       {
-        "type": "进球",
-        "time": "45",
-        "playerId": "35",
-        "teamAbbr": "BGT",
-        "note": "进球⚽️"
-      },
-      {
-        "type": "进球",
-        "time": "38",
+        "type": "黄牌",
+        "time": "23",
         "playerId": "10",
-        "teamAbbr": "QX",
-        "note": "进球⚽️"
+        "teamAbbr": "XZD",
+        "note": "黄牌🟨"
       },
       {
         "type": "进球",
-        "time": "32",
-        "playerId": "35",
-        "teamAbbr": "BGT",
-        "note": "进球⚽️"
-      },
-      {
-        "type": "进球",
-        "time": "27",
+        "time": "14",
         "playerId": "10",
-        "teamAbbr": "QX",
-        "note": "进球⚽️"
-      },
-      {
-        "type": "进球",
-        "time": "19",
-        "playerId": "22",
-        "teamAbbr": "QX",
+        "teamAbbr": "XJ",
         "note": "进球⚽️"
       }
     ]
