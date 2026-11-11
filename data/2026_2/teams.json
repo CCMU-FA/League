@@ -1674,7 +1674,7 @@
         "id": "4",
         "name": "卞宇航",
         "docId": "2501193",
-        "goals": 1,
+        "goals": 3,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1773,7 +1773,7 @@
         "id": "20",
         "name": "阿卜杜哈力克·吐尔逊",
         "docId": "2411161",
-        "goals": 1,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1791,13 +1791,13 @@
     "points": 6,
     "wins": 2,
     "draws": 0,
-    "losses": 1,
-    "goalsFor": 7,
-    "goalsAgainst": 6,
+    "losses": 2,
+    "goalsFor": 10,
+    "goalsAgainst": 12,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 90
+    "refFeeBalance": 70
   },
   "BX": {
     "abbr": "BX",
@@ -2196,7 +2196,7 @@
         "id": "9",
         "name": "NASIR",
         "docId": "122025091754",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 1,
         "isEligible": true
@@ -2205,9 +2205,9 @@
         "id": "11",
         "name": "MOSAVIASL",
         "docId": "2311W002",
-        "goals": 0,
+        "goals": 3,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
@@ -2234,14 +2234,14 @@
         "docId": "2511550",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "isEligible": true
       },
       {
         "id": "6",
         "name": "KHALED",
         "docId": "2511515",
-        "goals": 1,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 1,
         "isEligible": true
@@ -2259,7 +2259,7 @@
         "id": "5",
         "name": "ALI DEIRY",
         "docId": "2011W017",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2310,16 +2310,16 @@
         "isEligible": true
       }
     ],
-    "points": 0,
-    "wins": 0,
+    "points": 3,
+    "wins": 1,
     "draws": 0,
     "losses": 4,
-    "goalsFor": 5,
-    "goalsAgainst": 14,
+    "goalsFor": 11,
+    "goalsAgainst": 17,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 70,
-    "refFeeBalance": -40
+    "refFeeBalance": -60
   },
   "SPR": {
     "abbr": "SPR",
