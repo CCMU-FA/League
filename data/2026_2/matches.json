@@ -1292,6 +1292,94 @@
     ]
   },
   {
+    "time": "2026-11-11T18:00",
+    "referee": "赵立强",
+    "assistRefs": "",
+    "score": "6:3",
+    "refFee": 40,
+    "team1": "PSG",
+    "team2": "QX",
+    "events": [
+      {
+        "type": "进球",
+        "time": "52",
+        "playerId": "4",
+        "teamAbbr": "QX",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "48",
+        "playerId": "6",
+        "teamAbbr": "PSG",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "黄牌",
+        "time": "34",
+        "playerId": "3",
+        "teamAbbr": "PSG",
+        "note": "黄牌🟨"
+      },
+      {
+        "type": "进球",
+        "time": "32",
+        "playerId": "11",
+        "teamAbbr": "PSG",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "30",
+        "playerId": "20",
+        "teamAbbr": "QX",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "29",
+        "playerId": "4",
+        "teamAbbr": "QX",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "26",
+        "playerId": "11",
+        "teamAbbr": "PSG",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "黄牌",
+        "time": "25",
+        "playerId": "11",
+        "teamAbbr": "PSG",
+        "note": "黄牌🟨"
+      },
+      {
+        "type": "进球",
+        "time": "21",
+        "playerId": "5",
+        "teamAbbr": "PSG",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "10",
+        "playerId": "11",
+        "teamAbbr": "PSG",
+        "note": "进球⚽️"
+      },
+      {
+        "type": "进球",
+        "time": "7",
+        "playerId": "9",
+        "teamAbbr": "PSG",
+        "note": "进球⚽️"
+      }
+    ]
+  },
+  {
     "time": "",
     "referee": "张兴源",
     "assistRefs": "",
