@@ -810,7 +810,7 @@
         "id": "14",
         "name": "何嘉泽",
         "docId": "2401026",
-        "goals": 1,
+        "goals": 2,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -978,16 +978,16 @@
         "isEligible": true
       }
     ],
-    "points": 7,
+    "points": 8,
     "wins": 2,
-    "draws": 1,
+    "draws": 2,
     "losses": 1,
-    "goalsFor": 7,
-    "goalsAgainst": 4,
+    "goalsFor": 8,
+    "goalsAgainst": 5,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 100
+    "refFeeBalance": 25
   },
   "BQB": {
     "abbr": "BQB",
@@ -1548,7 +1548,7 @@
         "id": "12",
         "name": "陈张俍",
         "docId": "2601009",
-        "goals": 0,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1608,16 +1608,16 @@
         "isEligible": true
       }
     ],
-    "points": 6,
+    "points": 7,
     "wins": 2,
-    "draws": 0,
+    "draws": 1,
     "losses": 1,
-    "goalsFor": 6,
-    "goalsAgainst": 3,
+    "goalsFor": 7,
+    "goalsAgainst": 4,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 105
+    "refFeeBalance": 30
   },
   "QX": {
     "abbr": "QX",
@@ -1674,7 +1674,7 @@
         "id": "4",
         "name": "卞宇航",
         "docId": "2501193",
-        "goals": 3,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1773,7 +1773,7 @@
         "id": "20",
         "name": "阿卜杜哈力克·吐尔逊",
         "docId": "2411161",
-        "goals": 2,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -1791,13 +1791,13 @@
     "points": 6,
     "wins": 2,
     "draws": 0,
-    "losses": 2,
-    "goalsFor": 10,
-    "goalsAgainst": 12,
+    "losses": 1,
+    "goalsFor": 7,
+    "goalsAgainst": 6,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 100,
-    "refFeeBalance": 70
+    "refFeeBalance": 90
   },
   "BX": {
     "abbr": "BX",
@@ -2196,7 +2196,7 @@
         "id": "9",
         "name": "NASIR",
         "docId": "122025091754",
-        "goals": 1,
+        "goals": 0,
         "redCards": 0,
         "yellowCards": 1,
         "isEligible": true
@@ -2205,9 +2205,9 @@
         "id": "11",
         "name": "MOSAVIASL",
         "docId": "2311W002",
-        "goals": 3,
+        "goals": 0,
         "redCards": 0,
-        "yellowCards": 1,
+        "yellowCards": 0,
         "isEligible": true
       },
       {
@@ -2234,14 +2234,14 @@
         "docId": "2511550",
         "goals": 0,
         "redCards": 0,
-        "yellowCards": 1,
+        "yellowCards": 0,
         "isEligible": true
       },
       {
         "id": "6",
         "name": "KHALED",
         "docId": "2511515",
-        "goals": 2,
+        "goals": 1,
         "redCards": 0,
         "yellowCards": 1,
         "isEligible": true
@@ -2259,7 +2259,7 @@
         "id": "5",
         "name": "ALI DEIRY",
         "docId": "2011W017",
-        "goals": 1,
+        "goals": 0,
         "redCards": 0,
         "yellowCards": 0,
         "isEligible": true
@@ -2310,16 +2310,16 @@
         "isEligible": true
       }
     ],
-    "points": 3,
-    "wins": 1,
+    "points": 0,
+    "wins": 0,
     "draws": 0,
     "losses": 4,
-    "goalsFor": 11,
-    "goalsAgainst": 17,
+    "goalsFor": 5,
+    "goalsAgainst": 14,
     "forfeits": 0,
     "fairPlayPoints": 100,
     "depositBalance": 70,
-    "refFeeBalance": -60
+    "refFeeBalance": -40
   },
   "SPR": {
     "abbr": "SPR",
